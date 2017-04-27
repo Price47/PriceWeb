@@ -1,0 +1,72 @@
+body{
+    background: #1a1b1c !important;
+    margin-top:100px !important;
+}
+
+.headernav{
+    top: 0;
+    left:0;
+    margin-top:-250px;
+    position: fixed;
+    height:350px;
+    width:100%;
+    background-color:black;
+    z-index: 10;
+}
+
+.sidenav{
+    height:1500px;
+    margin-left:-50px;
+    width:150px;
+    float:left;
+    left:0;
+    background-color:#1a1b1c;
+}
+
+#sidenav > ul{
+    list-style: none;
+    width:100%;
+}
+
+#sidenav > ul > li:hover{
+    background-color: black;
+    color:white;
+}
+
+#sidenav > ul > li:active{
+    color:white;
+}
+
+#sidenav > ul > li:visited,li:link{
+    color:white;
+}
+
+#sidenav > ul > li{
+    padding: 15px;
+}
+
+#sidenav > ul > li > a{
+    color:white;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+}
+
+#home-logo{
+    top:0;
+    left:0;
+    position:fixed;
+    width:100px;
+    height:100px;
+    background-color: black;
+    float:left;
+    z-index: 20;
+}
+
+#home-logo > a{
+    margin-top: 12px;
+    display: block;
+}
+
+
+
