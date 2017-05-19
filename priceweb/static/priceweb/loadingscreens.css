@@ -1,0 +1,79 @@
+.loader-example{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+ }
+
+.loading-control {
+    background-color: transparent;
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    z-index: 50;
+}
+
+.loading-menu{
+    background-color: transparent;
+    position: absolute;
+    float: left;
+    top: 90%;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    z-index: 50;
+    font-size: 8vh;
+
+}
+
+.loading-menu-item{
+    color:darkslategray;
+
+}
+
+.loading-menu-item:hover{
+    color:navajowhite;
+}
+
+.loading-control > a > span {
+    top:50%;
+    color:darkslategrey;
+}
+
+.loading-control > a > span:hover {
+    top:50%;
+    color:navajowhite;
+}
+
+.loading-control .glyphicon{
+    font-size: 50px;
+}
+
+.example-1{
+    background-color: orange;
+}
+
+.example-2{
+    background-color: crimson;
+}
+
+.example-3{
+    background-color: springgreen;
+}
+
+.example-4{
+    background-color: black;
+}
+
+.example-5{
+    background-color: white;
+}
+
+
+

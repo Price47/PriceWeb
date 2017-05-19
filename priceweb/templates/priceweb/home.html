@@ -1,0 +1,62 @@
+{% extends 'priceweb/index.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <div class="loader"></div>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2" >
+            <div id="carousel-slide-caption"></div>
+        </div>
+
+        <div class="col-lg-10 col-md-10 col-sm-10">
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <!-- Menu -->
+                <ol class="carousel-indicators home-carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                         <a href="dori" id="dori_button">
+                            <img src="http://lorempixel.com/1500/600/abstract/1" alt="Slide 1" />
+                         </a>
+                            <div class="carousel-caption">
+                                <h3>DORI</h3>
+                                <p>Check out this shit mofo i made it called DORI.</p>
+                          </div>
+                    </div>
+                    <div class="item">
+                        <a href="loadingscreens/1" id="loadscreen_button">
+                            <img src="http://lorempixel.com/1500/600/abstract/2" alt="Slide 2" />
+                        </a>
+                            <div class="carousel-caption">
+                                <h3>Loading Screens</h3>
+                                <p>Peep some loading screens I made motherfucker.</p>
+                          </div>
+                    </div>
+                    <div class="item">
+                         <a href="about" id="about_button">
+                            <img src="http://lorempixel.com/1500/600/abstract/4" alt="Slide 4" />
+                         </a>
+                            <div class="carousel-caption">
+                                <h3>About</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                          </div>
+                    </div>
+                </div>
+                <a href="#carousel" class="left carousel-control" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a href="#carousel" class="right carousel-control" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
