@@ -1,0 +1,146 @@
+.loader-example{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+ }
+
+.loading-control {
+    background-color: transparent;
+    position: absolute;
+    float: left;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    z-index: 50;
+}
+
+.loading-menu{
+    background-color: transparent;
+    position: absolute;
+    float: left;
+    top: 90%;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    text-align: center;
+    z-index: 50;
+    font-size: 8vh;
+
+}
+
+.loading-menu-item{
+    color:darkslategray;
+
+}
+
+.loading-menu-item:hover{
+    color:navajowhite;
+}
+
+.loading-control > a > span {
+    top:45%;
+    color:darkslategrey;
+}
+
+.loading-control > a > span:hover {
+    color:navajowhite;
+}
+
+.loading-control .glyphicon{
+    font-size: 50px;
+}
+
+#loading_home_button > span{
+    top:1%; !important;
+}
+
+.example-1{
+    background-color: orange;
+}
+
+.example-2{
+    background-color: crimson;
+}
+
+.example-3{
+    background-color: springgreen;
+}
+
+.example-4{
+    background-color: black;
+}
+
+.example-5{
+    background-color: white;
+}
+
+.animation-div{
+    margin:auto;
+    top:40%;
+    width:125px;
+    height:125px;
+    position:relative;
+}
+
+
+.loading-block{
+    position:absolute;
+    float:left;
+    z-index:1000;
+    width: 25px;
+    height:25px;
+    background: white;
+}
+
+#example_1_block_1{
+    -webkit-animation: example1 4.5s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: example1 4.5s linear 0s infinite;
+}
+
+#example_1_block_2{
+    -webkit-animation: example1 4.5s linear 0.1s infinite; /* Safari 4.0 - 8.0 */
+    animation: example1 4.5s linear 0.1s infinite;
+}
+
+#example_1_block_3{
+    -webkit-animation: example1 4.5s linear 0.2s infinite; /* Safari 4.0 - 8.0 */
+    animation: example1 4.5s linear 0.2s infinite;
+}
+
+#example_1_block_4{
+    -webkit-animation: example1 4.5s linear 0.3s infinite; /* Safari 4.0 - 8.0 */
+    animation: example1 4.5s linear 0.3s infinite;
+}
+
+#example_1_block_5{
+    -webkit-animation: example1 4.5s linear 0.4s infinite; /* Safari 4.0 - 8.0 */
+    animation: example1 4.5s linear 0.4s infinite;
+}
+
+@-webkit-keyframes example1 {
+    0%   {left:0; top:0}
+    10%  {left:80%; top:0}
+    25%  {left:80%;top:0}
+    35%  {left:80%;top:80%}
+    50%  {left:80%;top:80%}
+    60%  {left:0; top:80%}
+    75%  {left:0;top:80%}
+    85% {left:0; top:0;}
+}
+
+/* Standard syntax */
+@keyframes example1 {
+    0%   {left:0; top:0}
+    10%  {left:80%; top:0}
+    25%  {left:80%;top:0}
+    35%  {left:80%;top:80%}
+    50%  {left:80%;top:80%}
+    60%  {left:0; top:80%}
+    75%  {left:0;top:80%}
+    85% {left:0; top:0;}
+}
+

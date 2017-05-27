@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'priceweb.apps.PricewebConfig',
+    'static_precompiler',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -103,6 +104,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+STATIC_PRECOMPILER_COMPILERS = (
+    ('static_precompiler.compilers.LESS', {
+        "executable": "/usr/bin/lessc",
+        "sourcemap_enabled": True,
+        "global_vars": {"link-color": "red"}
+    }),
+)
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
@@ -121,3 +131,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_PRECOMPILER_ROOT = '/static/less'
+

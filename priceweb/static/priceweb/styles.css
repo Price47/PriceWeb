@@ -1,18 +1,42 @@
 body{
     background: #1a1b1c !important;
-    margin-top:100px !important;
+    margin-top:110px !important;
 }
 
-.headernav{
+.loader{
+    position: absolute;
+    display: block;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index: 1000;
+    background: black;
+}
+
+/* Header Styles */
+
+#header_container{
     top: 0;
     left:0;
     margin-top:-250px;
+    position: fixed;
+    width:100%;
+    height:355px;
+}
+
+.headernav{
+    top:0;
+    left:0;
+    margin-top: -250px;
     position: fixed;
     height:350px;
     width:100%;
     background-color:black;
     z-index: 10;
 }
+
+/* Sidenav Style */
 
 .sidenav{
     height:1500px;
@@ -38,7 +62,7 @@ body{
 }
 
 #sidenav > ul > li:visited,li:link{
-    color:white;
+    color:#333333
 }
 
 #sidenav > ul > li{
@@ -50,7 +74,10 @@ body{
     text-align: center;
     display: block;
     text-decoration: none;
+    font: inherit;
 }
+
+/* Home Style */
 
 #home-logo{
     top:0;
@@ -60,13 +87,109 @@ body{
     height:100px;
     background-color: black;
     float:left;
-    z-index: 20;
 }
 
-#home-logo > a{
+.home-logo > a{
     margin-top: 12px;
     display: block;
+
+}
+
+#title_main{
+    margin-top:275px;
+    float:right;
+    margin-right: 15px;
+    z-index: 50;
+    color:#23dbfc;
+}
+
+/* Text Styles */
+
+.text-style-descriptive{
+    color: white;
+    font-family: Baskerville;
+    font-size: 16px;
+    text-align: center;
+}
+
+.text-style-creative{
+
+}
+
+/* About Page */
+
+#about_info >img{
+    margin-top: 15px;
+}
+
+#about_info > p{
+    margin-top: 5px;
+    font: inherit;
+}
+
+#about_info{
+    margin-top: 20px;
+    width:300px;
+    height:500px;
+    float:right;
+    background-color: #181818;
+}
+
+/* Home Links */
+
+
+.home-link-text{
+    background-color: #181818;
+    float:left;
+    height:300px;
+    width:175px;
+    word-wrap: break-word;
 }
 
 
+
+/* Home Page Carousel Styles */
+
+.carousel-caption{
+    display: none;
+}
+
+ol.home-carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+}
+
+ol.home-carousel-indicators li,
+ol.home-carousel-indicators li.active {
+  float: left;
+  width: 33.33%;
+  height: 5px;
+  margin: 0;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+}
+
+ol.home-carousel-indicators li:hover{
+    background: #628a91;
+}
+
+ol.home-carousel-indicators li.active {
+  background: #23dbfc;;
+}
+
+
+/* gradient */
+
+.gradient1{
+background: #45e043; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #45e043 , #23dbfc); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #45e043, #23dbfc); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #45e043, #23dbfc); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #45e043 , #23dbfc); /* Standard syntax */
+}
 

@@ -1,0 +1,30 @@
+{% extends 'priceweb/index.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+
+    {% block loader %}
+    {% endblock %}
+
+
+
+    <div id='loading_back' class="loading-control">
+        <a id="loading_home_button" href="/priceweb/home">
+            <span class="glyphicon glyphicon-home loading-menu-item"></span>
+        </a>
+        <a id='loading_back_button' href={{ last_loader }}>
+            <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        </a>
+    </div>
+
+    <div id='loading_next' class="loading-control" style="left:90%;">
+        <a id='loading_next_button' href={{ next_loader }}>
+            <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
+
+</body>
+
+{% endblock %}
+

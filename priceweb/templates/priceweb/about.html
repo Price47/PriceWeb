@@ -2,10 +2,22 @@
 {% load static %}
 
 {% block content %}
-<div style="background-color: green; width:250px;height:500px;float:right">
-    <a href="/priceweb">
-            <img src="{% static "priceweb/author_picture.jpg" %}" alt="My image" height="250" width="250"/>
-        </a>
+
+    <div id="sidenav" class="sidenav text-style-descriptive">
+    <ul>
+        <li id="about_link"><a href="about">link1</a></li>
+        <li id="dori_link"><a href="dori">link2</a></li>
+        <li><a>link3</a></li>
+        <li><a>link4</a></li>
+        <li><a>link5</a></li>
+        <li><a>link6</a></li>
+    </ul>
+</div>
+
+<div id="about_info" class="text-style-descriptive">
+    <img src="{% static "priceweb/author_picture.jpg" %}" alt="My image" height="250" width="250"/>
+    <p> Richardstoeffel47@gmail.com </p>
+    <a href="https://github.com/Price47" target="_blank">https://github.com/Price47</a>
 </div>
 
 {% endblock %}
