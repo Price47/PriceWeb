@@ -1,3 +1,5 @@
+/* animations and css for the various loaders*/
+
 .loader-example{
     position: absolute;
     width:100%;
@@ -30,7 +32,6 @@
     text-align: center;
     z-index: 50;
     font-size: 8vh;
-
 }
 
 .loading-menu-item{
@@ -59,20 +60,6 @@
     top:1%; !important;
 }
 
-.example-2{
-    background-color: crimson;
-}
-
-.example-3{
-    background-color: springgreen;
-}
-
-.example-4{
-    background-color: black;
-}
-
-
-
 .animation-div{
     margin:auto;
     top:40%;
@@ -81,6 +68,7 @@
     position:relative;
     background: transparent;
 }
+
 
 /* Example 1*/
 .example-1{
@@ -151,6 +139,182 @@
     height:25px;
     background: green;
 }
+
+
+/* Example 2 */
+.example-2{
+    background-color: crimson;
+}
+
+.blocks_2{
+    position:relative;
+    float:left;
+    z-index:1000;
+    width: 25px;
+    height:25px;
+    background: steelblue;
+}
+
+
+/* Example 3 */
+.example-3{
+    background-color: springgreen;
+}
+
+.tall-rect{
+    position:absolute;
+    z-index:1000;
+    width: 25px;
+    height:125px;
+    background: #ff2605;
+}
+
+.long-rect{
+    position:absolute;
+    z-index:1000;
+    width: 125px;
+    height:25px;
+    background: #ff2605;
+}
+
+#example_3_block_1 {
+    -webkit-animation: example3-1 2s linear 0s alternate infinite; /* Safari 4.0 - 8.0 */
+    animation: example3-1 2s linear 0s alternate infinite;
+}
+
+#example_3_block_2{
+    -webkit-animation: example3-2 2s linear 0s alternate infinite; /* Safari 4.0 - 8.0 */
+    animation: example3-2 2s linear 0s alternate infinite;
+}
+
+#example_3_block_3{
+    -webkit-animation: example3-3 2s linear 0s alternate infinite; /* Safari 4.0 - 8.0 */
+    animation: example3-3 2s linear 0s alternate infinite;
+}
+
+#example_3_block_4{
+    -webkit-animation: example3-4 2s linear 0s alternate infinite; /* Safari 4.0 - 8.0 */
+    animation: example3-4 2s linear 0s alternate infinite;
+}
+
+@-webkit-keyframes example3-1 {
+    0% {left:0}
+    100% {left:100px}
+}
+
+@-webkit-keyframes example3-2 {
+    0% {right:0}
+    100% {right:100px}
+}
+
+/* Standard syntax */
+@keyframes example3-1 {
+    0% {left:0}
+    100% {left:100px}
+}
+
+@keyframes example3-2 {
+    0% {right:0}
+    100% {right:100px}
+}
+
+@-webkit-keyframes example3-3 {
+    0% {top:0}
+    100% {top:100px;}
+}
+
+@-webkit-keyframes example3-4 {
+    0% {bottom:0}
+    100% {bottom:100px;}
+}
+
+/* Standard syntax */
+@keyframes example3-3 {
+    0% {top:0}
+    100% {top:100px;}
+}
+
+@keyframes example3-4 {
+    0% {bottom:0}
+    100% {bottom:100px;}
+}
+
+
+/* Example 4 */
+.example-4{
+    background-color: black;
+}
+
+.mini-square{
+    position:relative;
+    float:left;
+    z-index:1000;
+    width: 25px;
+    height:25px;
+    background: white;
+}
+
+#example_4_block_1{
+     -webkit-animation: example4 1.8s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 0s  infinite;
+}
+
+#example_4_block_2, #example_4_block_6{
+    -webkit-animation: example4 1.8s linear 0.2s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 0.2s  infinite;
+}
+
+#example_4_block_3, #example_4_block_7, #example_4_block_11{
+    -webkit-animation: example4 1.8s linear 0.4s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 0.4s  infinite;
+}
+
+#example_4_block_4, #example_4_block_8, #example_4_block_12, #example_4_block_16{
+    -webkit-animation: example4 1.8s linear 0.6s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 0.6s  infinite;
+}
+
+#example_4_block_5, #example_4_block_9, #example_4_block_13, #example_4_block_17, #example_4_block_21{
+    -webkit-animation: example4 1.8s linear 0.8s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 0.8s  infinite;
+}
+
+#example_4_block_10, #example_4_block_14, #example_4_block_18, #example_4_block_22{
+    -webkit-animation: example4 1.8s linear 1s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 1s  infinite;
+}
+
+#example_4_block_15, #example_4_block_19, #example_4_block_23{
+    -webkit-animation: example4 1.8s linear 1.2s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 1.2s  infinite;
+}
+
+#example_4_block_20, #example_4_block_24{
+    -webkit-animation: example4 1.8s linear 1.4s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 1.4s  infinite;
+}
+
+#example_4_block_25{
+    -webkit-animation: example4 1.8s linear 1.6s infinite; /* Safari 4.0 - 8.0 */
+    animation: example4 1.8s linear 1.6s  infinite;
+}
+
+@-webkit-keyframes example4 {
+    0%   {background: white}
+    10% { background: black}
+    30% {background: white}
+    100% {background: white}
+}
+
+/* Standard syntax */
+@keyframes example4 {
+    0%   {background: white}
+    10% { background: black}
+    30% {background: white}
+    100% {background: white}
+}
+
+
 /* Example 5 */
 .example-5{
     background-color: white;
@@ -169,42 +333,36 @@
 #example_5_circle_1{
     -webkit-animation: example5 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
     animation: example5 1.3s linear 0s infinite;
-    left:0;
-    top:0;
+
 }
 #example_5_circle_2{
      -webkit-animation: example5 1.3s linear 0s reverse infinite; /* Safari 4.0 - 8.0 */
     animation: example5 1.3s linear 0s reverse infinite;
-    right:0;
-    top:0;
+
 }
 
 #example_5_circle_3{
     -webkit-animation: example5 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
     animation: example5 1.3s linear 0s infinite;
-    left:0;
-    bottom:0;
+
 }
 
 #example_5_circle_4{
     -webkit-animation: example5 1.3s linear 0s reverse infinite; /* Safari 4.0 - 8.0 */
     animation: example5 1.3s linear 0s reverse infinite;
-    right:0;
-    bottom:0;
+
 }
 
 #example_5_circle_5{
     -webkit-animation: example5 1.3s linear 0s  infinite; /* Safari 4.0 - 8.0 */
     animation: example5 1.3s linear 0s  infinite;
-    right:0;
-    bottom:0;
+
 }
 
 #example_5_circle_6{
     -webkit-animation: example5 1.3s linear 0s  reverse infinite; /* Safari 4.0 - 8.0 */
     animation: example5 1.3s linear 0s  reverse infinite;
-    right:0;
-    bottom:0;
+
 }
 
 @-webkit-keyframes example5 {
@@ -217,3 +375,7 @@
     0% {width: 0; height: 0; background: #23dbfc}
     100% {width: 55px;height: 55px; background: aquamarine}
 }
+
+
+
+

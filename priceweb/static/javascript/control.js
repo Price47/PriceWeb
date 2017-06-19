@@ -3,7 +3,6 @@
  */
 
 $(document).ready(function(){
-    $('#carousel').carousel();
     headContainer = $('#header_container');
     doriDev = $('#dori_development');
     doriOverview = $('#dori_overview');

@@ -2,27 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5b0a233-6993-4586-8337-68a4851b1238" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/priceweb/static/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/about-back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/brick-back.jpeg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/dori-back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/loadscreen-back.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/wood-back.jpeg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PriceSite/urls.py" afterPath="$PROJECT_DIR$/PriceSite/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/static/javascript/control.js" afterPath="$PROJECT_DIR$/priceweb/static/javascript/control.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/about.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/about.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_1.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_2.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_5.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_5.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_3.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_4.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_4.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/loadingscreens.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/loadingscreens.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/test.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/views.py" afterPath="$PROJECT_DIR$/priceweb/views.py" />
     </list>
     <ignored path="PriceSite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,43 +34,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="loading_screen_1.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_1.html">
+      <file leaf-file-name="loadingscreens.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+            <state relative-caret-position="-1807">
+              <caret line="176" column="23" selection-start-line="176" selection-start-column="23" selection-end-line="176" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loading_screen_5.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_5.html">
+      <file leaf-file-name="loading_screen_3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_3.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
               <folding>
-                <element signature="e#165#185#0#HTML" expanded="true" />
+                <element signature="e#280#295#0#HTML" expanded="true" />
+                <element signature="e#361#395#0#HTML" expanded="true" />
+                <element signature="e#461#477#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loadingscreens.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1174">
-              <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
-              <folding />
+            <state relative-caret-position="158">
+              <caret line="29" column="112" selection-start-line="29" selection-start-column="112" selection-end-line="29" selection-end-column="112" />
+              <folding>
+                <marker date="1497850670000" expanded="false" signature="149:178" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="control.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/control.js">
+      <file leaf-file-name="loading_screen_4.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_4.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+            <state relative-caret-position="165">
+              <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="31" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -110,9 +102,7 @@
         <option value="$PROJECT_DIR$/priceweb/static/priceweb/animations.css" />
         <option value="$PROJECT_DIR$/priceweb/static/priceweb/less/less_styles.less" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/sidebar.html" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_3.html" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loader_controls.html" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_4.html" />
         <option value="$PROJECT_DIR$/priceweb/settings.py" />
         <option value="$PROJECT_DIR$/PriceSite/settings.py" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/themes.html" />
@@ -120,19 +110,21 @@
         <option value="$PROJECT_DIR$/priceweb/views.py" />
         <option value="$PROJECT_DIR$/priceweb/static/priceweb/themes.css" />
         <option value="$PROJECT_DIR$/PriceSite/urls.py" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_2.html" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/test.html" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" />
         <option value="$PROJECT_DIR$/priceweb/static/priceweb/dori-background.html" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/about.html" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loadingscreens.html" />
-        <option value="$PROJECT_DIR$/priceweb/static/javascript/control.js" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" />
-        <option value="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_5.html" />
-        <option value="$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_1.html" />
+        <option value="$PROJECT_DIR$/priceweb/static/javascript/control.js" />
+        <option value="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loadingscreens.html" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_4.html" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_2.html" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_3.html" />
+        <option value="$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" />
       </list>
     </option>
   </component>
@@ -637,23 +629,23 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17704627" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.51067615" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3220339" sideWeight="0.16014235" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.48932385" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.48932385" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3220339" sideWeight="0.8451957" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3220339" sideWeight="0.83985764" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32909605" sideWeight="0.48576513" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -842,30 +834,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loader_controls.html" />
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/KinectView.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/animations.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/themes.html" />
@@ -916,14 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/dori-background.html" />
     <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/about-back.png">
       <provider selected="true" editor-type-id="images">
@@ -940,45 +903,13 @@
         <state relative-caret-position="165">
           <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
           <folding>
-            <element signature="e#587#653#0#HTML" expanded="true" />
-            <element signature="e#685#765#0#HTML" expanded="true" />
-            <element signature="e#796#840#0#HTML" expanded="true" />
-            <element signature="e#872#951#0#HTML" expanded="true" />
-            <element signature="e#993#1057#0#HTML" expanded="true" />
-            <element signature="e#1089#1168#0#HTML" expanded="true" />
+            <element signature="e#587#653#0#HTML" expanded="false" />
+            <element signature="e#685#765#0#HTML" expanded="false" />
+            <element signature="e#796#840#0#HTML" expanded="false" />
+            <element signature="e#872#951#0#HTML" expanded="false" />
+            <element signature="e#993#1057#0#HTML" expanded="false" />
+            <element signature="e#1089#1168#0#HTML" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loadingscreens.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="9" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="181" column="0" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -990,45 +921,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/dori.html">
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_5.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="55" />
+        <state relative-caret-position="210">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/animations.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/control.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="812">
+          <caret line="93" column="33" selection-start-line="93" selection-start-column="33" selection-end-line="93" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_5.html">
+    <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#165#185#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="139" column="1" selection-start-line="139" selection-start-column="1" selection-end-line="139" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css">
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/dori.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1174">
-          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+        <state relative-caret-position="120">
+          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loadingscreens.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        <state relative-caret-position="195">
+          <caret line="13" column="14" selection-start-line="5" selection-start-column="8" selection-end-line="13" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_4.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="31" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="e#161#177#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/loaders/loading_screen_3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="66" selection-start-line="8" selection-start-column="66" selection-end-line="8" selection-end-column="66" />
+          <folding>
+            <element signature="e#280#295#0#HTML" expanded="true" />
+            <element signature="e#361#395#0#HTML" expanded="true" />
+            <element signature="e#461#477#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/loadingscreens.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1807">
+          <caret line="176" column="23" selection-start-line="176" selection-start-column="23" selection-end-line="176" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="29" column="112" selection-start-line="29" selection-start-column="112" selection-end-line="29" selection-end-column="112" />
+          <folding>
+            <marker date="1497850670000" expanded="false" signature="149:178" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
