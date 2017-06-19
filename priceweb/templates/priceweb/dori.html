@@ -4,13 +4,66 @@
 
 {% block content %}
 
-</div>
+    <div class="row">
+        <div class="loader wood-color-dark">
+            <div style="position:relative;margin:auto">
+                <img src="{% static "priceweb/47.png" %}" alt="My image" height="256" width="408" class="center-image"/>
+            </div>
+        </div>
 
-    <h1> Kinect Development With Python</h1>
+        <div class="text-container-wrapper gradient1">
+            <div class="text-container wood-color-mid wood-font">
+                <h1>DORi Development</h1>
+            </div>
+        </div>
+    </div>
+    <div class="gradient1" style="padding: 2px;border-top-right-radius: 5px;border-top-left-radius: 5px;">
+        <div style="margin-right:15px;margin-left:15px;">
+        <div class="row">
+            <div id=dori_overview class="col-xs-4 col-sm-4 col-md-4 col-lg-4 wood-color-mid content-header wood-font">
+                Overview
+            </div>
+            <div id=dori_development class="col-xs-4 col-sm-4 col-md-4 col-lg-4 wood-color-mid content-header wood-font"
+                style="border-right: 1px solid white;border-left: 1px solid white">
+                Kinect & Python
+            </div>
+            <div id=dori_results class="col-xs-4 col-sm-4 col-md-4 col-lg-4 wood-color-mid content-header wood-font"
+                style="border-right:none!important">
+                Results
+            </div>
+        </div>
+        <div class="row">
+            <div id=dori_overview_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wood-font dori-content">
+                Overview content
+            </div>
+            <div id=dori_development_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wood-font dori-content">
+                Kinect Development with Python content
+            </div>
+            <div id=dori_results_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wood-font dori-content">
+                <div>results</div>
+                <div class="row">
+                    <div id="kinect_view" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-header">
+                        This pic
+                    </div>
+                    <div id="kinect_view_content" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <img src="{% static "priceweb/KinectView.png" %}" alt="My image" height="739" width="1000"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id=dori_video class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-header">
+                        This Vid
+                    </div>
+                    <div class="container-fluid">
+                        <div id=dori_video_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin-top: 10px;">
+                            <iframe id=dori_video_frame width="560" height="315" src="https://www.youtube.com/embed/oERQ4XCdLgU"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-    <img src="{% static "priceweb/KinectView.png" %}" alt="My image" height="964" width="1304"/>
-
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/oERQ4XCdLgU"
-            allowfullscreen></iframe>
 {% endblock %}
 

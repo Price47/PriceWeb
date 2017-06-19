@@ -1,6 +1,6 @@
 body{
-    background: #1a1b1c !important;
-    margin-top:110px !important;
+    margin-top:135px !important;
+    background-image: url("wood-back.jpeg");;
 }
 
 .loader{
@@ -11,7 +11,38 @@ body{
     width:100%;
     height:100%;
     z-index: 1000;
-    background: black;
+}
+
+
+.wood-color-light{
+    background-color: white;
+}
+
+.wood-font{
+    color:white;
+}
+
+.wood-color-dark{
+    background-color: black;
+}
+
+.wood-color-mid{
+    background-color: #1a1b1c;
+}
+
+.text-container-wrapper{
+    padding: 2px;
+    margin:15px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.text-container{
+    padding:15px;
+    border-width:2px;
+    border-color:#010101;
+    border-style: outset;
+    border-radius:10px;
 }
 
 /* Header Styles */
@@ -23,6 +54,7 @@ body{
     position: fixed;
     width:100%;
     height:355px;
+    z-index:9;
 }
 
 .headernav{
@@ -32,50 +64,51 @@ body{
     position: fixed;
     height:350px;
     width:100%;
-    background-color:black;
     z-index: 10;
 }
 
 /* Sidenav Style */
 
-.sidenav{
-    height:1500px;
-    margin-left:-50px;
-    width:150px;
-    float:left;
-    left:0;
-    background-color:#1a1b1c;
+.sidenav {
+    height: 1500px;
+    margin-left: -50px;
+    width: 150px;
+    float: left;
+    left: 0;
+    background-color: #1a1b1c;
 }
 
-#sidenav > ul{
+#sidenav > ul {
     list-style: none;
-    width:100%;
+    width: 100%;
 }
 
-#sidenav > ul > li:hover{
+#sidenav > ul > li:hover {
     background-color: black;
-    color:white;
+    color: white;
 }
 
-#sidenav > ul > li:active{
-    color:white;
+#sidenav > ul > li:active {
+    color: white;
 }
 
-#sidenav > ul > li:visited,li:link{
-    color:#333333
+#sidenav > ul > li:visited, li:link {
+    color: #333333
 }
 
-#sidenav > ul > li{
+#sidenav > ul > li {
     padding: 15px;
 }
 
-#sidenav > ul > li > a{
-    color:white;
+#sidenav > ul > li > a {
+    color: white;
     text-align: center;
     display: block;
     text-decoration: none;
     font: inherit;
 }
+
+
 
 /* Home Style */
 
@@ -85,7 +118,6 @@ body{
     position:fixed;
     width:100px;
     height:100px;
-    background-color: black;
     float:left;
 }
 
@@ -100,52 +132,83 @@ body{
     float:right;
     margin-right: 15px;
     z-index: 50;
-    color:#23dbfc;
+}
+
+.center-image{
+    display: block;
+    margin:auto;
 }
 
 /* Text Styles */
 
 .text-style-descriptive{
-    color: white;
     font-family: Baskerville;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
+    color:white;
 }
 
 .text-style-creative{
 
 }
 
-/* About Page */
+/* Dori */
 
-#about_info >img{
-    margin-top: 15px;
+.content-header{
+    padding: 15px;
+    position:relative;
+
+
 }
 
-#about_info > p{
-    margin-top: 5px;
-    font: inherit;
+.dori-content{
+    background-color: #252525;
+    padding:5px;
+
+}
+
+.content-header:hover {
+    background-color: white;
+    color: #1a1b1c;
+}
+
+#dori_overview{
+    border-top-left-radius: 5px;
+}
+
+#dori_results{
+    border-top-right-radius: 5px;
+}
+
+.content{
+
+}
+
+#dori_video_frame{
+    width:100%;
+    height:65vh;
+}
+
+#kinect_view_content img{
+    max-width:100%;
+    width:auto;
+    height:auto\9;
+}
+
+/* About Page */
+
+#about_info p{
+    text-align: center;
 }
 
 #about_info{
-    margin-top: 20px;
-    width:300px;
-    height:500px;
-    float:right;
-    background-color: #181818;
+    text-align: center;
 }
 
-/* Home Links */
-
-
-.home-link-text{
-    background-color: #181818;
-    float:left;
-    height:300px;
-    width:175px;
-    word-wrap: break-word;
+#about_info img{
+    display:block;
+    margin:auto;
 }
-
 
 
 /* Home Page Carousel Styles */
@@ -175,12 +238,14 @@ ol.home-carousel-indicators li.active {
 }
 
 ol.home-carousel-indicators li:hover{
-    background: #628a91;
+    background: lightgrey;
 }
 
 ol.home-carousel-indicators li.active {
-  background: #23dbfc;;
+  background: white;;
 }
+
+
 
 
 /* gradient */
@@ -191,5 +256,22 @@ background: #45e043; /* For browsers that do not support gradients */
   background: -o-linear-gradient(right, #45e043, #23dbfc); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right, #45e043, #23dbfc); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #45e043 , #23dbfc); /* Standard syntax */
+}
+
+.gradient2{
+background: #3582ff; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #3582ff , #ff4444); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #3582ff, #ff4444); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #3582ff, #ff4444); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #3582ff , #ff4444); /* Standard syntax */
+}
+
+
+.gradient3{
+background: #ff851c; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #ff851c , #ecfc41); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #ff851c, #ecfc41); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #ff851c, #ecfc41); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #ff851c , #ecfc41); /* Standard syntax */
 }
 

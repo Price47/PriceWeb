@@ -3,21 +3,39 @@
 
 {% block content %}
 
-    <div id="sidenav" class="sidenav text-style-descriptive">
-    <ul>
-        <li id="about_link"><a href="about">link1</a></li>
-        <li id="dori_link"><a href="dori">link2</a></li>
-        <li><a>link3</a></li>
-        <li><a>link4</a></li>
-        <li><a>link5</a></li>
-        <li><a>link6</a></li>
-    </ul>
-</div>
+    <div class="row">
 
-<div id="about_info" class="text-style-descriptive">
-    <img src="{% static "priceweb/author_picture.jpg" %}" alt="My image" height="250" width="250"/>
-    <p> Richardstoeffel47@gmail.com </p>
-    <a href="https://github.com/Price47" target="_blank">https://github.com/Price47</a>
-</div>
+        <div class="col-xs-12 col-sm-5 col-md-7 col-lg-8">
+            <div class="text-container-wrapper gradient3">
+                <div class="wood-color-mid wood-font text-container">
+                    <p>
+                        htru is lorem impsurb aouintoa ubgign eirug berwgb ewpfubadpfj badfjasbdhgk
+                    aksdbgadskjg bsapdiug baspdjgbads jg basljkgbsad
+                    gsjkdgbdflkjgbdjf gbfjlbg erwgb ebadlk gbf
+                    gdfsngjrewbgj efbg oweirhbg oerwibg eorig berijhbgkljf bg4i gw
+                    ge lisrbgoisuetbg oitbgiuw bgilfsjnbglberwgl b
+                    </p>
+                </div>
+            </div>
+            <div class="text-container-wrapper gradient3">
+                <div class="text-container wood-color-mid wood-font">
+                    https://www.pexels.com/
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-7 col-md-5 col-lg-4">
+            <div id="about_info" class="text-container-wrapper">
+                <div class="text-style-descriptive wood-font wood-color-mid text-container">
+                    <img src="{% static "priceweb/author_picture.jpg" %}" alt="My image" height="250" width="250"/>
+                    <p> Richardstoeffel47@gmail.com </p>
+                    <a href="https://github.com/Price47" target="_blank">github.com/Price47</a>
+                    <br>
+                    <a href="https://github.com/Price47/PriceWeb/tree/master/priceweb" target="_blank">Here's the code for this website!</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 {% endblock %}

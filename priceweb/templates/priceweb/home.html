@@ -3,13 +3,15 @@
 
 {% block content %}
 <body>
-    <div class="loader">
-
+    <div class="loader wood-color-dark">
+        <div style="position:relative;margin:auto">
+            <img src="{% static "priceweb/47.png" %}" alt="My image" height="256" width="408" class="center-image"/>
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-2 col-md-2 col-sm-2" >
-            <div id="carousel-slide-caption"></div>
+    <div class="row" style="background-color: #1a1b1c;padding:10px;margin:5px;">
+        <div class="col-lg-2 col-md-2 col-sm-2 text-style-descriptive wood-font" >
+            <div id="carousel-slide-caption" class="text-style-descriptive"></div>
         </div>
 
         <div class="col-lg-10 col-md-10 col-sm-10">
@@ -25,7 +27,7 @@
                 <div class="carousel-inner">
                     <div class="item active">
                          <a href="dori" id="dori_button">
-                            <img src="http://lorempixel.com/1500/600/abstract/1" alt="Slide 1" />
+                            <img src="{% static 'priceweb/dori-back.png' %}" width="1500" height="600" alt="Slide 1" />
                          </a>
                             <div class="carousel-caption">
                                 <h3>DORI</h3>
@@ -34,7 +36,7 @@
                     </div>
                     <div class="item">
                         <a href="loadingscreens/1" id="loadscreen_button">
-                            <img src="http://lorempixel.com/1500/600/abstract/2" alt="Slide 2" />
+                            <img src="{% static 'priceweb/loadscreen-back.png' %}" width="1500" height="600" alt="Slide 2" />
                         </a>
                             <div class="carousel-caption">
                                 <h3>Loading Screens</h3>
@@ -43,11 +45,11 @@
                     </div>
                     <div class="item">
                          <a href="about" id="about_button">
-                            <img src="http://lorempixel.com/1500/600/abstract/4" alt="Slide 4" />
+                            <img src="{% static 'priceweb/about-back.png' %}" width="1500" height="600" alt="Slide 4" />
                          </a>
                             <div class="carousel-caption">
                                 <h3>About</h3>
-                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                <p>Learn more about this site, it's author, and it's contributors.</p>
                           </div>
                     </div>
                 </div>
@@ -60,5 +62,7 @@
             </div>
         </div>
     </div>
+
+
 
 {% endblock %}

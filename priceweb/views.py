@@ -1,9 +1,6 @@
 from django.shortcuts import render
 from settings import MAX_LOADERS
 
-# Create your views here.
-
-from django.http import HttpResponse
 
 def index(request):
     return render(request, 'priceweb/index.html')
@@ -16,6 +13,7 @@ def dori(request):
 
 def test(request):
     return render(request, 'priceweb/test.html')
+
 
 def loadingscreens(request, index):
     i = int(index)

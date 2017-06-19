@@ -3,7 +3,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>This is prices page</title>
+    <title>PriceWeb</title>
 
     {%  load static %}
     {%  load staticfiles %}
@@ -21,8 +21,6 @@
     <link rel="stylesheet" type="text/css"
           href="{% static 'priceweb/loadingscreens.css' %}" />
 
-    <link rel="stylesheet" type="text/css"
-          href="{% static 'priceweb/less/less_styles.less' %}" />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -34,19 +32,22 @@
     <script src="{% static 'javascript/control.js' %}"></script>
 
 </head>
+
+{% load static %}
 <body>
 
+<link rel="shortcut icon" type="image/png" href="{% static "priceweb/../../static/favicon.ico" %}"/>
 
-
-<div id="header_container" class="gradient1">
-    <div id="header" class="headernav">
+<div id="header_container" class="wood-color-light">
+    <div id="header" class="headernav wood-color-dark">
         <form class="text-style-descriptive">
         <div id="home-logo" class="home-logo">
-            <a href="/priceweb">
+            <a href="/">
                 <img src="{% static "priceweb/47.png" %}" alt="My image" height="76.8" width="102.4"/>
             </a>
+
         </div>
-            <h3 id="title_main"></h3>
+            <h3 id="title_main" class="wood-font"></h3>
         </form>
     </div>
 </div>
@@ -57,9 +58,6 @@
     {% endblock %}
 </div>
 
-
 </body>
-
-<footer></footer>
 </html>
 

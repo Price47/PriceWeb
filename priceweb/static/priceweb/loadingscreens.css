@@ -4,6 +4,7 @@
     height:100%;
     top:0;
     left:0;
+    z-index:15;
  }
 
 .loading-control {
@@ -58,10 +59,6 @@
     top:1%; !important;
 }
 
-.example-1{
-    background-color: orange;
-}
-
 .example-2{
     background-color: crimson;
 }
@@ -74,9 +71,7 @@
     background-color: black;
 }
 
-.example-5{
-    background-color: white;
-}
+
 
 .animation-div{
     margin:auto;
@@ -84,8 +79,13 @@
     width:125px;
     height:125px;
     position:relative;
+    background: transparent;
 }
 
+/* Example 1*/
+.example-1{
+    background-color: orange;
+}
 
 .loading-block{
     position:absolute;
@@ -97,28 +97,28 @@
 }
 
 #example_1_block_1{
-    -webkit-animation: example1 4.5s linear 0s infinite; /* Safari 4.0 - 8.0 */
-    animation: example1 4.5s linear 0s infinite;
-}
-
-#example_1_block_2{
     -webkit-animation: example1 4.5s linear 0.1s infinite; /* Safari 4.0 - 8.0 */
     animation: example1 4.5s linear 0.1s infinite;
 }
 
-#example_1_block_3{
+#example_1_block_2{
     -webkit-animation: example1 4.5s linear 0.2s infinite; /* Safari 4.0 - 8.0 */
     animation: example1 4.5s linear 0.2s infinite;
 }
 
-#example_1_block_4{
+#example_1_block_3{
     -webkit-animation: example1 4.5s linear 0.3s infinite; /* Safari 4.0 - 8.0 */
     animation: example1 4.5s linear 0.3s infinite;
 }
 
-#example_1_block_5{
+#example_1_block_4{
     -webkit-animation: example1 4.5s linear 0.4s infinite; /* Safari 4.0 - 8.0 */
     animation: example1 4.5s linear 0.4s infinite;
+}
+
+#example_1_block_5{
+    -webkit-animation: example1 4.5s linear 0.5s infinite; /* Safari 4.0 - 8.0 */
+    animation: example1 4.5s linear 0.5s infinite;
 }
 
 @-webkit-keyframes example1 {
@@ -143,4 +143,77 @@
     75%  {left:0;top:80%}
     85% {left:0; top:0;}
 }
+.loading-block2{
+    position:absolute;
+    float:left;
+    z-index:1000;
+    width: 25px;
+    height:25px;
+    background: green;
+}
+/* Example 5 */
+.example-5{
+    background-color: white;
+}
 
+.loading-circle{
+    position:relative;
+    float:left;
+    z-index:1000;
+    width: 55px;
+    height:55px;
+    border-radius:50px;
+
+}
+
+#example_5_circle_1{
+    -webkit-animation: example5 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: example5 1.3s linear 0s infinite;
+    left:0;
+    top:0;
+}
+#example_5_circle_2{
+     -webkit-animation: example5 1.3s linear 0s reverse infinite; /* Safari 4.0 - 8.0 */
+    animation: example5 1.3s linear 0s reverse infinite;
+    right:0;
+    top:0;
+}
+
+#example_5_circle_3{
+    -webkit-animation: example5 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: example5 1.3s linear 0s infinite;
+    left:0;
+    bottom:0;
+}
+
+#example_5_circle_4{
+    -webkit-animation: example5 1.3s linear 0s reverse infinite; /* Safari 4.0 - 8.0 */
+    animation: example5 1.3s linear 0s reverse infinite;
+    right:0;
+    bottom:0;
+}
+
+#example_5_circle_5{
+    -webkit-animation: example5 1.3s linear 0s  infinite; /* Safari 4.0 - 8.0 */
+    animation: example5 1.3s linear 0s  infinite;
+    right:0;
+    bottom:0;
+}
+
+#example_5_circle_6{
+    -webkit-animation: example5 1.3s linear 0s  reverse infinite; /* Safari 4.0 - 8.0 */
+    animation: example5 1.3s linear 0s  reverse infinite;
+    right:0;
+    bottom:0;
+}
+
+@-webkit-keyframes example5 {
+    0%   {width:0; height:0; background: #23dbfc}
+    100% {width:55px; height:55px; background: aquamarine}
+}
+
+/* Standard syntax */
+@keyframes example5 {
+    0% {width: 0; height: 0; background: #23dbfc}
+    100% {width: 55px;height: 55px; background: aquamarine}
+}
