@@ -195,6 +195,26 @@ body{
     height:auto\9;
 }
 
+button {
+    margin: auto;
+}
+
+.dori-button{
+    background: #1a1b1c;
+    position:relative;
+    float:left;
+    border:none;
+    margin:0;
+    border-radius:5px;
+    padding: 10px 20px 10px 20px;
+    width:50%;
+}
+
+.dori-button-container button:hover{
+    background: white;
+    color:black;
+}
+
 /* About Page */
 
 #about_info p{
@@ -210,6 +230,19 @@ body{
     margin:auto;
 }
 
+#about_links a:link, a:visited {
+    color:white;
+}
+
+#about_links a:hover{
+    color:#ff851c;
+    text-decoration:none;
+}
+
+#helpful_links li a:hover{
+    color:#ff851c;
+    text-decoration:none;
+}
 
 /* Home Page Carousel Styles */
 

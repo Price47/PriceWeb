@@ -1,0 +1,43 @@
+<pre style="color:white">
+
+    (Just want to see the robot? There's a video in the result section!)
+
+    The motivation for this project stems from the absence of any reliable/dependable safety precautions/installations
+    for at home pool use. Drowning is the third most common cause of accidental death in the United States. The Center
+    for Disease Control estimates that an average of 3,536 fatal accidental drownings, unrelated to boating, occurred
+    each year from 2005-2014.
+
+    Pool monitoring cameras and software exist and are available for purchase by large organizations, such as community
+    pools, but are often expensive installations involving both surface, as well as submerged cameras. These systems
+    also require constant monitoring of a CCTV stream to be effective in preventing accidental death or injury. DORI
+    addresses many of the drawbacks of these expensive systems and is best applied for home use in pools where it is
+    easily deployable, requires no installation, and notifies supervisors immediately of an emergency.
+
+    Drowning is so pervasive as a cause of accidental death because it is difficult to detect and respond in time to
+    save its victims. Victim’s behavior is often very difficult to distinguish from the act of treading water. Victims
+    often struggle silently to keep their head above the water while quickly losing energy and sinking. It is very
+    uncommon for a victim to be able to flail, scream, or shout for help while in distress. In the absence of any
+    lifeguard trained to recognize this type of behavior, consumers with home pools are at an especially great risk of
+    an accidental death by drowning occurring at their home.
+
+    DORI locates and monitors the motion of swimmers underwater using a time of flight depth sensing camera and an
+    ultrasonic sonar array. The sensors provide DORI with a 360 degree field of view. DORI then rotates to center any
+    distressed swimmers. An algorithm determines whether a swimmer is in distress while in the field of view of the
+    camera. The local single board computer performs video processing. A surface hub connects to DORI over a
+    peer-to-peer network. If DORI registers an individual in distress, it sends an alert to the hub which then emits an
+    alarm sound and red warning light on the pool deck. BLE is also enabled on the surface hub for future app
+    development, allowing notifications directly to the user’s smartphone.
+
+    Testing was successfully performed to verify functionality of various subsystems,
+    specifically the waterproof enclosure, sensors, and reporting components. We drilled a hole in the enclosure and
+    fed a cable through it via a cable gland. By placing a simple LED circuit in the enclosure it was shown that the
+    enclosure could be submerged underwater with neither leaks nor damage to the electronics. The Kinect’s ability to
+    detect and determine the status of a swimmer was verified by setting up the Kinect to look through a container of
+    water surrounded by a transparent barrier. Lastly, DORI’s reporting component was tested by using the raspberry pi
+    and a host computer.
+
+    Upon completion, DORI is ideally utilized in private pools as a robust yet compact system that allows owners to
+    provide their family and friends with a safe swimming environment.
+
+
+</pre>

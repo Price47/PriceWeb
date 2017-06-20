@@ -1,0 +1,55 @@
+<pre style="color:white">
+
+    The Kinect sensing was done using libfreenect2 to access raw depth data from every frame collected. Each raw depth frame
+is returned as a 512 x 424 array of depths, representing the different pixels in the frame. The first step was accessing
+this array (converting it from a 2 dimensional to a 1 dimensional array), so that it could be iterated over by using an
+offset which represented the data’s original place in the unraveled array. The offset for the unraveled array is
+calculated using the the x value, y value, and total points of the original unraveled array, so each point is saved in
+a dictionary containing its x, y, and Depth values. The image below is a visual representation of how the kinect sees
+depth data, in grayscale, where white represents closer depths and black represents further depths
+
+    By iterating over the dictionary, an average depth could be calculated. Furthermore, by comparing the average depth
+against the position of depth values in the frame, we are able to make assumptions as to whether or not there is a
+human, as well as the basic orientation of the human. This is done by finding all points in the array equal to the
+average depth within a 200 mm difference (i.e. all points within 230 to 630 for an average depth calculated as 430)
+and appending each point into a new array. By appending all these points into a new array, we have a functional
+array of the body being monitored. From this body data we can approximate some rudimentary spine data and a center
+of mass.
+
+    The depth, body, and spine data are calculated with each new frame (the kinect captures data at about 30fps). So
+while the coordinates of the center of mass are constantly updated, we save the average position through the entire
+iterative process, to keep a baseline. With each new frame, the new position is averaged into the existing average
+position, and using this we can calculate the change in position over time. Using a set time threshold, we can
+determine if the potential drowning victim has remained relatively motionless in the pool for too long in a
+horizontal position, and if so, alert nemo.
+
+    Applying our original implementation to underwater testing proved to be troublesome, and as such we were forced to
+rethink our algorithm to better suit the data we were receiving. Outside of water, we had been receiving nice depth
+maps with smooth and clear transitions in depth which we could map easily, however with our first test in a small
+tank, we found that there is no depth gradient returned when sensing through water. This means that the kinect
+returns what can be considered more as a binary depth map, as can be seen below in figure x. This figure also includes
+reflections on the sides of the glass tank, which can be ignored because they will not be present in a full pool.
+Additionally, although testing the kinect with the small tank resulted in a decisive minimum range for the kinect
+sensing(about .5 meters), we were left wondering as to what the maximum range is for the kinect.
+
+    Our next set of testing was once we gained access to a larger tank, where we could submerge the entire enclosure with
+the kinect inside, allowing us to get more realistic data. Submerging an additional target object inside the tank
+allowed us to get more concrete information as to the maximum distance the kinect can find objects underwater,
+which was about 1 meter. With this knowledge, we were able to finalize our algorithm for finding and detecting
+humans.
+
+    What we ended up doing was similar to the original algorithm. While the data loss we experienced in the transition
+from out of water to underwater is never ideal, the additional constraints allowed us to make a simple algorithm to
+decide what kind of object we are looking at, as well as its orientation. Our algorithm starts off by iterating
+through the array of depths and returning a new array containing which points either do or do not see an object.
+With the new array, we can analyze the size of of the array as well as the correlation between the depth positions
+in the original field of view to not only decide if there is a human in front of us, but also to calculate the
+orientation of the object(vertical vs horizontal). The end result is a functional array which represents the body
+being monitored. Using this data, we can perform the same analysis on the movement of the target as when we were
+above water, which notifies the main computer as to whether or not it finds a victim.
+
+   Unfortunately, due to a slow response time from facility managers for Cabot Pool, we were unable to test the entire
+system underwater. However, with a concrete range for the kinect as proven in the large tank testing, it would have
+been simple to navigate the robot to the correct position and range needed to detect victims with the kinect.
+
+</pre>

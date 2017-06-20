@@ -17,11 +17,11 @@
             </div>
         </div>
     </div>
-    <div class="gradient1" style="padding: 2px;border-top-right-radius: 5px;border-top-left-radius: 5px;">
+    <div class="gradient1" style="padding: 2px;border-top-right-radius: 5px;border-top-left-radius: 5px;margin:25px;">
         <div style="margin-right:15px;margin-left:15px;">
         <div class="row">
             <div id=dori_overview class="col-xs-4 col-sm-4 col-md-4 col-lg-4 wood-color-mid content-header wood-font">
-                Overview
+                Abstract
             </div>
             <div id=dori_development class="col-xs-4 col-sm-4 col-md-4 col-lg-4 wood-color-mid content-header wood-font"
                 style="border-right: 1px solid white;border-left: 1px solid white">
@@ -34,13 +34,46 @@
         </div>
         <div class="row">
             <div id=dori_overview_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wood-font dori-content">
-                Overview content
+                <iframe id=abstract_frame src="{% static 'priceweb/textbody/dori_abstract.html' %}" frameborder="0"
+                        style="height:250px;width:100%"></iframe>
+                <div class="dori-button-container">
+                    <button id="abstract_close" class="dori-button"
+                            style="border-top-right-radius: 0;border-bottom-right-radius: 0;border-right:1px solid white">
+                        close
+                    </button>
+                    <button id="abstract_max" class="dori-button"
+                            style="border-top-left-radius: 0;border-bottom-left-radius: 0; border-left:1px solid white">
+                        resize
+                    </button>
+                </div>
             </div>
             <div id=dori_development_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wood-font dori-content">
-                Kinect Development with Python content
+                <iframe id=dev_frame src="{% static 'priceweb/textbody/dori_dev.html' %}" frameborder="0"
+                        style="height:250px;width:100%"></iframe>
+                <div class="dori-button-container">
+                    <button id="development_close" class="dori-button"
+                            style="border-top-right-radius: 0;border-bottom-right-radius: 0;border-right:1px solid white">
+                        close
+                    </button>
+                    <button id="development_max" class="dori-button"
+                            style="border-top-left-radius: 0;border-bottom-left-radius: 0; border-left:1px solid white">
+                        resize
+                    </button>
+                </div>
             </div>
             <div id=dori_results_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wood-font dori-content">
-                <div>results</div>
+                <iframe id=result_frame src="{% static 'priceweb/textbody/dori_results.html' %}" frameborder="0"
+                        style="height:250px;width:100%"></iframe>
+                <div class="dori-button-container">
+                    <button id="results_close" class="dori-button"
+                            style="border-top-right-radius: 0;border-bottom-right-radius: 0;border-right:1px solid white">
+                        close
+                    </button>
+                    <button id="results_max" class="dori-button"
+                            style="border-top-left-radius: 0;border-bottom-left-radius: 0; border-left:1px solid white">
+                        resize
+                    </button>
+                </div>
                 <div class="row">
                     <div id="kinect_view" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-header">
                         Kinect's depth cloud view

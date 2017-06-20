@@ -14,6 +14,15 @@ $(document).ready(function(){
     doriVideo = $('#dori_video');
     doriKinectViewContent = $('#kinect_view_content');
     doriVideoContent = $('#dori_video_content');
+    abstractMax = $('#abstract_max');
+    abstractClose = $('#abstract_close');
+    abstractFrame = $('#abstract_frame');
+    developmentMax = $('#development_max');
+    developmentClose = $('#development_close');
+    developmentFrame = $('#dev_frame');
+    resultMax = $('#results_max');
+    resultsClose = $('#results_close');
+    resultsFrame = $('#result_frame');
 
     doriDevContent.slideUp();
     doriOverviewContent.slideUp();
@@ -118,6 +127,48 @@ $(document).ready(function(){
     doriVideo.click(function(){
         doriVideoContent.slideToggle();
     });
+
+    abstractClose.click(function(){
+        doriOverviewContent.slideUp();
+    });
+
+    developmentClose.click(function(){
+        doriDevContent.slideUp();
+    });
+
+    resultsClose.click(function(){
+        doriResultContent.slideUp();
+    });
+
+    abstractMax.click(function(){
+        if(abstractFrame.css('height')=='250px'){
+            $('#abstract_frame').animate({'height':'+=375px'})
+        }
+        if(abstractFrame.css('height')=='625px'){
+            $('#abstract_frame').animate({'height':'-=375px'})
+        }
+    });
+
+    developmentMax.click(function(){
+        console.log(developmentFrame.css('height'));
+        if(developmentFrame.css('height')=='250px'){
+            $('#dev_frame').animate({'height':'+=550px'})
+        }
+        if(developmentFrame.css('height')=='800px'){
+            $('#dev_frame').animate({'height':'-=550px'})
+        }
+    });
+
+    resultMax.click(function(){
+        if(resultsFrame.css('height')=='250px'){
+            $('#result_frame').animate({'height':'+=100px'})
+        }
+        if(resultsFrame.css('height')=='350px'){
+            $('#result_frame').animate({'height':'-=100px'})
+        }
+    });
+
+
 
 });
 
