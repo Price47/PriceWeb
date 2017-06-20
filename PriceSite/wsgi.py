@@ -11,6 +11,8 @@ import os, sys
 
 from django.core.wsgi import get_wsgi_application
 
+sys.path.insert(0, '/opt/python/current/app')
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "PriceSite.settings")
 
 application = get_wsgi_application()
