@@ -278,6 +278,29 @@ ol.home-carousel-indicators li.active {
   background: white;;
 }
 
+/* Brewer page */
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #1a1b1c; // Choose your own color here
+ }
+
+.brew-table{
+    background-color: black;
+    color: white;
+}
+
+
+
+.brew-table th{
+    height:35px;
+    width: 100px;
+}
+
+.brew-table tr{
+    padding: 10px;
+    border: 1px solid black;
+}
 
 
 

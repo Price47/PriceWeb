@@ -168,6 +168,15 @@ $(document).ready(function(){
         }
     });
 
+    $.ajax(url)
+        .done(function(){
+
+        })
+        .fail(function(){
+
+        })
+
+
 
 
 });

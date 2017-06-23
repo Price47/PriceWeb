@@ -1,0 +1,126 @@
+{% extends 'priceweb/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+
+<div class="row">
+    <div class="wood-font col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div class="row wood-color-mid">
+                <h1> {{ json.name }} ({{ json.first_brewed }}) </h1>
+                <h2> {{ json.tagline }} </h2>
+                <p> {{ json.description }} </p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <table class="brew-table table-striped ">
+                                <tr>
+                                    <th> Volume </th>
+                                    <th> {{ json.volume.value }} {{ json.volume.unit }} </th>
+                                </tr>
+                                <tr>
+                                    <th> ABV </th>
+                                    <th> {{ json.abv }} </th>
+                                </tr>
+                                <tr>
+                                    <th> IBU </th>
+                                    <th> {{ json.ibu }} </th>
+                                </tr>
+                                <tr>
+                                    <th> ebc </th>
+                                    <th> {{ json.ebc }} </th>
+                                </tr>
+                                <tr>
+                                    <th> srm</th>
+                                    <th> {{ json.srm }} </th>
+                                </tr>
+                                <tr>
+                                    <th> PH</th>
+                                    <th> {{ json.ph }} </th>
+                                </tr>
+                                <tr>
+                                    <th> Atennuation Level</th>
+                                    <th> {{ json.attenuation_level }} </th>
+                                </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <table class="brew-table table-striped">
+                        <tr>
+                            <th> Name </th>
+                            <th> Amount </th>
+                        </tr>
+                    {%  for item in ingredients.malt %}
+                        <tr>
+                            <th> {{ item.name }} </th>
+                            <th> {{ item.amount.value }} {{ item.amount.unit }} </th>
+                        </tr>
+                    {%  endfor %}
+                    </table>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <table class="brew-table table-striped">
+                        <tr>
+                            <th> Name </th>
+                            <th> Amount </th>
+                            <th> Attribute </th>
+                            <th> Add At </th>
+                        </tr>
+                    {%  for item in ingredients.hops %}
+                        <tr>
+                            <th> {{ item.name }} </th>
+                            <th> {{ item.amount.value }} {{ item.amount.unit }} </th>
+                            <th> {{ item.attribute }} </th>
+                            <th> {{ item.add }} </th>
+                        </tr>
+                    {%  endfor %}
+                    </table>
+                </div>
+                <div class="row">
+                    <div>
+                        {{ ingredients.yeast }}
+                    </div>
+
+
+                    <div class="wood-color-mid wood-font">
+                        {{ json.brewers_tips }}
+                        {{ json.food_pairing }}
+                        {{ json.contributed_by }}
+                    </div>
+
+                    <div>
+                            {{ temps.mash }}
+                            {{ temps.fermentation }}
+                    </div>
+
+                    <div class="wood-color-mid wood-font">
+                        {{ json.method.twist }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <img  src={{ json.image_url }}>
+            </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+{% endblock %}
