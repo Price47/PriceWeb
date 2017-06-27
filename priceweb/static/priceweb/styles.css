@@ -67,49 +67,6 @@ body{
     z-index: 10;
 }
 
-/* Sidenav Style */
-
-.sidenav {
-    height: 1500px;
-    margin-left: -50px;
-    width: 150px;
-    float: left;
-    left: 0;
-    background-color: #1a1b1c;
-}
-
-#sidenav > ul {
-    list-style: none;
-    width: 100%;
-}
-
-#sidenav > ul > li:hover {
-    background-color: black;
-    color: white;
-}
-
-#sidenav > ul > li:active {
-    color: white;
-}
-
-#sidenav > ul > li:visited, li:link {
-    color: #333333
-}
-
-#sidenav > ul > li {
-    padding: 15px;
-}
-
-#sidenav > ul > li > a {
-    color: white;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-    font: inherit;
-}
-
-
-
 /* Home Style */
 
 #home-logo{
@@ -244,6 +201,31 @@ button {
     text-decoration:none;
 }
 
+/* Top Nav */
+
+.top-nav{
+    width:100%;
+    height:30px;
+    background: #1a1b1c;
+    position:absolute;
+    margin-top: -30px;
+}
+
+.top-nav-item{
+    width:25%;
+    height:100%;
+    position: relative;
+    float:left;
+    text-align: center;
+    color:white;
+
+}
+
+.top-nav-links{
+    top:0;
+    position:absolute;
+}
+
 /* Home Page Carousel Styles */
 
 .carousel-caption{
@@ -262,7 +244,7 @@ ol.home-carousel-indicators {
 ol.home-carousel-indicators li,
 ol.home-carousel-indicators li.active {
   float: left;
-  width: 33.33%;
+  width: 20%;
   height: 5px;
   margin: 0;
   border-radius: 0;
@@ -277,6 +259,11 @@ ol.home-carousel-indicators li:hover{
 ol.home-carousel-indicators li.active {
   background: white;;
 }
+
+.item a:hover{
+    text-decoration: none;
+}
+
 
 /* Brewer page */
 
@@ -302,11 +289,43 @@ ol.home-carousel-indicators li.active {
     border: 1px solid black;
 }
 
+.brew-query-button{
+    color:white;
+    background: black;
+    border:none;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
 
 
-/* gradient */
+/* gradients */
 
 .gradient1{
+background: #ff4444; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #ff4444 , #ff851c); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #ff4444, #ff851c); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #ff4444, #ff851c); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #ff4444 , #ff851c); /* Standard syntax */
+}
+
+.gradient2{
+background: #ff851c; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #ff851c , #ecfc41); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #ff851c, #ecfc41); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #ff851c, #ecfc41); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #ff851c , #ecfc41); /* Standard syntax */
+}
+
+.gradient3{
+background: #ecfc41; /* For browsers that do not support gradients  45e043  23dbfc*/
+  background: -webkit-linear-gradient(left, #ecfc41 , #45e043); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #ecfc41, #45e043); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #ecfc41, #45e043); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #ecfc41 , #45e043); /* Standard syntax */
+}
+
+.gradient4{
 background: #45e043; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #45e043 , #23dbfc); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, #45e043, #23dbfc); /* For Opera 11.1 to 12.0 */
@@ -314,20 +333,13 @@ background: #45e043; /* For browsers that do not support gradients */
   background: linear-gradient(to right, #45e043 , #23dbfc); /* Standard syntax */
 }
 
-.gradient2{
-background: #3582ff; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #3582ff , #ff4444); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #3582ff, #ff4444); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #3582ff, #ff4444); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #3582ff , #ff4444); /* Standard syntax */
+.gradient5{
+background: #23dbfc; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #23dbfc , #ff4444); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #23dbfc, #ff4444); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, #23dbfc, #ff4444); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #23dbfc , #ff4444); /* Standard syntax */
 }
 
 
-.gradient3{
-background: #ff851c; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #ff851c , #ecfc41); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #ff851c, #ecfc41); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, #ff851c, #ecfc41); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #ff851c , #ecfc41); /* Standard syntax */
-}
 

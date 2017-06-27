@@ -3,26 +3,39 @@
  */
 
 $(document).ready(function(){
-    headContainer = $('#header_container');
-    doriDev = $('#dori_development');
-    doriOverview = $('#dori_overview');
-    doriResult = $('#dori_results');
-    doriDevContent = $('#dori_development_content');
-    doriOverviewContent = $('#dori_overview_content');
-    doriResultContent = $('#dori_results_content');
-    doriKinectView = $('#kinect_view');
-    doriVideo = $('#dori_video');
-    doriKinectViewContent = $('#kinect_view_content');
-    doriVideoContent = $('#dori_video_content');
-    abstractMax = $('#abstract_max');
-    abstractClose = $('#abstract_close');
-    abstractFrame = $('#abstract_frame');
-    developmentMax = $('#development_max');
-    developmentClose = $('#development_close');
-    developmentFrame = $('#dev_frame');
-    resultMax = $('#results_max');
-    resultsClose = $('#results_close');
-    resultsFrame = $('#result_frame');
+    var headContainer = $('#header_container');
+    var doriDev = $('#dori_development');
+    var doriOverview = $('#dori_overview');
+    var doriResult = $('#dori_results');
+    var doriDevContent = $('#dori_development_content');
+    var doriOverviewContent = $('#dori_overview_content');
+    var doriResultContent = $('#dori_results_content');
+    var doriKinectView = $('#kinect_view');
+    var doriVideo = $('#dori_video');
+    var doriKinectViewContent = $('#kinect_view_content');
+    var doriVideoContent = $('#dori_video_content');
+    var abstractMax = $('#abstract_max');
+    var abstractClose = $('#abstract_close');
+    var abstractFrame = $('#abstract_frame');
+    var developmentMax = $('#development_max');
+    var developmentClose = $('#development_close');
+    var developmentFrame = $('#dev_frame');
+    var resultMax = $('#results_max');
+    var resultsClose = $('#results_close');
+    var resultsFrame = $('#result_frame');
+    var topNav = $('#top_nav_links');
+    var topNavAbout = $('#top_nav_about');
+    var topNavDori = $('#top_nav_dori');
+    var topNavLoading = $('#top_nav_loading');
+    var topNavBrewer = $('#top_nav_brewer');
+    var abvValue = $('#abv');
+    var rng = document.querySelector("#abv");
+    var beerQueryInput = $('#beerquery_check');
+    var beerNameQueryCheck = $('#name_query_check');
+    var beerNameQueryDiv = $('#beer_name_div');
+    var beerAbvQueryCheck = $('#abv_query_check');
+    var beerAbvQueryDiv = $('#beer_abv_div');
+
 
     doriDevContent.slideUp();
     doriOverviewContent.slideUp();
@@ -65,10 +78,10 @@ $(document).ready(function(){
     );
 
 
-    $('#about_link, #about_button').hover(
+    $('.about-button').hover(
         function(){
             setTitle('About This Page');
-            setHighlight('gradient3')
+            setHighlight('gradient5')
         },
         function(){
            resetTitle();
@@ -77,10 +90,10 @@ $(document).ready(function(){
         }
     );
 
-    $('#dori_link, #dori_button').hover(
+    $('.dori-link-button').hover(
         function(){
            setTitle('DORi Development Page');
-           setHighlight('gradient1');
+           setHighlight('gradient4');
         },
         function(){
             resetTitle();
@@ -88,9 +101,20 @@ $(document).ready(function(){
         }
     );
 
-    $('#loadscreen_button').hover(
+    $('.loadscreen-button').hover(
         function(){
             setTitle('Loading Screens');
+            setHighlight('gradient1');
+        },
+        function(){
+            resetTitle();
+            removeHighlight();
+        }
+    );
+
+    $('.brewer-button').hover(
+        function(){
+            setTitle('Brewer');
             setHighlight('gradient2');
         },
         function(){
@@ -99,9 +123,6 @@ $(document).ready(function(){
         }
     );
 
-    $('#dori_button').click(function(){
-        setHighlight('gradient1')
-    });
 
     $('#carousel-slide-caption').html($('.active > .carousel-caption').html());
     $('.carousel').on('slid.bs.carousel', function () {
@@ -168,17 +189,82 @@ $(document).ready(function(){
         }
     });
 
-    $.ajax(url)
-        .done(function(){
+    $('#menu_button_down').click(function(){
+        $(this).css({'display':'none'});
+        $('#menu_wrapper').animate({'margin-top':'+=30px'});
+        $('#menu_button_up').css({'display':'inline'});
 
-        })
-        .fail(function(){
+    });
 
-        })
+    $('#menu_button_up').click(function(){
+        $(this).css({'display':'none'});
+
+        $('#menu_wrapper').animate({'margin-top':'-=30px'});
+        $('#menu_button_down').css({'display':'inline'});
+    }) ;
+
+
+    setElementHoverAttribute(topNavLoading, 'gradient1', 'Loading Screens');
+    setElementHoverAttribute(topNavBrewer, 'gradient2', 'Brewer');
+    setElementHoverAttribute(topNavDori, 'gradient4', 'DORi');
+    setElementHoverAttribute( topNavAbout,'gradient5', 'About');
+
+    function setElementHoverAttribute(elem, gradient, title){
+        elem.hover(
+            function(){
+                $(this).addClass(gradient);
+                setTitle(title);
+            },function(){
+                $(this).removeClass(gradient);
+                resetTitle();
+            });
+    }
 
 
 
+    var abvRange = function() {
+          window.requestAnimationFrame(function() {
+            document.querySelector("#abv_value").innerHTML = rng.value;
+          });
+        };
 
+        rng.addEventListener("mousedown", function() {
+          abvRange();
+          rng.addEventListener("mousemove", abvRange);
+        });
+        rng.addEventListener("mouseup", function() {
+          rng.removeEventListener("mousemove", abvRange);
+        });
+
+
+    beerQueryInput.on('click', function(){
+        if ( $(this).is(':checked') ) {
+            $('#beer_query_div').show()
+        }
+        else {
+            beerNameQueryCheck.attr('checked', false);
+            beerAbvQueryCheck.attr('checked', false);
+            $('#beer_query_div').hide();
+            beerNameQueryDiv.hide();
+            beerAbvQueryDiv.hide();
+        }
+    });
+
+    beerNameQueryCheck.on('click', function(){
+        if ( $(this).is(':checked') ) {
+            beerNameQueryDiv.show()
+        }
+        else
+            beerNameQueryDiv.hide()
+    });
+
+    beerAbvQueryCheck.on('click',function(){
+        if ( $(this).is(':checked') ) {
+            beerAbvQueryDiv.show();
+        }
+        else
+            beerAbvQueryDiv.hide()
+    });
 });
 
 

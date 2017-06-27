@@ -2,18 +2,58 @@
 {% load static %}
 
 {% block content %}
+{% include "priceweb/top_nav.html"%}
 
 <body>
 
-<div class="row">
-    <div class="wood-font col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+
+<div class="row" style="margin-top:15px;">
+    <div class="col-lg-4 col-md-3 col-sm-4 col-xs-12">
+            <div>
+                <img style="display: block;margin: auto" src={{ json.image_url }}>
+            </div>
+    </div>
+    <div class="wood-font col-lg-8 col-md-9 col-sm-8 col-xs-12">
+
+            <div class="row wood-color-mid" style="margin-bottom: 15px;">
+                <div style="position: relative;float:left;margin:10px;">
+                    <form action="brewer">
+                        <input class='brew-query-button' type="submit" value="Random" style="display:block;margin:auto;margin-top: 60%;"><br>
+                        <input id=beerquery_check type="checkbox" name="beerquery" value="search"> Query Search
+                    </form>
+                </div>
+                <div id=beer_name_div style="position: relative;float:left;display: none;">
+                    <form id=brew_query action="brewer">
+                        Beer name:<br>
+                        <input type="text" name="firstname" value="">
+                        <br>
+                    </form>
+                </div>
+                <div id=beer_abv_div style="position: relative;float:left;display: none;">
+                    <span id="abv_value"> 8 </span>
+                    <form id=brew_query action="brewer">
+                        <input id=abv type="range" min="0" max="15">
+                    </form>
+                </div>
+                <div id=beer_query_div style="position: relative;float:left;display:none">
+                    <form id=brew_query action="brewer">
+                        <input id=name_query_check type="checkbox" name="name"> Name <br>
+                        <input id=abv_query_check type="checkbox" name="abv"> ABV <br>
+                        <input class='brew-query-button' type="submit">
+                        <input class='brew-query-button' type="reset">
+                    </form>
+                </div>
+            </div>
             <div class="row wood-color-mid">
                 <h1> {{ json.name }} ({{ json.first_brewed }}) </h1>
                 <h2> {{ json.tagline }} </h2>
                 <p> {{ json.description }} </p>
             </div>
+
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        Specs and shit
                         <table class="brew-table table-striped ">
                                 <tr>
                                     <th> Volume </th>
@@ -47,6 +87,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    Malt Ingredients
                     <table class="brew-table table-striped">
                         <tr>
                             <th> Name </th>
@@ -61,6 +102,7 @@
                     </table>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    Hops
                     <table class="brew-table table-striped">
                         <tr>
                             <th> Name </th>
@@ -78,8 +120,10 @@
                     {%  endfor %}
                     </table>
                 </div>
+
                 <div class="row">
-                    <div>
+                    Yeast
+                    <div class="wood-font wood-color-mid">
                         {{ ingredients.yeast }}
                     </div>
 
@@ -99,28 +143,9 @@
                         {{ json.method.twist }}
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                <img  src={{ json.image_url }}>
-            </div>
-
+    </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 {% endblock %}
