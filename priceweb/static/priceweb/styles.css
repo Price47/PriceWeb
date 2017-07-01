@@ -278,6 +278,9 @@ ol.home-carousel-indicators li.active {
 
 }
 
+.brew-table{
+    margin-top:10px;
+}
 
 
 .brew-table th{
@@ -291,6 +294,12 @@ ol.home-carousel-indicators li.active {
 
 .brew-table tr th{
     padding:10px;
+}
+
+.brew-table caption{
+    padding:10px;
+    font-weight: bold;
+    background: #454545;
 }
 
 .brew-banner{
@@ -333,6 +342,10 @@ ol.home-carousel-indicators li.active {
     margin-left:10px;
 }
 
+.brew-table-title{
+    transform: rotate(90deg);
+
+}
 
 /* gradients */
 

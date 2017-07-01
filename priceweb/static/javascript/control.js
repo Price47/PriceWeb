@@ -222,10 +222,6 @@ $(document).ready(function(){
         $('#menu_button_down').css({'display':'inline'});
     }) ;
 
-
-
-
-
     var abvRange = function() {
           window.requestAnimationFrame(function() {
             document.querySelector("#abv_value").innerHTML = rng.value;
@@ -248,8 +244,8 @@ $(document).ready(function(){
         }
         else {
             $('#brew_submit').val('Random');
-            beerNameQueryCheck.attr('checked', false);
-            beerAbvQueryCheck.attr('checked', false);
+            beerNameQueryCheck.prop('checked', false);
+            beerAbvQueryCheck.prop('checked', false);
             $('#beer_query_div').hide();
             beerNameQueryDiv.hide();
             beerAbvQueryDiv.hide();

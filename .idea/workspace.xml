@@ -5,10 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/static/javascript/control.js" afterPath="$PROJECT_DIR$/priceweb/static/javascript/control.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/about.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/about.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/brewer.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/brewer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/test.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/views.py" afterPath="$PROJECT_DIR$/priceweb/views.py" />
     </list>
     <ignored path="PriceSite.iws" />
@@ -36,28 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="brewer.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/brewer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
-              <folding>
-                <element signature="e#170#351#0#HTML" expanded="false" />
-                <element signature="e#500#528#0#HTML" expanded="true" />
-                <element signature="e#2051#2277#0#HTML" expanded="false" />
-                <element signature="e#2290#3513#0#HTML" expanded="false" />
-                <element signature="e#3526#6707#0#HTML" expanded="false" />
-                <element signature="e#3688#5135#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1215">
-              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
+            <state relative-caret-position="195">
+              <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -68,8 +49,8 @@
       <file leaf-file-name="control.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/control.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="137" column="19" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
+            <state relative-caret-position="166">
+              <caret line="238" column="0" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,9 +59,28 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="327" column="1" selection-start-line="327" selection-start-column="1" selection-end-line="327" selection-end-column="13" />
+            <state relative-caret-position="306">
+              <caret line="307" column="1" selection-start-line="307" selection-start-column="1" selection-end-line="307" selection-end-column="1" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dori.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/dori.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="87">
+              <caret line="74" column="107" selection-start-line="74" selection-start-column="107" selection-end-line="74" selection-end-column="107" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#button#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,15 +133,15 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/priceweb/api_models.py" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/top_nav.html" />
-        <option value="$PROJECT_DIR$/priceweb/views.py" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/test.html" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" />
-        <option value="$PROJECT_DIR$/priceweb/static/javascript/control.js" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/about.html" />
-        <option value="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
+        <option value="$PROJECT_DIR$/priceweb/views.py" />
+        <option value="$PROJECT_DIR$/priceweb/static/javascript/control.js" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/brewer.html" />
+        <option value="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/dori.html" />
       </list>
     </option>
   </component>
@@ -723,7 +723,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="django-line">
           <url>file://$PROJECT_DIR$/priceweb/templates/priceweb/brewer.html</url>
-          <line>48</line>
+          <line>50</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -973,28 +973,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/api_models.py" />
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/dori.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/top_nav.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="83" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1034,31 +1016,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/control.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="137" column="19" selection-start-line="137" selection-start-column="19" selection-end-line="137" selection-end-column="19" />
+        <state relative-caret-position="166">
+          <caret line="238" column="0" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="327" column="1" selection-start-line="327" selection-start-column="1" selection-end-line="327" selection-end-column="13" />
+        <state relative-caret-position="306">
+          <caret line="307" column="1" selection-start-line="307" selection-start-column="1" selection-end-line="307" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/brewer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="39" column="56" selection-start-line="39" selection-start-column="56" selection-end-line="39" selection-end-column="56" />
+        <state relative-caret-position="14">
+          <caret line="108" column="60" selection-start-line="108" selection-start-column="60" selection-end-line="108" selection-end-column="60" />
           <folding>
             <element signature="e#170#351#0#HTML" expanded="false" />
             <element signature="e#500#528#0#HTML" expanded="true" />
-            <element signature="e#2051#2277#0#HTML" expanded="false" />
-            <element signature="e#2290#3513#0#HTML" expanded="false" />
-            <element signature="e#3526#6707#0#HTML" expanded="false" />
-            <element signature="e#3688#5135#0#HTML" expanded="false" />
+            <element signature="e#566#616#0#HTML" expanded="true" />
+            <element signature="e#2188#2414#0#HTML" expanded="false" />
+            <element signature="e#2427#3637#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="82" column="17" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/dori.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="74" column="107" selection-start-line="74" selection-start-column="107" selection-end-line="74" selection-end-column="107" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#1;n#div#0;n#div#1;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#button#1;n#div#0;n#div#2;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

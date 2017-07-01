@@ -27,7 +27,6 @@
                     <form id=brew_query action="brewer">
                         <input id=name_query_check name="name_query" value="on" type="checkbox"> Name <br>
                         <input id=abv_query_check name="abv_query" value="on" type="checkbox"> ABV <br>
-                        <input class='brew-query-button' type="reset">
                     </form>
                 </div>
                 <div id=beer_name_div class="query-subdiv">
@@ -38,10 +37,13 @@
                     </fieldset>
                 </div>
                 <div id=beer_abv_div class="query-subdiv">
-                    <span id="abv_value"> 8 </span>
+
                     <fieldset id=abv_query>
-                        <input id=abv type="range" name="abv_range" min="0" max="15">
+                        <input type="radio" name="abv_range_above" value="greater" checked> Greater Than
+                        <br> <input type="radio" name="abv_range_above" value="less"> Less Than
+                        <input id=abv type="range" name="abv_range" min="5" max="25">
                     </fieldset>
+                    ABV: <span id="abv_value"> 15 </span>
                 </div>
             </div>
             </form>
@@ -51,7 +53,7 @@
                 <p> {{ json.description }} </p>
             </div>
             <div class="row"> {# Brew content #}
-                    <div class="wood-font wood-color-mid brew-content">
+                    <div class="wood-font wood-color-mid">
                         <h3>Yeast</h3>
                         {{ ingredients.yeast }}
                     </div>
@@ -81,7 +83,6 @@
                 </div>
             <div class="row"> {# Brew Specs #}
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                         Beer Specs
                         <table class="brew-table table-striped">
                                 <tr>
                                     <th> Volume </th>
@@ -111,10 +112,10 @@
                                     <th> Atennuation Level</th>
                                     <th> {{ json.attenuation_level }} </th>
                                 </tr>
+                                <caption class="wood-color-mid wood-font">Beer Specs</caption>
                         </table>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                        Malt Ingredients
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <table class="brew-table table-striped">
                         <tr>
                             <th> Name </th>
@@ -126,10 +127,10 @@
                             <th> {{ item.amount.value }} {{ item.amount.unit }} </th>
                         </tr>
                     {%  endfor %}
+                        <caption class="wood-color-mid wood-font">Malt Ingredients</caption>
                     </table>
                     </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    Hops
                     <table class="brew-table table-striped">
                         <tr>
                             <th> Name </th>
@@ -145,6 +146,7 @@
                             <th> {{ item.add }} </th>
                         </tr>
                     {%  endfor %}
+                        <caption class="wood-color-mid wood-font">Hops</caption>
                     </table>
                 </div>
             </div>

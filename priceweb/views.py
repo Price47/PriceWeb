@@ -71,14 +71,17 @@ def brewer(request):
         abv_range = request.GET.get('abv_range')
         abv_query = request.GET.get('name_query')
         name_query = request.GET.get('name_query')
+        abv_range_search = request.GET.get('abv_range_above')
 
         if name_query:
             if name:
                 url += "beer_name=" + name + "&"
 
-        if abv_query:
-            url += "abv_gt=" + abv_range + "&"
-
+        elif abv_query:
+            if abv_range_search=="less":
+                url += "abv_lt=" + abv_range + "&"
+            else:
+                url += "abv_gt=" + abv_range + "&"
 
     if url == "https://api.punkapi.com/v2/beers/?":
         url = "https://api.punkapi.com/v2/beers/random"
