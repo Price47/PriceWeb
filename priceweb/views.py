@@ -41,10 +41,7 @@ def home(request):
 
     return render(request, 'priceweb/home.html')
 
-def brewer(request):
-    r = requests.get("https://api.punkapi.com/v2/beers/random")
-
-    json = r.json()[0]
+def getRequestData(json):
 
     method = json["method"]
 
@@ -53,12 +50,48 @@ def brewer(request):
     fermentation_temp = str(method["fermentation"]["temp"]["value"]) + \
                         " " + method["fermentation"]["temp"]["unit"]
 
-    temps = {'mash':mash_temp, 'fermentation':fermentation_temp}
+    temps = {'mash': mash_temp, 'fermentation': fermentation_temp}
     twist = method['twist']
+    if twist == None:
+        twist = 'Sorry, no creative twists for this beer!'
 
     ingredients = json['ingredients']
     method = json['method']
+
+    return {'ingredients':ingredients, 'method':method, 'temps':temps,'twist':twist}
+
+
+def brewer(request):
+
+    if not request.GET.get('query_search'):
+        url = "https://api.punkapi.com/v2/beers/random"
+    else:
+        url = "https://api.punkapi.com/v2/beers/?"
+        name = request.GET.get('beer_name')
+        abv_range = request.GET.get('abv_range')
+        abv_query = request.GET.get('name_query')
+        name_query = request.GET.get('name_query')
+
+        if name_query:
+            if name:
+                url += "beer_name=" + name + "&"
+
+        if abv_query:
+            url += "abv_gt=" + abv_range + "&"
+
+
+    if url == "https://api.punkapi.com/v2/beers/?":
+        url = "https://api.punkapi.com/v2/beers/random"
+
+    print url
+    r = requests.get(url)
+
+    json = r.json()[0]
+
+    data = getRequestData(json)
+
     return render(request, 'priceweb/brewer.html', context={'json':json,
-                                                            'ingredients':ingredients,
-                                                            'method':method,
-                                                            'temps':temps})
+                                                            'ingredients':data['ingredients'],
+                                                            'method':data['method'],
+                                                            'temps':data['temps'],
+                                                            'twist':data['twist']})

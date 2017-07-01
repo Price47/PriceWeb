@@ -15,46 +15,74 @@
             </div>
     </div>
     <div class="wood-font col-lg-8 col-md-9 col-sm-8 col-xs-12">
-
-            <div class="row wood-color-mid" style="margin-bottom: 15px;">
+            <form action="brewer">
+                <div class="row wood-color-mid" style="margin-bottom: 15px;">{# Query Div #}
                 <div style="position: relative;float:left;margin:10px;">
-                    <form action="brewer">
-                        <input class='brew-query-button' type="submit" value="Random" style="display:block;margin:auto;margin-top: 60%;"><br>
-                        <input id=beerquery_check type="checkbox" name="beerquery" value="search"> Query Search
-                    </form>
+                    <fieldset id="query_form">
+                        <input id=brew_submit class='brew-query-button' type="submit" value="Random"><br>
+                        <input id=beerquery_check type="checkbox" name=query_search value="on"> Query Search
+                    </fieldset>
                 </div>
-                <div id=beer_name_div style="position: relative;float:left;display: none;">
+                <div id=beer_query_div class="query-subdiv">
                     <form id=brew_query action="brewer">
-                        Beer name:<br>
-                        <input type="text" name="firstname" value="">
-                        <br>
-                    </form>
-                </div>
-                <div id=beer_abv_div style="position: relative;float:left;display: none;">
-                    <span id="abv_value"> 8 </span>
-                    <form id=brew_query action="brewer">
-                        <input id=abv type="range" min="0" max="15">
-                    </form>
-                </div>
-                <div id=beer_query_div style="position: relative;float:left;display:none">
-                    <form id=brew_query action="brewer">
-                        <input id=name_query_check type="checkbox" name="name"> Name <br>
-                        <input id=abv_query_check type="checkbox" name="abv"> ABV <br>
-                        <input class='brew-query-button' type="submit">
+                        <input id=name_query_check name="name_query" value="on" type="checkbox"> Name <br>
+                        <input id=abv_query_check name="abv_query" value="on" type="checkbox"> ABV <br>
                         <input class='brew-query-button' type="reset">
                     </form>
                 </div>
+                <div id=beer_name_div class="query-subdiv">
+                    <fieldset id=name_query>
+                        Beer name:<br>
+                        <input type="text" name="beer_name" value="" style="color:black">
+                        <br>
+                    </fieldset>
+                </div>
+                <div id=beer_abv_div class="query-subdiv">
+                    <span id="abv_value"> 8 </span>
+                    <fieldset id=abv_query>
+                        <input id=abv type="range" name="abv_range" min="0" max="15">
+                    </fieldset>
+                </div>
             </div>
-            <div class="row wood-color-mid">
+            </form>
+            <div class="row wood-color-mid brew-banner">
                 <h1> {{ json.name }} ({{ json.first_brewed }}) </h1>
                 <h2> {{ json.tagline }} </h2>
                 <p> {{ json.description }} </p>
             </div>
+            <div class="row"> {# Brew content #}
+                    <div class="wood-font wood-color-mid brew-content">
+                        <h3>Yeast</h3>
+                        {{ ingredients.yeast }}
+                    </div>
 
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                        Specs and shit
-                        <table class="brew-table table-striped ">
+
+                    <div class="wood-color-mid wood-font brew-content">
+                        <h3> Brewers Tips:</h3>
+                        {{ json.brewers_tips }} <br>
+                        <h4> Food Pairing:</h4>
+                        {% for food in json.food_pairing %}
+                             {{ food }} <br>
+                        {% endfor %}
+                        <hr>
+                        Contributed by {{ json.contributed_by }} <br>
+                    </div>
+
+                    <div class="wood-color-mid wood-font brew-content">
+                        <h3> Brewing Temps:</h3>
+                            Mash temperature: {{ temps.mash }} <br>
+                            Fermentation temperature: {{ temps.fermentation }} <br>
+                    </div>
+
+                    <div class="wood-color-mid wood-font brew-content">
+                        <h3> Brewers Twists:</h3>
+                        {{ twist }}
+                    </div>
+                </div>
+            <div class="row"> {# Brew Specs #}
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                         Beer Specs
+                        <table class="brew-table table-striped">
                                 <tr>
                                     <th> Volume </th>
                                     <th> {{ json.volume.value }} {{ json.volume.unit }} </th>
@@ -85,10 +113,9 @@
                                 </tr>
                         </table>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
-                    Malt Ingredients
-                    <table class="brew-table table-striped">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        Malt Ingredients
+                        <table class="brew-table table-striped">
                         <tr>
                             <th> Name </th>
                             <th> Amount </th>
@@ -100,8 +127,8 @@
                         </tr>
                     {%  endfor %}
                     </table>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     Hops
                     <table class="brew-table table-striped">
                         <tr>
@@ -120,29 +147,7 @@
                     {%  endfor %}
                     </table>
                 </div>
-
-                <div class="row">
-                    Yeast
-                    <div class="wood-font wood-color-mid">
-                        {{ ingredients.yeast }}
-                    </div>
-
-
-                    <div class="wood-color-mid wood-font">
-                        {{ json.brewers_tips }}
-                        {{ json.food_pairing }}
-                        {{ json.contributed_by }}
-                    </div>
-
-                    <div>
-                            {{ temps.mash }}
-                            {{ temps.fermentation }}
-                    </div>
-
-                    <div class="wood-color-mid wood-font">
-                        {{ json.method.twist }}
-                    </div>
-                </div>
+            </div>
     </div>
 
 </div>

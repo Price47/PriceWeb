@@ -77,29 +77,25 @@ $(document).ready(function(){
         }
     );
 
+    function setElementHoverAttribute(elem, gradient, title){
+        elem.hover(
+            function(){
+                $(this).addClass(gradient);
+                setTitle(title);
+            },function(){
+                $(this).removeClass(gradient);
+                resetTitle();
+            });
+    }
 
-    $('.about-button').hover(
-        function(){
-            setTitle('About This Page');
-            setHighlight('gradient5')
-        },
-        function(){
-           resetTitle();
-           removeHighlight();
+    // set the hover function for each link to highlight the top nav and output
+    // the link path
+    setElementHoverAttribute(topNavLoading, 'gradient1', 'Loading Screens');
+    setElementHoverAttribute(topNavBrewer, 'gradient2', 'Brewer');
+    setElementHoverAttribute(topNavDori, 'gradient3', 'DORi');
+    setElementHoverAttribute( topNavAbout,'gradient4', 'About');
 
-        }
-    );
 
-    $('.dori-link-button').hover(
-        function(){
-           setTitle('DORi Development Page');
-           setHighlight('gradient4');
-        },
-        function(){
-            resetTitle();
-            removeHighlight();
-        }
-    );
 
     $('.loadscreen-button').hover(
         function(){
@@ -120,6 +116,29 @@ $(document).ready(function(){
         function(){
             resetTitle();
             removeHighlight();
+        }
+    );
+
+    $('.dori-link-button').hover(
+        function(){
+           setTitle('DORi Development Page');
+           setHighlight('gradient3');
+        },
+        function(){
+            resetTitle();
+            removeHighlight();
+        }
+    );
+
+    $('.about-button').hover(
+        function(){
+            setTitle('About This Page');
+            setHighlight('gradient4')
+        },
+        function(){
+           resetTitle();
+           removeHighlight();
+
         }
     );
 
@@ -204,21 +223,6 @@ $(document).ready(function(){
     }) ;
 
 
-    setElementHoverAttribute(topNavLoading, 'gradient1', 'Loading Screens');
-    setElementHoverAttribute(topNavBrewer, 'gradient2', 'Brewer');
-    setElementHoverAttribute(topNavDori, 'gradient4', 'DORi');
-    setElementHoverAttribute( topNavAbout,'gradient5', 'About');
-
-    function setElementHoverAttribute(elem, gradient, title){
-        elem.hover(
-            function(){
-                $(this).addClass(gradient);
-                setTitle(title);
-            },function(){
-                $(this).removeClass(gradient);
-                resetTitle();
-            });
-    }
 
 
 
@@ -239,9 +243,11 @@ $(document).ready(function(){
 
     beerQueryInput.on('click', function(){
         if ( $(this).is(':checked') ) {
-            $('#beer_query_div').show()
+            $('#beer_query_div').show();
+            $('#brew_submit').val('Search')
         }
         else {
+            $('#brew_submit').val('Random');
             beerNameQueryCheck.attr('checked', false);
             beerAbvQueryCheck.attr('checked', false);
             $('#beer_query_div').hide();
@@ -265,6 +271,7 @@ $(document).ready(function(){
         else
             beerAbvQueryDiv.hide()
     });
+
 });
 
 
