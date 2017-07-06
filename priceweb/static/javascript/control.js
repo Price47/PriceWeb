@@ -29,12 +29,9 @@ $(document).ready(function(){
     var topNavLoading = $('#top_nav_loading');
     var topNavBrewer = $('#top_nav_brewer');
     var abvValue = $('#abv');
-    var rng = document.querySelector("#abv");
-    var beerQueryInput = $('#beerquery_check');
-    var beerNameQueryCheck = $('#name_query_check');
-    var beerNameQueryDiv = $('#beer_name_div');
-    var beerAbvQueryCheck = $('#abv_query_check');
-    var beerAbvQueryDiv = $('#beer_abv_div');
+
+    var homeLinksVisible = false;
+
 
 
     doriDevContent.slideUp();
@@ -222,51 +219,26 @@ $(document).ready(function(){
         $('#menu_button_down').css({'display':'inline'});
     }) ;
 
-    var abvRange = function() {
-          window.requestAnimationFrame(function() {
-            document.querySelector("#abv_value").innerHTML = rng.value;
-          });
-        };
 
-        rng.addEventListener("mousedown", function() {
-          abvRange();
-          rng.addEventListener("mousemove", abvRange);
-        });
-        rng.addEventListener("mouseup", function() {
-          rng.removeEventListener("mousemove", abvRange);
-        });
-
-
-    beerQueryInput.on('click', function(){
-        if ( $(this).is(':checked') ) {
-            $('#beer_query_div').show();
-            $('#brew_submit').val('Search')
+    $('#home_link_open').click(function(){
+        if(homeLinksVisible){
+            $('#home_link_glyph').removeClass('glyphicon glyphicon-chevron-left');
+            $('#home_link_glyph').addClass('glyphicon glyphicon-chevron-right');
+            homeLinksVisible = false;
+            $('#home_links_container').css({'display':'none'})
         }
-        else {
-            $('#brew_submit').val('Random');
-            beerNameQueryCheck.prop('checked', false);
-            beerAbvQueryCheck.prop('checked', false);
-            $('#beer_query_div').hide();
-            beerNameQueryDiv.hide();
-            beerAbvQueryDiv.hide();
+        else{
+            $('#home_link_glyph').removeClass('glyphicon glyphicon-chevron-right');
+            $('#home_link_glyph').addClass('glyphicon glyphicon-chevron-left');
+            homeLinksVisible = true;
+            $('#home_links_container').css({'display':'inline'})
         }
+
+
     });
 
-    beerNameQueryCheck.on('click', function(){
-        if ( $(this).is(':checked') ) {
-            beerNameQueryDiv.show()
-        }
-        else
-            beerNameQueryDiv.hide()
-    });
 
-    beerAbvQueryCheck.on('click',function(){
-        if ( $(this).is(':checked') ) {
-            beerAbvQueryDiv.show();
-        }
-        else
-            beerAbvQueryDiv.hide()
-    });
+
 
 });
 
