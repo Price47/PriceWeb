@@ -29,6 +29,7 @@ $(document).ready(function(){
     var topNavLoading = $('#top_nav_loading');
     var topNavBrewer = $('#top_nav_brewer');
     var abvValue = $('#abv');
+    var homeLinkGlyph = $('#home_link_glyph');
 
     var homeLinksVisible = false;
 
@@ -222,14 +223,14 @@ $(document).ready(function(){
 
     $('#home_link_open').click(function(){
         if(homeLinksVisible){
-            $('#home_link_glyph').removeClass('glyphicon glyphicon-chevron-left');
-            $('#home_link_glyph').addClass('glyphicon glyphicon-chevron-right');
+            homeLinkGlyph.removeClass('glyphicon glyphicon-chevron-left');
+            homeLinkGlyph.addClass('glyphicon glyphicon-chevron-right');
             homeLinksVisible = false;
             $('#home_links_container').css({'display':'none'})
         }
         else{
-            $('#home_link_glyph').removeClass('glyphicon glyphicon-chevron-right');
-            $('#home_link_glyph').addClass('glyphicon glyphicon-chevron-left');
+            homeLinkGlyph.removeClass('glyphicon glyphicon-chevron-right');
+            homeLinkGlyph.addClass('glyphicon glyphicon-chevron-left');
             homeLinksVisible = true;
             $('#home_links_container').css({'display':'inline'})
         }

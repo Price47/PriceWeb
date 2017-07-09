@@ -12,9 +12,6 @@ def about(request):
 def dori(request):
     return render(request, 'priceweb/dori.html')
 
-def test(request):
-    return render(request, 'priceweb/test.html')
-
 
 def loadingscreens(request, index):
     i = int(index)
@@ -37,7 +34,6 @@ def loadingscreens(request, index):
     return render(request, html, context={'last_loader':last_loader, 'next_loader':next_loader})
 
 def home(request):
-
 
     return render(request, 'priceweb/home.html')
 

@@ -8,7 +8,6 @@ urlpatterns = [
     url(r'^dori', views.dori, name='dori'),
     url(r'^home', views.home, name='home'),
     url(r'^loadingscreens/(?P<index>[0-9]{1})' , views.loadingscreens, name='loadingscreens'),
-    url(r'^test', views.test, name='test'),
     url(r'^brewer',views.brewer, name='brewer'),
 
 ]

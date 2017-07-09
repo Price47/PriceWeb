@@ -3,18 +3,38 @@
 
 {% block content %}
 <body style="">
-{#    <div class="loader wood-color-dark">#}
-{#        <div style="position:relative;margin:auto">#}
-{#            <img src="{% static "priceweb/47.png" %}" alt="My image" height="256" width="408" class="center-image"/>#}
-{#        </div>#}
-{#    </div>#}
 
-   {% include 'priceweb/link_carousel.html' %}
+
+    <div style="z-index:25;">
+        {% include 'priceweb/link_carousel.html' %}
+    </div>
+
     <div style="margin:-30px -15px 0">
-        <div style="width:100%;height:600px;margin-top:-30px;" class="gradient1 home-div"></div>
-        <div style="width:100%;height:600px" class="gradient2 home-div"></div>
-        <div style="width:100%;height:600px" class="gradient3 home-div"></div>
-        <div style="width:100%;height:600px" class="gradient4 home-div"></div>
+        <div style="margin-top:-30px;" class="gradient1 home-content">
+            <a class="home-glyph-link loadscreen-button" href="loadingscreens/1">
+                <span class="glyphicon glyphicon-hourglass home-glyph-left home-glyph spin-slow"></span>
+            </a>
+        </div>
+        <div class="home-break"></div>
+        <div class="gradient2 home-content">
+            <a class="home-glyph-link brewer-button" href="brewer">
+                <span class="glyphicon glyphicon-glass home-glyph-left home-glyph"></span>
+            </a>
+        </div>
+        <div class="home-break"></div>
+        <div class="gradient3 home-content">
+            <a class="home-glyph-link dori-link-button" href="dori">
+                <span class="glyphicon glyphicon-education home-glyph-left home-glyph"></span>
+                <span class="glyphicon glyphicon-chevron-right home-glyph-left home-glyph"></span>
+            </a>
+        </div>
+        <div class="home-break"></div>
+        <div class="gradient4 home-content">
+            <a class="home-glyph-link about-button" href="about">
+                <span class="glyphicon glyphicon-question-sign home-glyph-left home-glyph"></span>
+            </a>
+        </div>
+    <div style="width:100%;height:100px;background: black;margin-bottom:-100px;"></div>
     </div>
 
 
