@@ -3,6 +3,10 @@
 {% block content %}
 {% include "priceweb/top_nav.html"%}
 
+<head>
+    <script src="{% static 'javascript/brewerControl.js' %}"></script>
+</head>
+
 <body>
 
 
@@ -52,7 +56,7 @@
                 <p> {{ json.description }} </p>
             </div>
             <div class="row"> {# Brew content #}
-                    <div class="wood-font wood-color-mid">
+                    <div class="wood-font wood-color-mid brew-content">
                         <h3>Yeast</h3>
                         {{ ingredients.yeast }}
                     </div>

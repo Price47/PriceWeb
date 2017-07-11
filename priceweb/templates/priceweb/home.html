@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block content %}
-<body style="">
-
+<body>
 
     <div style="z-index:25;">
         {% include 'priceweb/link_carousel.html' %}
@@ -11,28 +10,55 @@
 
     <div style="margin:-30px -15px 0">
         <div style="margin-top:-30px;" class="gradient1 home-content">
-            <a class="home-glyph-link loadscreen-button" href="loadingscreens/1">
-                <span class="glyphicon glyphicon-hourglass home-glyph-left home-glyph spin-slow"></span>
-            </a>
+            <div class="home-link">
+                <a class="home-glyph-link loadscreen-button" href="loadingscreens/1">
+                    <span class="glyphicon glyphicon-hourglass home-glyph-left home-glyph spin-slow"></span>
+                </a>
+            </div>
+            <div class="home-text">
+                <h1>
+                    LoadSCREEn
+                </h1>
+            </div>
         </div>
         <div class="home-break"></div>
         <div class="gradient2 home-content">
-            <a class="home-glyph-link brewer-button" href="brewer">
-                <span class="glyphicon glyphicon-glass home-glyph-left home-glyph"></span>
-            </a>
+            <div class="home-text">
+                <h1>
+                    BREWERY
+                </h1>
+            </div>
+            <div class="home-link">
+                <a class="home-glyph-link brewer-button" href="brewer">
+                    <span class="glyphicon glyphicon-glass home-glyph-left home-glyph"></span>
+                </a>
+            </div>
         </div>
         <div class="home-break"></div>
         <div class="gradient3 home-content">
-            <a class="home-glyph-link dori-link-button" href="dori">
-                <span class="glyphicon glyphicon-education home-glyph-left home-glyph"></span>
-                <span class="glyphicon glyphicon-chevron-right home-glyph-left home-glyph"></span>
-            </a>
+            <div class="home-link">
+                <a class="home-glyph-link dori-link-button" href="dori">
+                    <span class="glyphicon glyphicon-education home-glyph-left home-glyph"></span>
+                </a>
+            </div>
+            <div class="home-text">
+                <h1>
+                    DORI
+                </h1>
+            </div>
         </div>
         <div class="home-break"></div>
         <div class="gradient4 home-content">
-            <a class="home-glyph-link about-button" href="about">
-                <span class="glyphicon glyphicon-question-sign home-glyph-left home-glyph"></span>
-            </a>
+            <div class="home-text">
+                <h1>
+                    ABOUT
+                </h1>
+            </div>
+            <div class="home-link">
+                <a class="home-glyph-link about-button" href="about">
+                    <span class="glyphicon glyphicon-question-sign home-glyph-left home-glyph"></span>
+                </a>
+            </div>
         </div>
     <div style="width:100%;height:100px;background: black;margin-bottom:-100px;"></div>
     </div>
