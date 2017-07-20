@@ -223,14 +223,14 @@ $(document).ready(function(){
 
     $('#home_link_open').click(function(){
         if(homeLinksVisible){
-            homeLinkGlyph.removeClass('glyphicon glyphicon-chevron-left');
-            homeLinkGlyph.addClass('glyphicon glyphicon-chevron-right');
+            homeLinkGlyph.removeClass('glyphicon glyphicon-resize-small');
+            homeLinkGlyph.addClass('glyphicon glyphicon-resize-full');
             homeLinksVisible = false;
             $('#home_links_container').css({'display':'none'})
         }
         else{
-            homeLinkGlyph.removeClass('glyphicon glyphicon-chevron-right');
-            homeLinkGlyph.addClass('glyphicon glyphicon-chevron-left');
+            homeLinkGlyph.removeClass('glyphicon glyphicon-resize-full');
+            homeLinkGlyph.addClass('glyphicon glyphicon-resize-small');
             homeLinksVisible = true;
             $('#home_links_container').css({'display':'inline'})
         }
