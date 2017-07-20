@@ -1,1 +1,1 @@
-web: gunicorn PriceSite.wsgi.application
+web: gunicorn PriceSite.wsgi
