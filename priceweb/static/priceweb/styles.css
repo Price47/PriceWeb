@@ -107,7 +107,7 @@ body{
 }
 
 .home-glyph-link{
-    line-height: 800px;
+    line-height: 600px;
     vertical-align: center;
 }
 
@@ -124,13 +124,13 @@ body{
 
 .home-content{
     width:100%;
-    height:600px
+    height:600px;
 }
 
 .home-break{
     width:100%;
     height:150px;
-    background: black
+    background: black;
 }
 
 .home-link{
@@ -254,14 +254,19 @@ button {
 }
 
 #about_links a:hover{
-    color:#be00db;
+    color:#ff3f3f;
     text-decoration:none;
 }
 
+#helpful_links li a:link, a:visited{
+    color:white;
+}
+
 #helpful_links li a:hover{
-    color:#be00db;
+    color:#ff3f3f;
     text-decoration:none;
 }
+
 
 /* Top Nav */
 
