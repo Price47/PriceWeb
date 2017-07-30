@@ -379,5 +379,215 @@
 }
 
 
+/* Example 6 */
+.example-6{
+    background-color: #ff19eb;
+}
+
+.loading-circle-3{
+    position:absolute;
+    display:block;
+    color:transparent;
+    align-self: center;
+    margin:auto;
+    z-index:1000;
+    border-top: 2px solid white;
+}
 
 
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+#example_7_circle_1{
+    width: 55px;
+    height:55px;
+    border-radius:50px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_2{
+    width: 65px;
+    height: 65px;
+    border-radius:100px;
+     -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_3{
+    width: 75px;
+    height: 75px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_4{
+    width: 85px;
+    height: 85px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_5{
+    width: 95px;
+    height: 95px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_6{
+    width: 105px;
+    height: 105px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_7{
+    width: 115px;
+    height: 115px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_8{
+    width: 125px;
+    height:125px;
+    border-radius:125px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_9{
+    width: 135px;
+    height: 135px;
+    border-radius:100px;
+     -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_10{
+    width: 145px;
+    height: 145px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+#example_7_circle_11{
+    width: 155px;
+    height: 155px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+
+
+#example_7_circle_12{
+    width: 165px;
+    height: 165px;
+    border-radius:160px;
+    -webkit-animation: spin 1.3s linear 0s infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.3s linear 0s infinite;
+
+}
+
+
+
+
+
+
+
+
+/* Example 7 */
+
+.example-7{
+    background-color: #147aff;
+}
+
+.loading-circle-2{
+    position:relative;
+    float:left;
+    display:block;
+    color:transparent;
+    margin:auto;
+    z-index:1000;
+    width: 55px;
+    height:55px;
+    border-radius:50px;
+
+
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-webkit-keyframes example6_1{
+    0%   {border-color: #0000ed}
+    50% {border-color: white}
+}
+
+/* Standard syntax */
+@keyframes example6_1 {
+    0%   {border-color: #0000ed}
+    50% {border-color: white}
+}
+
+
+
+@-webkit-keyframes example6_2{
+    0%   {border-color: white}
+    50% {border-color: #0000ed}
+}
+
+/* Standard syntax */
+@keyframes example6_2 {
+    0%   {border-color: white}
+    50% {border-color: #0000ed}
+}
+
+
+#example_6_circle_1{
+    border-bottom: 2px solid #0000ed;
+    -webkit-animation: spin 1.5s linear 0s infinite , example6_1 6s linear infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.5s linear 0s  infinite, example6_1 6s linear infinite;
+
+}
+#example_6_circle_2{
+    border-bottom: 2px solid #0000ed;
+     -webkit-animation: spin 1.5s linear 0s reverse infinite, example6_1 6s linear infinite; /* Safari 4.0 - 8.0 */
+    animation: spin 1.5s linear 0s reverse infinite, example6_1 6s linear infinite;
+
+}
+
+#example_6_circle_3{
+    border-top: 2px solid white;
+    -webkit-animation: spin 1.5s linear 0s reverse infinite, example6_2 6s linear infinite;; /* Safari 4.0 - 8.0 */
+    animation: spin 1.5s linear 0s reverse infinite, example6_2 6s linear infinite;;
+
+}
+
+#example_6_circle_4{
+    border-top: 2px solid white;
+    -webkit-animation: spin 1.5s linear 0s infinite, example6_2 6s linear infinite;; /* Safari 4.0 - 8.0 */
+    animation: spin 1.5s linear 0s infinite, example6_2 6s linear infinite;;
+
+}
