@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5b0a233-6993-4586-8337-68a4851b1238" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/favicon.ico" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/priceweb/static/favicon.ico" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" afterPath="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" />
     </list>
     <ignored path="PriceSite.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,13 +52,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="283">
               <caret line="137" column="10" selection-start-line="137" selection-start-column="10" selection-end-line="137" selection-end-column="10" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="favicon.png" pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Desktop/favicon.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -121,7 +139,6 @@
         <option value="$PROJECT_DIR$/priceweb/views.py" />
         <option value="$PROJECT_DIR$/priceweb/urls.py" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/about.html" />
-        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/brewer.html" />
         <option value="$PROJECT_DIR$/priceweb/static/javascript/control.js" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/link_carousel.html" />
@@ -134,6 +151,7 @@
         <option value="$PROJECT_DIR$/PriceSite/settings.py" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/home.html" />
         <option value="$PROJECT_DIR$/priceweb/static/priceweb/styles.css" />
+        <option value="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" />
       </list>
     </option>
   </component>
@@ -144,7 +162,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="16" />
+    <option name="x" value="242" />
     <option name="y" value="23" />
     <option name="width" value="1245" />
     <option name="height" value="777" />
@@ -245,6 +263,10 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="priceweb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -261,10 +283,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="priceweb" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,16 +344,16 @@
     <property name="ignore_missing_gitignore" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/priceweb/templates/priceweb/loaders" />
-      <recent name="$PROJECT_DIR$/priceweb/templates/priceweb" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/priceweb/templates/priceweb" />
       <recent name="$PROJECT_DIR$/priceweb/static/priceweb" />
+      <recent name="$PROJECT_DIR$/priceweb/templates/priceweb" />
       <recent name="$PROJECT_DIR$/priceweb/static" />
       <recent name="$PROJECT_DIR$/priceweb/static/javascript" />
       <recent name="$PROJECT_DIR$/priceweb/static/priceweb/less" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/priceweb/templates/priceweb/loaders" />
+      <recent name="$PROJECT_DIR$/priceweb/templates/priceweb" />
     </key>
   </component>
   <component name="RunManager" selected="Django tests.Test: priceweb.static.javascript.control.js">
@@ -645,7 +663,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="16" y="23" width="1245" height="777" extended-state="0" />
+    <frame x="242" y="23" width="1245" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15983936" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -711,11 +729,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/themes.html" />
     <entry file="file://$PROJECT_DIR$/priceweb/static/priceweb/themes.css" />
-    <entry file="file://$PROJECT_DIR$/priceweb/static/favicon.ico">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PriceSite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -886,14 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="33" column="64" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/control.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3390">
@@ -980,6 +985,19 @@
           <caret line="137" column="10" selection-start-line="137" selection-start-column="10" selection-end-line="137" selection-end-column="10" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="29" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/favicon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
