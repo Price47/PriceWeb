@@ -135,11 +135,13 @@ body{
 
 .home-link{
     text-align: center;
+    top:45px;
 }
 
 .home-text {
     text-align: center;
     color: white;
+    top:200px;
 }
 
 /* link carousel style */
