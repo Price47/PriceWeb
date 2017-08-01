@@ -25,7 +25,7 @@ SECRET_KEY = 'p=o!h%4vt*++ej55=^7xhqxj&hih7qs)$4)7=w-$szr2vkgstd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.e7q5xhgr2u.us-east-2.elasticbeanstalk.com','priceweb47.com', '127.0.0.1']
+ALLOWED_HOSTS = ['priceweb-env.e7q5xhgr2u.us-east-2.elasticbeanstalk.com','priceweb47.com', '127.0.0.1']
 
 
 # Application definition
