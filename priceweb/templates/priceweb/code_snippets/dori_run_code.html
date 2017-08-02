@@ -1,0 +1,23 @@
+{% load static %}
+
+<div class="code-wrapper" style="width:610px;">
+    <pre class="code-text">
+    def fullDataLoop(self):
+
+
+        registration = Registration(self.device.getIrCameraParams(),
+                                    self.device.getColorCameraParams())
+
+
+
+        depthArray = self.update(registration)
+        rows, cols = depthArray.shape
+        d = self.pointRavel(depthArray, rows, cols)
+        m = self.getMeanDepth(d, rows, cols)
+        b = self.getBody(d, m, rows, cols)
+        s = self.getSkeleton(deptharraytest, m, cols, rows)
+
+
+        return {'spine' : s, 'meanDepth' : m}
+    </pre>
+</div>

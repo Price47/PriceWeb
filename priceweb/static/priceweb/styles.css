@@ -236,6 +236,33 @@ button {
     color:black;
 }
 
+.code-wrapper{
+    border-radius: 10px;
+    background:#fafafa;
+    margin: 0 auto;
+    padding-top:10px;
+    margin-top:25px;
+
+}
+
+.code-text{
+    color:deepskyblue;
+    background: transparent!important;
+    border:none;
+}
+
+.dori-code-description{
+    padding:5px;
+}
+
+
+.dori-code-description a:hover{
+    color:#23dbfc;
+    text-decoration: none;
+}
+
+
+
 /* About Page */
 
 #about_info p{

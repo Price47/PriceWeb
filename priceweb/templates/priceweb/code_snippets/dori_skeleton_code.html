@@ -1,0 +1,30 @@
+{% load static %}
+
+<div class="code-wrapper" style="width:510px;">
+    <pre class="code-text">
+    def getSkeleton(self, depthArray, average, rows, cols):
+        topY = 0
+        leftX = rows
+        bottomY = cols
+        rightX = 0
+
+        for d in depthArray:
+            if (d['x'] > rightX):
+                rightX = d['x']
+            if (d['x'] < leftX):
+                leftX = d['x']
+            if (d['y'] < bottomY):
+                bottomY = d['y']
+            if (d['y'] > topY):
+                topY = d['y']
+
+        averageX = (leftX + rightX) / 2
+        returnValues = {'averageX': averageX,
+                        'topY': topY,
+                        'bottomY': bottomY,
+                        'rightX': rightX,
+                        'leftX': leftX}
+
+        return returnValues
+    </pre>
+</div>

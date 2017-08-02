@@ -1,0 +1,18 @@
+{% load static %}
+
+<div class="code-wrapper" style="width:670px;">
+    <pre class="code-text">
+    def pointRavel(self, unraveledArray, rows, cols):
+        raveledArray = []
+        d = unraveledArray.ravel()
+        for row in range(rows):
+            for col in range(cols):
+                try:
+                    offset = row + col * (rows)
+                    raveledArray.append({'x': row, 'y': col, 'depth': d[offset]})
+                except IndexError as e:
+                    print e
+
+        return raveledArray
+    </pre>
+</div>

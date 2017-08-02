@@ -26,7 +26,7 @@
             </div>
             <div id=dori_development class="col-xs-4 col-sm-4 col-md-4 col-lg-4 wood-color-mid content-header wood-font"
                 style="border-right: 1px solid white;border-left: 1px solid white">
-                Kinect & Python
+                Libfreenect
             </div>
             <div id=dori_results class="col-xs-4 col-sm-4 col-md-4 col-lg-4 wood-color-mid content-header wood-font"
                 style="border-right:none!important">
@@ -49,16 +49,60 @@
                 </div>
             </div>
             <div id=dori_development_content class="col-xs-12 col-sm-12 col-md-12 col-lg-12 wood-font dori-content">
-                <iframe id=dev_frame src="{% static 'priceweb/textbody/dori_dev.html' %}" frameborder="0"
-                        style="height:250px;width:100%"></iframe>
+
+                <div class="dori-code-description">
+                    <h1>
+                        DORi's functionality is messy and complicated, but here is a brief look at how it sees a victim in
+                        the pool. To get the full picture of how it works, You can check out DORi in it's entirety here:
+                        <a href="https://github.com/Price47/JackalopeCapstone" target="_blank"> JackalopeCapstone</a>
+                    </h1>
+                </div>
+
+                <div class="dori-code-description wood-font">
+                    The bulk of what we use is from a library called pylibfreenect2, which provides a way to communicate
+                    with a kinect V2 using python. Microsoft provides a skeleton tracking SDK for PC based systems,
+                    but using a linux system left us to our own devices. This function grabs a very basic skeleton by
+                    finding the right most and left most points that are within a calculated body of points.
+                    The depthArray passed in is all the points in the frame that are within a certain range of the
+                    calculated mean depths for each frame. It returns the data representation of a basic 't' shape,
+                    which represents the spine and the width of the target data
+                </div>
+                {% include "priceweb/code_snippets/dori_skeleton_code.html" %}
+                <div class="dori-code-description">
+                    The point ravel function is used for depth frames from the kinect, and essentially turns a 1
+                    dimensional array into an array of 3 dimensional points. The frame is stored in 1 dimension, so to
+                    get the depth with the associated x and y coordinates, an iterative loop goes through the rows and
+                    columns and multiplies the sum by the total rows. Shiffman.net explains this in depth
+                    <a href="https://youtu.be/FBmxc4EyVjs?list=PLRqwX-V7Uu6ZMlWHdcy8hAGDy6IaoxUKf" target="_blank">
+                        here </a>, but essentially the multiplication by rows sets how far into the array the point
+                    basically resides, and the addition of the col and row set it's exact location. Again, this is a
+                    very rudimentary explanation, but enough to follow the code. Returned is the depth at a point
+                    (x,y), plus the x and y coordinates. This makes using the depth array data much easier later on.
+                </div>
+                {% include "priceweb/code_snippets/dori_point_ravel_code.html" %}
+                <div class="dori-code-description">
+                    This data loop occurs for each frame the kinect returns. The registration has to happen to grab a
+                    new frame, and is used to get the depth array that is analyzed. The depthArray is an object from the
+                    pylibfreenect2 library, and has the attribute shape, which returns rows and columns. Then, the
+                    pointRavel returns our new more readable depth array, which is used to calculate a mean depth. the
+                    mean depth is used get a basic body shape, which is just an array of points which have a depth
+                    within a range of the average depth. In a pool, this gives us a really good approximation of a
+                    person's full body. Using this body array, we run the above skeleton function to find the spine.
+                    This will be used in the checkDrowning function.
+                </div>
+                {% include "priceweb/code_snippets/dori_run_code.html" %}
+                <div class="dori-code-description">
+                    This function is the main loop of the py file, and is what is called in the rest of our processes.
+                    it takes a set time limit (set as 20 seconds in the settings), and for that duration runs the
+                    data loop we explored above. The spine is checked for a minimum threshold of movement, if it's
+                    discovered that the spine spine hasn't made meaningful movement in 20 seconds, DORi is alerted to a
+                    potential drowning. If not, the device simply stops and waits to be started again
+                </div>
+                {% include "priceweb/code_snippets/dori_check_drowning_code.html" %}
                 <div class="dori-button-container">
                     <button id="development_close" class="dori-button"
-                            style="border-top-right-radius: 0;border-bottom-right-radius: 0;border-right:1px solid white">
+                            style="width:100%">
                         <span class="glyphicon glyphicon-remove-sign" style="font-size:3vmax"></span>
-                    </button>
-                    <button id="development_max" class="dori-button"
-                            style="border-top-left-radius: 0;border-bottom-left-radius: 0; border-left:1px solid white">
-                        <span class="glyphicon glyphicon-option-horizontal" style="font-size:3vmax"></span>
                     </button>
                 </div>
             </div>
@@ -98,6 +142,8 @@
         </div>
     </div>
     </div>
+
+
 
 {% endblock %}
 

@@ -1,0 +1,34 @@
+{% load static %}
+
+<div class="code-wrapper" style="width:705px;">
+    <pre class="code-text">
+    def checkDrowning(self):
+        print "checkDrowning"
+        drowningRisk = True
+        drowning = False
+        falsePositive = 0
+        # 20 seconds from start of def #
+        timeLimit = time.time() + DROWN_TIME
+        self.device.start()
+        while drowningRisk:
+            print 'checking...'
+            if time.time() > timeLimit:
+                drowningRisk = False
+                drowning = True
+
+            data = self.fullDataLoop()
+            if (self.valueUnbounded((self.averageSpineX - data['spine']['averageX']),
+                                                                X_CHANGE_THRESHOLD)):
+                falsePositive += 1
+                if falsePositive > 100:
+                    drowningRisk = False
+            else:
+                continue
+        if drowning:
+            self.device.stop()
+            print "This guy is for sure drowning"
+            sys.exit(47)
+
+        self.device.stop()
+    </pre>
+</div>

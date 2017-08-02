@@ -1,0 +1,20 @@
+{% load static %}
+
+<div class="code-wrapper" style="width:510px;">
+    <pre class="code-text">
+    def getMeanDepth(self, depth, rows, cols):
+       total = 0
+       sumDepth = 0
+       for row in range(rows):
+           for col in range(cols):
+               try:
+                   offset = row + col * (rows)
+               except IndexError as e:
+                   print e
+
+               total += 1
+               sumDepth += depth[offset]['depth']
+
+       return (sumDepth / total)
+    </pre>
+</div>

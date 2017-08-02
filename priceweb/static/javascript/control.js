@@ -188,13 +188,9 @@ $(document).ready(function(){
     });
 
     developmentMax.click(function(){
-        console.log(developmentFrame.css('height'));
-        if(developmentFrame.css('height')=='250px'){
-            $('#dev_frame').animate({'height':'+=550px'})
-        }
-        if(developmentFrame.css('height')=='800px'){
-            $('#dev_frame').animate({'height':'-=550px'})
-        }
+        $('.dori-code-description').each(function(){
+            $(this).css('display','none')
+        })
     });
 
     resultMax.click(function(){
