@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import mechanize
 import re
 
+from settings import EMPTY_ATTRIBUTE_ERROR
+
 class ScraperObject():
     """
 
@@ -13,6 +15,13 @@ class ScraperObject():
                         'LG':[],
                        'Toshiba':[],
                        'Sony':[]}
+
+        self.top3 = {'Samsung':[],
+                        'LG':[],
+                       'Toshiba':[],
+                       'Sony':[]}
+
+        self.top3Count = 0
 
         self.samsung_reg = re.compile('(?i)samsung')
         self.lg_reg = re.compile('(?i)lg')
@@ -29,15 +38,56 @@ class ScraperObject():
 
         if self.samsung_reg.match(item['name']):
             self.brands['Samsung'].append(item)
+            if(self.top3Count<3):
+                self.top3['Samsung'].append(item)
+                self.top3Count+=1
 
         if self.lg_reg.match(item['name']):
             self.brands['LG'].append(item)
+            if (self.top3Count < 3):
+                self.top3['LG'].append(item)
+                self.top3Count += 1
 
         if self.toshiba_reg.match(item['name']):
             self.brands['Toshiba'].append(item)
+            if (self.top3Count < 3):
+                self.top3['Toshiba'].append(item)
+                self.top3Count += 1
 
         if self.sony_reg.match(item['name']):
             self.brands['Sony'].append(item)
+            if (self.top3Count < 3):
+                self.top3['Sony'].append(item)
+                self.top3Count += 1
+
+    def getData(self, soup):
+        ranks = [[]]
+        review_trend = [[]]
+        search_rank = 1
+
+        for item in soup:
+                try:
+                    name = item.find('div', attrs={'class':'sku-title'}).text
+                    rating = item.find('span',attrs={'class':'star-rating-value'}).text
+                    reviews = item.find('span',attrs={'class':'number-of-reviews'}).text
+
+                    search_obj = {'search_rank':search_rank,
+                                    'name':name,
+                                    'rating':float(rating),
+                                    'reviews':int(reviews)}
+
+                    ranks.append([search_rank, float(rating)])
+                    review_trend.append([search_rank, int(reviews)])
+
+                # search_results.append(search_obj)
+
+                    self.findBrand(search_obj)
+
+                    search_rank += 1
+                except AttributeError:
+                    print EMPTY_ATTRIBUTE_ERROR
+
+        return {'brands': self.brands, 'ranks': ranks, 'reviews': review_trend}
 
 
     def search(self):
@@ -47,6 +97,10 @@ class ScraperObject():
         review_trend = [[]]
         br = mechanize.Browser()
         br.open(self.base_url)
+        top_3_brands = {'Samsung':[],
+                        'LG':[],
+                       'Toshiba':[],
+                       'Sony':[]}
 
         br.select_form('frmSearch')
         br.form['st'] = self.search_term
@@ -57,24 +111,25 @@ class ScraperObject():
 
         soup = BeautifulSoup(r,'html.parser')
         items = soup.findAll('div', attrs={'class':'list-item-postcard'})
-        top3 = items[:3]
         for item in items:
-            name = item.find('div', attrs={'class':'sku-title'}).text
-            rating = item.find('span',attrs={'class':'star-rating-value'}).text
-            reviews = item.find('span',attrs={'class':'number-of-reviews'}).text
+                try:
+                    name = item.find('div', attrs={'class':'sku-title'}).text
+                    rating = item.find('span',attrs={'class':'star-rating-value'}).text
+                    reviews = item.find('span',attrs={'class':'number-of-reviews'}).text
 
-            search_obj = {'search_rank':search_rank,
-                            'name':name,
-                            'rating':float(rating),
-                            'reviews':int(reviews)}
+                    search_obj = {'search_rank':search_rank,
+                                    'name':name,
+                                    'rating':float(rating),
+                                    'reviews':int(reviews)}
 
-            ranks.append([search_rank, float(rating)])
-            review_trend.append([search_rank, int(reviews)])
+                    ranks.append([search_rank, float(rating)])
+                    review_trend.append([search_rank, int(reviews)])
 
-            # search_results.append(search_obj)
+                    self.findBrand(search_obj)
 
-            self.findBrand(search_obj)
+                    search_rank += 1
+                except AttributeError:
+                    print EMPTY_ATTRIBUTE_ERROR
 
-            search_rank += 1
 
-        return {'brands':self.brands, 'ranks':ranks, 'reviews':review_trend}
+        return {'brands':self.brands, 'ranks':ranks, 'reviews':review_trend, 'top_3_brands':self.top3}

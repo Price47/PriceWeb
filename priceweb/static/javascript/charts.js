@@ -1,8 +1,8 @@
 /**
  * Created by rockstar645 on 9/5/17.
  */
-
 function getTvData(){
+        console.log('collecting data...');
         $.get('rest/get_bestbuy_data').then(successCallback, errorCallback)
 }
 
@@ -14,16 +14,70 @@ function successCallback(response){
     console.log(response);
     var straightData = response['normal_hits'];
     var curvedData = response['curved_hits'];
+    var top3Data = response['top_3_hits'];
+    var curvedTop3Data = response['top_3_curved_hits'];
 
-    var totalHits = straightData['LG'] +
-                    straightData['Samsung'] +
-                    straightData['Sony'] +
-                    straightData['Toshiba'];
+    var top3Percentage = Highcharts.chart('top_3_percentage', {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text:'Brands in Top 3 Search Results'
+            },
+            subtitle: {
+                text: "Smart TV's"
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
+            },
+            series: [{
+                data: [{
+                    name: 'LG',
+                    y: top3Data['LG']
+            }, {
+                    name: 'Samsung',
+                    y: top3Data['Samsung']
 
-    var totalCurvedHits = curvedData['LG'] +
-                            curvedData['Samsung'] +
-                            curvedData['Sony'] +
-                            curvedData['Toshiba'];
+            }, {
+                    name: 'Sony',
+                    y: top3Data['Sony']
+            }, {
+                    name: 'Toshiba',
+                    y: top3Data['Toshiba']
+                }]
+            }]
+    });
+
+    var top3CurvedPercentage = Highcharts.chart('top_3_curved_percentage', {
+            chart: {
+                type: 'pie'
+            },
+            title: {
+                text:'Brands in Top 3 Search Results'
+            },
+            subtitle: {
+                text: "Curved Smart TV's"
+            },
+            tooltip: {
+                pointFormat: '<b>{point.percentage:.1f}%</b>'
+            },
+            series: [{
+                data: [{
+                    name: 'LG',
+                    y: curvedTop3Data['LG']
+            }, {
+                    name: 'Samsung',
+                    y: curvedTop3Data['Samsung']
+
+            }, {
+                    name: 'Sony',
+                    y: curvedTop3Data['Sony']
+            }, {
+                    name: 'Toshiba',
+                    y: curvedTop3Data['Toshiba']
+                }]
+            }]
+    });
 
     var searchResults = Highcharts.chart('tv_search_results', {
             chart: {
@@ -54,6 +108,12 @@ function successCallback(response){
             chart: {
                 type: 'pie'
             },
+            title: {
+                text: 'Search Result Percentages'
+            },
+            subtitle:{
+                text: "Smart Tv's"
+            },
             tooltip: {
                 pointFormat: '<b>{point.percentage:.1f}%</b>'
             },
@@ -78,6 +138,12 @@ function successCallback(response){
     var curvedResultPercentage = Highcharts.chart('curved_tv_search_results_percentage', {
             chart: {
                 type: 'pie'
+            },
+            title: {
+                text: 'Search Result Percentages'
+            },
+            subtitle:{
+                text: "Curved Smart Tv's"
             },
             tooltip: {
                 pointFormat: '<b>{point.percentage:.1f}%</b>'

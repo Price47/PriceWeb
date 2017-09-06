@@ -32,8 +32,21 @@ def getTVData(request):
                   'Samsung':len(curved_data['brands']['Samsung']),
                   'LG':len(curved_data['brands']['LG'])}
 
+    top_3_hits_json = {'Sony': len(data['top_3_brands']['Sony']),
+                 'Toshiba': len(data['top_3_brands']['Toshiba']),
+                 'Samsung': len(data['top_3_brands']['Samsung']),
+                 'LG': len(data['top_3_brands']['LG'])}
+
+    top_3_curved_hits_json = {'Sony': len(curved_data['top_3_brands']['Sony']),
+                        'Toshiba': len(curved_data['top_3_brands']['Toshiba']),
+                        'Samsung': len(curved_data['top_3_brands']['Samsung']),
+                        'LG': len(curved_data['top_3_brands']['LG'])}
+
+
     return_obj = {'normal_hits': hits_json,
                   'curved_hits': curved_hits_json,
+                  'top_3_hits': top_3_hits_json,
+                  'top_3_curved_hits':top_3_curved_hits_json,
                   'rate_trends': data['ranks'],
                   'curved_rate_trends': curved_data['ranks'],
                   'review_trends':data['reviews'],
