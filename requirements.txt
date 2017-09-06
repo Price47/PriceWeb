@@ -7,3 +7,8 @@ dockerpty==0.4.1
 gunicorn==19.6.0
 lessc==0.1.2
 requests==2.9.1
+html5lib==0.999999999
+six==1.10.0
+mechanize==0.3.5
+BeautifulSoup==3.2.1
+

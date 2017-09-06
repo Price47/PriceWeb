@@ -1,10 +1,46 @@
 from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse
 from settings import MAX_LOADERS
+from scraper import ScraperObject as SO
 import requests
 
 
 def index(request):
     return render(request, 'priceweb/index.html')
+
+def bestbuydata(request):
+    return render(request, 'priceweb/bestbuy_tv_data.html')
+
+def getTVData(request):
+
+    smart_tv = SO(keyword='smart tv')
+    curved_smart_tv = SO(keyword='curved smart tv')
+
+    rate_trends = []
+
+    data = smart_tv.search()
+    curved_data = curved_smart_tv.search()
+
+
+    hits_json = {'Sony':len(data['brands']['Sony']),
+                  'Toshiba':len(data['brands']['Toshiba']),
+                  'Samsung':len(data['brands']['Samsung']),
+                  'LG':len(data['brands']['LG'])}
+
+    curved_hits_json = {'Sony':len(curved_data['brands']['Sony']),
+                  'Toshiba':len(curved_data['brands']['Toshiba']),
+                  'Samsung':len(curved_data['brands']['Samsung']),
+                  'LG':len(curved_data['brands']['LG'])}
+
+    return_obj = {'normal_hits': hits_json,
+                  'curved_hits': curved_hits_json,
+                  'rate_trends': data['ranks'],
+                  'curved_rate_trends': curved_data['ranks'],
+                  'review_trends':data['reviews'],
+                  'curved_review_trends': curved_data['reviews']}
+
+    return JsonResponse(return_obj)
+
 
 def about(request):
     return render(request, 'priceweb/about.html')

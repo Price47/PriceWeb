@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['priceweb-env.e7q5xhgr2u.us-east-2.elasticbeanstalk.com','price
 INSTALLED_APPS = [
     'priceweb.apps.PricewebConfig',
     'static_precompiler',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
