@@ -3,7 +3,8 @@ from django.http import HttpResponse, JsonResponse
 from settings import MAX_LOADERS
 from scraper import ScraperObject as SO
 import requests
-
+import csv
+from datetime import datetime
 
 def index(request):
     return render(request, 'priceweb/index.html')
@@ -53,6 +54,47 @@ def getTVData(request):
                   'curved_review_trends': curved_data['reviews']}
 
     return JsonResponse(return_obj)
+
+
+
+def getTvDataCSV(request):
+    obj = SO(keyword='smart tv')
+    data = obj.search()
+    top3 = data['top_3_brands']
+    brands = data['brands']
+    ranks = data['ranks'][1:]
+    review = data['reviews'] [1:]
+    d = datetime.now()
+    unique_string = "%d%d%d%d%d%d" % (d.year, d.month, d.day, d.hour, d.minute, d.second)
+
+    filename = "Data_" + unique_string + ".csv"
+
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=' + filename
+
+    writer = csv.writer(response)
+
+    writer.writerow(['Smart TV'])
+    writer.writerow(['Top 3 Search Results'])
+    writer.writerow(['Search Rank','Name','Rating','Reviews'])
+    for key in ['Samsung', 'Sony', 'LG', 'Toshiba']:
+        for i in top3[key]:
+            writer.writerow([str(i['search_rank']),str(i['name']),str(i['rating']),str(i['reviews'])])
+    writer.writerow(['Search Results'])
+    writer.writerow(['Search Rank','Name','Rating','Reviews'])
+    for key in ['Samsung', 'Sony', 'LG', 'Toshiba']:
+        for i in brands[key]:
+            writer.writerow([str(i['search_rank']),str(i['name']),str(i['rating']),str(i['reviews'])])
+    writer.writerow(['Ranking Search Trend'])
+    writer.writerow(['Search Rank','Rating'])
+    for i in ranks:
+        writer.writerow([str(i[0]),str(i[1])])
+    writer.writerow(['Review Search Trend'])
+    writer.writerow(['Search Rank','Reviews'])
+    for i in review:
+        writer.writerow([str(i[0]),str(i[1])])
+
+    return response
 
 
 def about(request):

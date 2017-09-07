@@ -2,6 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 import mechanize
 import re
+from datetime import datetime
 
 from settings import EMPTY_ATTRIBUTE_ERROR
 
@@ -133,3 +134,14 @@ class ScraperObject():
 
 
         return {'brands':self.brands, 'ranks':ranks, 'reviews':review_trend, 'top_3_brands':self.top3}
+
+
+    def createCsv(self, top3, brands, ranks, review):
+
+
+
+
+
+
+
+        return csv
