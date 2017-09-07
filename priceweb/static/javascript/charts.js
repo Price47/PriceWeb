@@ -17,6 +17,9 @@ function successCallback(response){
     var top3Data = response['top_3_hits'];
     var curvedTop3Data = response['top_3_curved_hits'];
 
+    document.getElementById('best_buy_loader').style.display="none";
+    $('.data-chart').css('display', 'inline-block');
+
     var top3Percentage = Highcharts.chart('top_3_percentage', {
             chart: {
                 type: 'pie'

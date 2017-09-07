@@ -591,3 +591,18 @@
     animation: spin 1.5s linear 0s infinite, example6_2 6s linear infinite;;
 
 }
+
+@-webkit-keyframes best_buy_animation {
+    0%   {left:0}
+    100%   {left:100%}
+
+}
+
+/* Standard syntax */
+@keyframes best_buy_animation {
+    0%   {left:0}
+    100%   {left:100%}}
+
+
+
+
