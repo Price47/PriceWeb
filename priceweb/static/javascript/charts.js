@@ -48,6 +48,13 @@ function getTvData(){
         $.get('rest/get_bestbuy_data').then(successCallback, errorCallback)
 }
 
+function dbData(){
+    $('.data-chart').css('display', 'none');
+        document.getElementById('best_buy_loader').style.display="inline";
+        console.log('collecting data...');
+        $.get('savedTVData').then(successCallback, errorCallback)
+}
+
 function errorCallback(response){
     console.log(response)
 }

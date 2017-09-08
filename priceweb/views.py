@@ -6,6 +6,8 @@ import requests
 import csv
 from datetime import datetime
 
+from models import Television
+
 def index(request):
     return render(request, 'priceweb/index.html')
 
@@ -14,37 +16,35 @@ def bestbuydata(request):
     collected = "%d/%d/%d"%(now.month, now.day, now.year)
     return render(request, 'priceweb/bestbuy_tv_data.html', context={'date':collected})
 
+
+def sumBrands(dataset,key):
+    return {'Sony': len(dataset[key]['Sony']),
+             'Toshiba': len(dataset[key]['Toshiba']),
+             'Samsung': len(dataset[key]['Samsung']),
+             'LG': len(dataset[key]['LG'])}
+
+def sumDBBrands(base_query):
+
+    return {'Sony':len(base_query.filter(name__icontains="sony")),
+            'Toshiba': len(base_query.filter(name__icontains="toshiba")),
+            'Samsung': len(base_query.filter(name__icontains="samsung")),
+            'LG':len(base_query.filter(name__icontains="lg"))}
+
+
+
+
 def getTVData(request):
 
     smart_tv = SO(keyword='smart tv')
     curved_smart_tv = SO(keyword='curved smart tv')
 
-    rate_trends = []
-
     data = smart_tv.search()
     curved_data = curved_smart_tv.search()
 
-
-    hits_json = {'Sony':len(data['brands']['Sony']),
-                  'Toshiba':len(data['brands']['Toshiba']),
-                  'Samsung':len(data['brands']['Samsung']),
-                  'LG':len(data['brands']['LG'])}
-
-    curved_hits_json = {'Sony':len(curved_data['brands']['Sony']),
-                  'Toshiba':len(curved_data['brands']['Toshiba']),
-                  'Samsung':len(curved_data['brands']['Samsung']),
-                  'LG':len(curved_data['brands']['LG'])}
-
-    top_3_hits_json = {'Sony': len(data['top_3_brands']['Sony']),
-                 'Toshiba': len(data['top_3_brands']['Toshiba']),
-                 'Samsung': len(data['top_3_brands']['Samsung']),
-                 'LG': len(data['top_3_brands']['LG'])}
-
-    top_3_curved_hits_json = {'Sony': len(curved_data['top_3_brands']['Sony']),
-                        'Toshiba': len(curved_data['top_3_brands']['Toshiba']),
-                        'Samsung': len(curved_data['top_3_brands']['Samsung']),
-                        'LG': len(curved_data['top_3_brands']['LG'])}
-
+    hits_json = sumBrands(data,'brands')
+    curved_hits_json = sumBrands(curved_data, 'brands')
+    top_3_hits_json = sumBrands(data, 'top_3_brands')
+    top_3_curved_hits_json = sumBrands(curved_data, 'top_3_brands')
 
     return_obj = {'normal_hits': hits_json,
                   'curved_hits': curved_hits_json,
@@ -58,14 +58,47 @@ def getTVData(request):
     return JsonResponse(return_obj)
 
 
+def savedTVData(request):
+    smart_tv = Television.objects.filter(search_term='smart tv')
+    curved_smart_tv = Television.objects.filter(search_term='curved smart tv')
+
+
+    hits_json = sumDBBrands(smart_tv)
+    curved_hits_json = sumDBBrands(curved_smart_tv)
+    top_3_hits_json = sumDBBrands(smart_tv.filter(top_3=True))
+    top_3_curved_hits_json = sumDBBrands(curved_smart_tv.filter(top_3=True))
+
+    rank_trend = list(smart_tv.values_list('search_rank','rating'))
+    curved_rank_trend = list(curved_smart_tv.values_list('search_rank','rating'))
+
+    review_trend = list(smart_tv.values_list('search_rank','reviews'))
+    curved_review_trend = list(curved_smart_tv.values_list('search_rank','reviews'))
+
+
+    return_obj = {'normal_hits': hits_json,
+                  'curved_hits': curved_hits_json,
+                  'top_3_hits': top_3_hits_json,
+                  'top_3_curved_hits':top_3_curved_hits_json,
+                  'rate_trends': rank_trend,
+                  'curved_rate_trends': curved_rank_trend,
+                  'review_trends':review_trend,
+                  'curved_review_trends': curved_review_trend}
+
+
+    print return_obj
+
+
+    return JsonResponse(return_obj)
+
+
 
 def getTvDataCSV(request):
     obj = SO(keyword='smart tv')
     data = obj.search()
     top3 = data['top_3_brands']
     brands = data['brands']
-    ranks = data['ranks'][1:]
-    review = data['reviews'] [1:]
+    ranks = data['ranks']
+    review = data['reviews']
     d = datetime.now()
     unique_string = "%d%d%d%d%d%d" % (d.year, d.month, d.day, d.hour, d.minute, d.second)
 

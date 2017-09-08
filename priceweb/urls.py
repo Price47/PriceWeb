@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^loadingscreens/(?P<index>[0-9]{1})', views.loadingscreens, name='loadingscreens'),
     url(r'^bestbuydata', views.bestbuydata, name='bestbuydata'),
     url(r'^getbestbuycsv', views.getTvDataCSV, name='csvdata'),
+    url(r'^savedTVData', views.savedTVData, name='savedData'),
     url(r'^brewer',views.brewer, name='brewer'),
     url(r'^rest/get_bestbuy_data',views.getTVData, name='getdata')
 
