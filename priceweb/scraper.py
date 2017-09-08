@@ -2,7 +2,7 @@ import urllib2
 from bs4 import BeautifulSoup
 import mechanize
 import re
-from datetime import datetime
+from datetime import date
 
 from settings import EMPTY_ATTRIBUTE_ERROR
 from models import Television
@@ -13,6 +13,7 @@ class ScraperObject():
     """
 
     def __init__(self, keyword=None):
+        self.today = date.today()
         self.brands = {'Samsung':[],
                         'LG':[],
                        'Toshiba':[],
@@ -35,43 +36,49 @@ class ScraperObject():
         self.search_term = keyword
 
 
-    def brandMatch(self, brand, item, date):
+    def brandMatch(self, brand, item):
         self.brands[brand].append(item)
         if (self.top3Count < 3):
             self.top3[brand].append(item)
             self.top3Count += 1
-            self.saveData(item,date, True)
+            self.saveData(item, True)
         else:
-            self.saveData(item, date, False)
+            self.saveData(item, False)
 
 
 
-    def findBrand(self, item, date):
+    def findBrand(self, item):
 
         if self.samsung_reg.match(item['name']):
-            self.brandMatch('Samsung', item, date)
+            self.brandMatch('Samsung', item)
 
         if self.lg_reg.match(item['name']):
-            self.brandMatch('LG', item, date)
+            self.brandMatch('LG', item)
 
         if self.toshiba_reg.match(item['name']):
-            self.brandMatch('Toshiba', item, date)
+            self.brandMatch('Toshiba', item)
 
         if self.sony_reg.match(item['name']):
-            self.brandMatch('Sony', item, date)
+            self.brandMatch('Sony', item)
 
 
-    def saveData(self, obj, date, top_3):
+    def saveData(self, obj, top_3):
         search_rank = obj['search_rank']
         name = obj['name']
         rating = obj['rating']
         reviews = obj['reviews']
-        Television.objects.create(search_rank=search_rank, search_date=date, search_term=self.search_term,
+        Television.objects.create(search_rank=search_rank, search_date=self.today, search_term=self.search_term,
                                   name=name, rating=rating, reviews=reviews, top_3=top_3)
 
 
+
+    def removeTodaysData(self):
+        Television.objects.filter(search_date=self.today).delete()
+
+
+
     def search(self):
-        now = datetime.now()
+        now = date.today()
         search_rank = 1
         ranks = []
         review_trend = []
@@ -84,6 +91,8 @@ class ScraperObject():
         br.submit()
 
         r = br.response()
+
+        self.removeTodaysData()
 
         soup = BeautifulSoup(r,'html.parser')
         items = soup.findAll('div', attrs={'class':'list-item-postcard'})
@@ -101,7 +110,7 @@ class ScraperObject():
                     ranks.append([search_rank, float(rating)])
                     review_trend.append([search_rank, int(reviews)])
 
-                    self.findBrand(search_obj, now)
+                    self.findBrand(search_obj)
 
                     search_rank += 1
 

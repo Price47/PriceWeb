@@ -11,16 +11,12 @@ $(document).ready(function(){
     });
 });
 
-
 function printCookies(){
     console.log(document.cookie);
     if(cookieExists('JSANIMATORCHECK')){
         console.log('exists')
     }
 }
-
-
-
 
 function clearAnimation(){
 
