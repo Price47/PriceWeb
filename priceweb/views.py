@@ -10,7 +10,9 @@ def index(request):
     return render(request, 'priceweb/index.html')
 
 def bestbuydata(request):
-    return render(request, 'priceweb/bestbuy_tv_data.html')
+    now = datetime.now()
+    collected = "%d/%d/%d"%(now.month, now.day, now.year)
+    return render(request, 'priceweb/bestbuy_tv_data.html', context={'date':collected})
 
 def getTVData(request):
 
@@ -93,6 +95,8 @@ def getTvDataCSV(request):
     writer.writerow(['Search Rank','Reviews'])
     for i in review:
         writer.writerow([str(i[0]),str(i[1])])
+
+    response.set_cookie(key='JSANIMATORCHECK', value='csv_download_complete')
 
     return response
 

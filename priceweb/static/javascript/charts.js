@@ -1,7 +1,49 @@
 /**
  * Created by rockstar645 on 9/5/17.
  */
+$(document).ready(function(){
+    delete_cookie("JSANIMATORCHECK");
+    cookie = false;
+    document.getElementById("download_csv").addEventListener("click", function(){
+            $('#animator_wrapper').css('display','inline');
+            var cookieChecker = setInterval(clearAnimation,500)
+
+    });
+});
+
+
+function printCookies(){
+    console.log(document.cookie);
+    if(cookieExists('JSANIMATORCHECK')){
+        console.log('exists')
+    }
+}
+
+
+
+
+function clearAnimation(){
+
+    if(cookieExists("JSANIMATORCHECK")){
+        $('#animator_wrapper').css('display','none');
+        delete_cookie("JSANIMATORCHECK");
+    }
+
+
+}
+
+function cookieExists(name) {
+    return (document.cookie.indexOf(name) > -1)
+}
+
+var delete_cookie = function(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+};
+
+
 function getTvData(){
+        $('.data-chart').css('display', 'none');
+        document.getElementById('best_buy_loader').style.display="inline";
         console.log('collecting data...');
         $.get('rest/get_bestbuy_data').then(successCallback, errorCallback)
 }
@@ -231,8 +273,4 @@ $(function () {
         colors:['#447fff', '#44ff91', '#ffab4c', '#c549ff']
 
     });
-
-
-
-
 });
