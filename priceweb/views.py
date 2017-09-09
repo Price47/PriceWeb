@@ -4,11 +4,21 @@ from settings import MAX_LOADERS
 from scraper import ScraperObject as SO
 import requests
 import csv
-from datetime import datetime
+from datetime import datetime, date
 from celery.schedules import crontab
 from celery.task import periodic_task
 
 from models import Television
+from Helper import  HelperObject
+
+helper = HelperObject()
+
+@periodic_task(run_every=crontab(hour=1, minute=30))
+def update_bestbuy_snapshot():
+    helper.clearTodaysData()
+
+    SO(keyword='smart tv').search()
+    SO(keyword='curved smart tv').search()
 
 def index(request):
     return render(request, 'priceweb/index.html')
@@ -18,63 +28,9 @@ def bestbuydata(request):
     collected = "%d/%d/%d"%(now.month, now.day, now.year)
     return render(request, 'priceweb/bestbuy_tv_data.html', context={'date':collected})
 
-
-def clearTodaysData():
-    Television.objects.filter(search_date=datetime.today()).delete()
-
-
-def sumBrands(dataset,key):
-    return {'Sony': len(dataset[key]['Sony']),
-             'Toshiba': len(dataset[key]['Toshiba']),
-             'Samsung': len(dataset[key]['Samsung']),
-             'LG': len(dataset[key]['LG'])}
-
-def sumDBBrands(base_query):
-
-    return {'Sony':len(base_query.filter(name__icontains="sony")),
-            'Toshiba': len(base_query.filter(name__icontains="toshiba")),
-            'Samsung': len(base_query.filter(name__icontains="samsung")),
-            'LG':len(base_query.filter(name__icontains="lg"))}
-
-
-def retrieveData():
-    smart_tv = Television.objects.filter(search_term='smart tv')
-    curved_smart_tv = Television.objects.filter(search_term='curved smart tv')
-
-    hits_json = sumDBBrands(smart_tv)
-    curved_hits_json = sumDBBrands(curved_smart_tv)
-    top_3_hits_json = sumDBBrands(smart_tv.filter(top_3=True))
-    top_3_curved_hits_json = sumDBBrands(curved_smart_tv.filter(top_3=True))
-
-    rank_trend = list(smart_tv.values_list('search_rank', 'rating'))
-    curved_rank_trend = list(curved_smart_tv.values_list('search_rank', 'rating'))
-
-    review_trend = list(smart_tv.values_list('search_rank', 'reviews'))
-    curved_review_trend = list(curved_smart_tv.values_list('search_rank', 'reviews'))
-
-    return_obj = {'normal_hits': hits_json,
-                  'curved_hits': curved_hits_json,
-                  'top_3_hits': top_3_hits_json,
-                  'top_3_curved_hits': top_3_curved_hits_json,
-                  'rate_trends': rank_trend,
-                  'curved_rate_trends': curved_rank_trend,
-                  'review_trends': review_trend,
-                  'curved_review_trends': curved_review_trend}
-
-    return return_obj
-
-
-@periodic_task(run_every=crontab(hour=1, minute=30))
-def update_bestbuy_snapshot():
-    clearTodaysData()
-
-    SO(keyword='smart tv').search()
-    SO(keyword='curved smart tv').search()
-
-
 def getTVData(request):
 
-    clearTodaysData()
+    helper.clearTodaysData()
 
     smart_tv = SO(keyword='smart tv')
     curved_smart_tv = SO(keyword='curved smart tv')
@@ -82,26 +38,18 @@ def getTVData(request):
     smart_tv.search()
     curved_smart_tv.search()
 
-    return_obj = retrieveData()
+    return_obj = helper.retrieveData()
 
     return JsonResponse(return_obj)
 
 
 def savedTVData(request):
 
-    return_obj = retrieveData()
+    return_obj = helper.retrieveData()
 
     return JsonResponse(return_obj)
 
-
-
 def getTvDataCSV(request):
-    obj = SO(keyword='smart tv')
-    data = obj.search()
-    top3 = data['top_3_brands']
-    brands = data['brands']
-    ranks = data['ranks']
-    review = data['reviews']
     d = datetime.now()
     unique_string = "%d%d%d%d%d%d" % (d.year, d.month, d.day, d.hour, d.minute, d.second)
 
@@ -112,25 +60,8 @@ def getTvDataCSV(request):
 
     writer = csv.writer(response)
 
-    writer.writerow(['Smart TV'])
-    writer.writerow(['Top 3 Search Results'])
-    writer.writerow(['Search Rank','Name','Rating','Reviews'])
-    for key in ['Samsung', 'Sony', 'LG', 'Toshiba']:
-        for i in top3[key]:
-            writer.writerow([str(i['search_rank']),str(i['name']),str(i['rating']),str(i['reviews'])])
-    writer.writerow(['Search Results'])
-    writer.writerow(['Search Rank','Name','Rating','Reviews'])
-    for key in ['Samsung', 'Sony', 'LG', 'Toshiba']:
-        for i in brands[key]:
-            writer.writerow([str(i['search_rank']),str(i['name']),str(i['rating']),str(i['reviews'])])
-    writer.writerow(['Ranking Search Trend'])
-    writer.writerow(['Search Rank','Rating'])
-    for i in ranks:
-        writer.writerow([str(i[0]),str(i[1])])
-    writer.writerow(['Review Search Trend'])
-    writer.writerow(['Search Rank','Reviews'])
-    for i in review:
-        writer.writerow([str(i[0]),str(i[1])])
+    helper.formatCSVData('smart tv', writer)
+    helper.formatCSVData('curved smart tv', writer)
 
     response.set_cookie(key='JSANIMATORCHECK', value='csv_download_complete')
 
@@ -142,7 +73,6 @@ def about(request):
 
 def dori(request):
     return render(request, 'priceweb/dori.html')
-
 
 def loadingscreens(request, index):
     i = int(index)
@@ -186,7 +116,6 @@ def getRequestData(json):
     method = json['method']
 
     return {'ingredients':ingredients, 'method':method, 'temps':temps,'twist':twist}
-
 
 def brewer(request):
 
