@@ -66,6 +66,10 @@ function getNext(){
 
     cur = new Date(new Date() - (86500000*dateOffset));
 
+    url = "getbestbuycsv/" + cur.toISOString().split('T')[0];
+
+    document.getElementById("download_csv").href = (url);
+
     dbDataByDate(cur)
 }
 
@@ -76,7 +80,19 @@ function getPrev(){
     $('#date').text(dateOffset);
     cur = new Date(new Date() - (86500000*dateOffset));
 
+    url = "getbestbuycsv/" + cur.toISOString().split('T')[0];
+
+    document.getElementById("download_csv").href = (url);
+
     dbDataByDate(cur)
+}
+
+function getDate(){
+    current = $('#date').text();
+
+    date = new Date(new Date() - (86500000*parseInt(current)));
+
+    return date
 }
 
 function errorCallback(response){

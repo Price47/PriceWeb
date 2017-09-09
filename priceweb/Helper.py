@@ -1,4 +1,5 @@
-from datetime import date
+from datetime import date, datetime
+from django.http import HttpResponse
 
 from models import Television
 
@@ -54,8 +55,8 @@ class HelperObject():
         return return_obj
 
 
-    def writeCSVData(self, writer, search_term, base_query, top_3, ranks, reviews):
-        writer.writerow([search_term])
+    def writeCSVData(self, writer, search_term, base_query, top_3, ranks, reviews, search_date):
+        writer.writerow([search_term,search_date])
         writer.writerow(['Top 3 Search Results'])
         writer.writerow(['Search Rank', 'Name', 'Rating', 'Reviews'])
         for i in top_3:
@@ -74,12 +75,11 @@ class HelperObject():
             writer.writerow([str(i[0]), str(i[1])])
 
 
-    def formatCSVData(self, search_term, writer):
-        today = date.today()
+    def formatCSVData(self, search_term, writer, search_date):
 
-        base_query = Television.objects.filter(search_date=today).filter(search_term=search_term)
+        base_query = Television.objects.filter(search_date=search_date).filter(search_term=search_term)
         top_3 = base_query.filter(top_3=True)
         ranks = base_query.values_list("search_rank","rating")
         reviews = base_query.values_list("search_rank", "rating")
 
-        self.writeCSVData(writer, search_term, base_query, top_3, ranks, reviews)
+        self.writeCSVData(writer, search_term, base_query, top_3, ranks, reviews, search_date)

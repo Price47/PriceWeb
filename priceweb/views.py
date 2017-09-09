@@ -52,7 +52,11 @@ def savedTVData(request, search_date=None):
 
     return JsonResponse(return_obj)
 
-def getTvDataCSV(request):
+
+def getTvDataCSVbyDate(request, search_date=None):
+    if search_date == None:
+        search_date = date.today()
+
     d = datetime.now()
     unique_string = "%d%d%d%d%d%d" % (d.year, d.month, d.day, d.hour, d.minute, d.second)
 
@@ -63,13 +67,12 @@ def getTvDataCSV(request):
 
     writer = csv.writer(response)
 
-    helper.formatCSVData('smart tv', writer)
-    helper.formatCSVData('curved smart tv', writer)
+    helper.formatCSVData('smart tv', writer, search_date)
+    helper.formatCSVData('curved smart tv', writer, search_date)
 
     response.set_cookie(key='JSANIMATORCHECK', value='csv_download_complete')
 
     return response
-
 
 def about(request):
     return render(request, 'priceweb/about.html')
