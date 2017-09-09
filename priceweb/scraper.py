@@ -72,13 +72,9 @@ class ScraperObject():
 
 
 
-    def removeTodaysData(self):
-        Television.objects.filter(search_date=self.today).delete()
-
 
 
     def search(self):
-        now = date.today()
         search_rank = 1
         ranks = []
         review_trend = []
@@ -91,8 +87,6 @@ class ScraperObject():
         br.submit()
 
         r = br.response()
-
-        self.removeTodaysData()
 
         soup = BeautifulSoup(r,'html.parser')
         items = soup.findAll('div', attrs={'class':'list-item-postcard'})

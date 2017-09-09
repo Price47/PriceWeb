@@ -11,12 +11,6 @@ $(document).ready(function(){
     });
 });
 
-function printCookies(){
-    console.log(document.cookie);
-    if(cookieExists('JSANIMATORCHECK')){
-        console.log('exists')
-    }
-}
 
 function clearAnimation(){
 
@@ -36,6 +30,14 @@ var delete_cookie = function(name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
 
+function dataLoop() {
+    var now = new Date();
+    if (now.getHours() === 1) {
+        getTvData();
+        var delay = 1000 * 60 * 59; //run every 59 minutes
+        setTimeout(dataLoop, delay);
+    }
+}
 
 function getTvData(){
         $('.data-chart').css('display', 'none');

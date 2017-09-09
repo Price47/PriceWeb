@@ -5,6 +5,8 @@ from scraper import ScraperObject as SO
 import requests
 import csv
 from datetime import datetime
+from celery.schedules import crontab
+from celery.task import periodic_task
 
 from models import Television
 
@@ -15,6 +17,10 @@ def bestbuydata(request):
     now = datetime.now()
     collected = "%d/%d/%d"%(now.month, now.day, now.year)
     return render(request, 'priceweb/bestbuy_tv_data.html', context={'date':collected})
+
+
+def clearTodaysData():
+    Television.objects.filter(search_date=datetime.today()).delete()
 
 
 def sumBrands(dataset,key):
@@ -31,62 +37,59 @@ def sumDBBrands(base_query):
             'LG':len(base_query.filter(name__icontains="lg"))}
 
 
-
-
-def getTVData(request):
-
-    smart_tv = SO(keyword='smart tv')
-    curved_smart_tv = SO(keyword='curved smart tv')
-
-    data = smart_tv.search()
-    curved_data = curved_smart_tv.search()
-
-    hits_json = sumBrands(data,'brands')
-    curved_hits_json = sumBrands(curved_data, 'brands')
-    top_3_hits_json = sumBrands(data, 'top_3_brands')
-    top_3_curved_hits_json = sumBrands(curved_data, 'top_3_brands')
-
-    return_obj = {'normal_hits': hits_json,
-                  'curved_hits': curved_hits_json,
-                  'top_3_hits': top_3_hits_json,
-                  'top_3_curved_hits':top_3_curved_hits_json,
-                  'rate_trends': data['ranks'],
-                  'curved_rate_trends': curved_data['ranks'],
-                  'review_trends':data['reviews'],
-                  'curved_review_trends': curved_data['reviews']}
-
-    return JsonResponse(return_obj)
-
-
-def savedTVData(request):
+def retrieveData():
     smart_tv = Television.objects.filter(search_term='smart tv')
     curved_smart_tv = Television.objects.filter(search_term='curved smart tv')
-
 
     hits_json = sumDBBrands(smart_tv)
     curved_hits_json = sumDBBrands(curved_smart_tv)
     top_3_hits_json = sumDBBrands(smart_tv.filter(top_3=True))
     top_3_curved_hits_json = sumDBBrands(curved_smart_tv.filter(top_3=True))
 
-    rank_trend = list(smart_tv.values_list('search_rank','rating'))
-    curved_rank_trend = list(curved_smart_tv.values_list('search_rank','rating'))
+    rank_trend = list(smart_tv.values_list('search_rank', 'rating'))
+    curved_rank_trend = list(curved_smart_tv.values_list('search_rank', 'rating'))
 
-    review_trend = list(smart_tv.values_list('search_rank','reviews'))
-    curved_review_trend = list(curved_smart_tv.values_list('search_rank','reviews'))
-
+    review_trend = list(smart_tv.values_list('search_rank', 'reviews'))
+    curved_review_trend = list(curved_smart_tv.values_list('search_rank', 'reviews'))
 
     return_obj = {'normal_hits': hits_json,
                   'curved_hits': curved_hits_json,
                   'top_3_hits': top_3_hits_json,
-                  'top_3_curved_hits':top_3_curved_hits_json,
+                  'top_3_curved_hits': top_3_curved_hits_json,
                   'rate_trends': rank_trend,
                   'curved_rate_trends': curved_rank_trend,
-                  'review_trends':review_trend,
+                  'review_trends': review_trend,
                   'curved_review_trends': curved_review_trend}
 
+    return return_obj
 
-    print return_obj
 
+@periodic_task(run_every=crontab(hour=1, minute=30))
+def update_bestbuy_snapshot():
+    clearTodaysData()
+
+    SO(keyword='smart tv').search()
+    SO(keyword='curved smart tv').search()
+
+
+def getTVData(request):
+
+    clearTodaysData()
+
+    smart_tv = SO(keyword='smart tv')
+    curved_smart_tv = SO(keyword='curved smart tv')
+
+    smart_tv.search()
+    curved_smart_tv.search()
+
+    return_obj = retrieveData()
+
+    return JsonResponse(return_obj)
+
+
+def savedTVData(request):
+
+    return_obj = retrieveData()
 
     return JsonResponse(return_obj)
 

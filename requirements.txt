@@ -1,3 +1,4 @@
+celery==3.1.25
 html5lib==0.999999999
 six==1.10.0
 mechanize==0.3.5
