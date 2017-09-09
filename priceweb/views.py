@@ -8,10 +8,10 @@ from datetime import datetime, date
 from celery.schedules import crontab
 from celery.task import periodic_task
 
-from models import Television
 from Helper import  HelperObject
 
 helper = HelperObject()
+
 
 @periodic_task(run_every=crontab(hour=1, minute=30))
 def update_bestbuy_snapshot():
@@ -25,7 +25,7 @@ def index(request):
 
 def bestbuydata(request):
     now = datetime.now()
-    collected = "%d/%d/%d"%(now.month, now.day, now.year)
+    collected = "%d-%d-%d"%(now.month, now.day, now.year)
     return render(request, 'priceweb/bestbuy_tv_data.html', context={'date':collected})
 
 def getTVData(request):
@@ -43,9 +43,12 @@ def getTVData(request):
     return JsonResponse(return_obj)
 
 
-def savedTVData(request):
-
-    return_obj = helper.retrieveData()
+def savedTVData(request, search_date=None):
+    if(search_date==None):
+        search_date = date.today()
+    else:
+        datetime.strptime(search_date,"%Y-%m-%d").date()
+    return_obj = helper.retrieveData(search_date)
 
     return JsonResponse(return_obj)
 

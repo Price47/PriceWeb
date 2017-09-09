@@ -36,9 +36,47 @@ function getTvData(){
 
 function dbData(){
     $('.data-chart').css('display', 'none');
+    now = new Date().toISOString().split('T')[0];
+    $('#header_date').text('Best Buy Data ' + now);
+    document.getElementById('best_buy_loader').style.display="inline";
+    console.log('collecting data...');
+    $.get('savedTVData/'+ now).then(successCallback, errorCallback);
+
+}
+
+function dbDataByDate(date){
+    cur_date = date.toISOString().split('T')[0];
+    $('.data-chart').css('display', 'none');
+        $('#header_date').text('Best Buy Data ' + cur_date );
         document.getElementById('best_buy_loader').style.display="inline";
         console.log('collecting data...');
-        $.get('savedTVData').then(successCallback, errorCallback)
+        $.get('savedTVData/'+ cur_date).then(successCallback, errorCallback);
+}
+
+function getNext(){
+
+    current = $('#date').text();
+    dateOffset = parseInt(current)-1;
+
+    if(dateOffset < 0){
+        dateOffset = 0;
+    }
+
+    $('#date').text(dateOffset);
+
+    cur = new Date(new Date() - (86500000*dateOffset));
+
+    dbDataByDate(cur)
+}
+
+function getPrev(){
+
+    current = $('#date').text();
+    dateOffset = parseInt(current)+1;
+    $('#date').text(dateOffset);
+    cur = new Date(new Date() - (86500000*dateOffset));
+
+    dbDataByDate(cur)
 }
 
 function errorCallback(response){

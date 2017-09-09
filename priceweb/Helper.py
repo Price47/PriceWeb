@@ -27,9 +27,9 @@ class HelperObject():
                 'LG': len(base_query.filter(name__icontains="lg"))}
 
 
-    def retrieveData(self):
-        smart_tv = Television.objects.filter(search_term='smart tv')
-        curved_smart_tv = Television.objects.filter(search_term='curved smart tv')
+    def retrieveData(self, date):
+        smart_tv = Television.objects.filter(search_term='smart tv').filter(search_date=date)
+        curved_smart_tv = Television.objects.filter(search_term='curved smart tv').filter(search_date=date)
 
         hits_json = self.sumDBBrands(smart_tv)
         curved_hits_json = self.sumDBBrands(curved_smart_tv)
