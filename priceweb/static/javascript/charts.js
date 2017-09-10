@@ -45,7 +45,7 @@ function getTvData(){
         $('.data-chart').css('display', 'none');
         document.getElementById('best_buy_loader').style.display="inline";
         console.log('collecting data...');
-        $.get('rest/get_bestbuy_data').then(successCallback, errorCallback)
+        $.get('get_bestbuy_data').then(successCallback, errorCallback)
 }
 
 function dbData(){

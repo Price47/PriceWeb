@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^savedTVData/(?P<search_date>[0-9]{4}-[0-9]{2}-[0-9]{2})', views.savedTVData, name='savedData'),
     url(r'^brewer',views.brewer, name='brewer'),
     url(r'^lowestDate', views.getLowestDate, name='lowestDate'),
-    url(r'^rest/get_bestbuy_data',views.getTVData, name='getdata'),
+    url(r'^get_bestbuy_data',views.getTVData, name='getdata'),
 
 
 ]

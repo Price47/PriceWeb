@@ -9,6 +9,7 @@ from models import Television
 
 class ScraperObject():
     """
+    Object used to scrape Bestbuy using Mechanize and Beautiful Soup
 
     """
 
@@ -37,6 +38,15 @@ class ScraperObject():
 
 
     def brandMatch(self, brand, item):
+        """
+        Save the data to the database, after appending it to itselfs brand dicts. Also Handles adding the
+        top 3 search items within the list of brands to a top_3 dict. It is also saved with the top_3 field
+        in Television model with True if it is top 3.
+
+        :param brand: Sony, Toshiba, LG, or Samsung
+        :param item: object created from Beautiful soup data
+        :return:
+        """
         self.brands[brand].append(item)
         if (self.top3Count < 3):
             self.top3[brand].append(item)
@@ -48,6 +58,11 @@ class ScraperObject():
 
 
     def findBrand(self, item):
+        """
+        Match each item scraped to their brand
+        :param item: An object created from Beautiful Soup data
+        :return: Updates objects list of brand data
+        """
 
         if self.samsung_reg.match(item['name']):
             self.brandMatch('Samsung', item)
@@ -63,6 +78,12 @@ class ScraperObject():
 
 
     def saveData(self, obj, top_3):
+        """
+        Organize data to be saved as Television object
+        :param obj: Object from Beautiful soup data
+        :param top_3: true or false
+        :return:
+        """
         search_rank = obj['search_rank']
         name = obj['name']
         rating = obj['rating']
@@ -71,10 +92,15 @@ class ScraperObject():
                                   name=name, rating=rating, reviews=reviews, top_3=top_3)
 
 
-
-
-
     def search(self):
+        """
+        Initialize a Mechanize browser and parse it with Beautiful Soup. The soup finds objects in
+        from the search in order (so the first object is also the top of the list). The objects are
+        stored as list-item-postcard classes, which contains all of each TV's data. A search rank is also
+        assigned to each object, to keep track of trends between Rating/Search Rank and Reviews/Search Rank
+
+        :return: An object of relevant data used by Highcharts to create graphs
+        """
         search_rank = 1
         ranks = []
         review_trend = []
