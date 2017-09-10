@@ -23,12 +23,17 @@ def update_bestbuy_snapshot():
 def index(request):
     return render(request, 'priceweb/index.html')
 
+def getLowestDate(request):
+
+    return JsonResponse({'low_date':helper.lowestDate(), 'high_date':helper.highestDate()})
+
 def bestbuydata(request):
     now = datetime.now()
     collected = "%d-%d-%d"%(now.month, now.day, now.year)
     return render(request, 'priceweb/bestbuy_tv_data.html', context={'date':collected})
 
 def getTVData(request):
+    today = date.today()
 
     helper.clearTodaysData()
 
@@ -38,7 +43,7 @@ def getTVData(request):
     smart_tv.search()
     curved_smart_tv.search()
 
-    return_obj = helper.retrieveData()
+    return_obj = helper.retrieveData(today)
 
     return JsonResponse(return_obj)
 

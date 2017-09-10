@@ -12,6 +12,14 @@ class HelperObject():
     def clearTodaysData(self):
         Television.objects.filter(search_date=self.today).delete()
 
+    def lowestDate(self):
+
+        return Television.objects.all().values_list('search_date', flat=True).order_by('search_date')[0]
+
+    def highestDate(self):
+
+        return Television.objects.all().values_list('search_date', flat=True).order_by('-search_date')[0]
+
 
     def sumBrands(self, dataset, key):
         return {'Sony': len(dataset[key]['Sony']),
