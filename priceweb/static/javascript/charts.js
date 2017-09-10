@@ -11,6 +11,20 @@ $(document).ready(function(){
     });
 });
 
+var highestDateOffset = 2;
+
+function getLowestDate(){
+    lowestDate = $.get('/lowestDate').then(
+        function(success){
+
+            highestDateOffset = parseInt(success['high_date'].split("-")[2]) -
+                parseInt(success['low_date'].split("-")[2]);
+
+    },
+        function(error){
+            console.log(error)
+        });
+}
 
 function clearAnimation(){
     if(cookieExists("JSANIMATORCHECK")){
@@ -78,6 +92,11 @@ function getPrev(){
 
     current = $('#date').text();
     dateOffset = parseInt(current)+1;
+
+    if(dateOffset > highestDateOffset){
+        dateOffset = highestDateOffset
+    }
+
     $('#date').text(dateOffset);
     cur = new Date(new Date() - (86500000*dateOffset));
 
