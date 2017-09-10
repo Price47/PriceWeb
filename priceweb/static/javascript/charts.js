@@ -50,6 +50,8 @@ function getTvData(){
 
 function dbData(){
     $('#date').text(0);
+    url = "getbestbuycsv/" + new Date().toISOString().split('T')[0];
+    document.getElementById("download_csv").href = (url);
     $('.data-chart').css('display', 'none');
     now = new Date().toISOString().split('T')[0];
     $('#header_date').text('Best Buy Data ' + now);
