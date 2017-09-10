@@ -122,7 +122,6 @@ function errorCallback(response){
 }
 
 function successCallback(response){
-    console.log(response);
     var straightData = response['normal_hits'];
     var curvedData = response['curved_hits'];
     var top3Data = response['top_3_hits'];
