@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
 });
 
-var highestDateOffset = 2;
+var highestDateOffset;
 
 function getLowestDate(){
     lowestDate = $.get('/lowestDate').then(
