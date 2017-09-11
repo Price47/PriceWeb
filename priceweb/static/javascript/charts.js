@@ -61,6 +61,8 @@ var delete_cookie = function(name) {
     document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 };
 
+// This function actually scrapes best buy for data, before creating charts. The data scraped is
+// added to the DB. This function is only called when the client clicks "update"
 function getTvData(){
         $('.data-chart').css('display', 'none');
         document.getElementById('best_buy_loader').style.display="inline";
@@ -68,6 +70,7 @@ function getTvData(){
         $.get('get_bestbuy_data').then(successCallback, errorCallback)
 }
 
+// Grab today's television data
 function dbData(){
     $('#date').text(0);
     url = "getbestbuycsv/" + new Date().toISOString().split('T')[0];
@@ -81,6 +84,7 @@ function dbData(){
 
 }
 
+// Grab Television data by a specific date
 function dbDataByDate(date){
     cur_date = date.toISOString().split('T')[0];
     $('.data-chart').css('display', 'none');
@@ -90,6 +94,8 @@ function dbDataByDate(date){
     $.get('savedTVData/'+ cur_date).then(successCallback, errorCallback);
 }
 
+// Grab the date from the 2 date fields, setting it to today if the field isn't filled in,
+// and then updates the download_csv href, then gets data for that date range.
 function dbDataByRange(){
         date = new Date();
         console.log('range');
@@ -121,6 +127,11 @@ function dbDataByRange(){
         $.get('savedTVDataRange/' + start + "/" + end).then(successCallback, errorCallback)
 }
 
+// getNext and getPrev load the next or previous days data. The value saves in #date
+// is the offset from today of the data being searched (9/6/2017 is 3 days away from 9/9/2017,
+// so the offset is 3.) 86500000 is one day in milliseconds, times the offset is days, which
+// gives the date next in the sequence. the download_csv href is also updated, so that
+// the csv downloaded is for the data currently being viewed.
 function getNext(){
 
     current = $('#date').text();
@@ -153,10 +164,7 @@ function getPrev(){
 
     $('#date').text(dateOffset);
 
-
-    $('#date').text(dateOffset);
     cur = new Date(new Date() - (86500000*dateOffset));
-
 
     url = "getbestbuycsv/" + cur.toISOString().split('T')[0];
 
@@ -170,6 +178,8 @@ function errorCallback(response){
     console.log(response)
 }
 
+// This function is called for each data request from the db, and populates
+// the highcharts graphs with data from the requests
 function successCallback(response){
     var straightData = response['normal_hits'];
     var curvedData = response['curved_hits'];
@@ -385,6 +395,8 @@ function successCallback(response){
     });
 }
 
+
+// Sets global style for highcharts
 $(function () {
     Highcharts.setOptions({
         colors:['#447fff', '#44ff91', '#ffab4c', '#c549ff']

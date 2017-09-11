@@ -71,7 +71,6 @@ def savedTVDataRange(request, start_date=None, end_date=None):
 
     return JsonResponse(return_obj)
 
-
 def getTvDataCSVbyDate(request, search_date=None):
     if search_date == None:
         search_date = date.today()

@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5b0a233-6993-4586-8337-68a4851b1238" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/Helper.py" afterPath="$PROJECT_DIR$/priceweb/Helper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/templates/priceweb/bestbuy_tv_data.html" afterPath="$PROJECT_DIR$/priceweb/templates/priceweb/bestbuy_tv_data.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/static/javascript/charts.js" afterPath="$PROJECT_DIR$/priceweb/static/javascript/charts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/priceweb/views.py" afterPath="$PROJECT_DIR$/priceweb/views.py" />
     </list>
     <ignored path="PriceSite.iws" />
@@ -57,28 +56,33 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="188">
+              <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
                 <element signature="e#548#593#0" expanded="false" />
                 <element signature="e#628#715#0" expanded="false" />
                 <element signature="e#747#913#0" expanded="false" />
-                <element signature="e#3332#3377#0" expanded="false" />
-                <element signature="e#3402#3446#0" expanded="false" />
-                <element signature="e#3488#3945#0" expanded="false" />
-                <element signature="e#3971#4015#0" expanded="false" />
-                <element signature="e#4048#4670#0" expanded="false" />
-                <element signature="e#4698#6018#0" expanded="false" />
+                <element signature="e#943#1217#0" expanded="false" />
+                <element signature="e#1268#1513#0" expanded="false" />
+                <element signature="e#1582#1938#0" expanded="false" />
+                <element signature="e#1995#2626#0" expanded="false" />
+                <element signature="e#2704#3305#0" expanded="false" />
+                <element signature="e#3331#3376#0" expanded="false" />
+                <element signature="e#3401#3445#0" expanded="false" />
+                <element signature="e#3487#3944#0" expanded="false" />
+                <element signature="e#3970#4014#0" expanded="false" />
+                <element signature="e#4047#4669#0" expanded="false" />
+                <element signature="e#4697#6017#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helper.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Helper.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/Helper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1786">
+            <state relative-caret-position="1020">
               <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -90,8 +94,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+            <state relative-caret-position="45">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="25" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -100,8 +104,8 @@
       <file leaf-file-name="charts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/charts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+            <state relative-caret-position="930">
+              <caret line="64" column="80" selection-start-line="64" selection-start-column="80" selection-end-line="64" selection-end-column="80" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -130,11 +134,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scraper.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scraper.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/priceweb/scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
+            <state relative-caret-position="-286">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -206,11 +210,11 @@
         <option value="$PROJECT_DIR$/priceweb/scraper.py" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/index.html" />
         <option value="$PROJECT_DIR$/PriceSite/settings.py" />
-        <option value="$PROJECT_DIR$/priceweb/static/javascript/charts.js" />
         <option value="$PROJECT_DIR$/priceweb/urls.py" />
         <option value="$PROJECT_DIR$/priceweb/templates/priceweb/bestbuy_tv_data.html" />
-        <option value="$PROJECT_DIR$/priceweb/views.py" />
         <option value="$PROJECT_DIR$/priceweb/Helper.py" />
+        <option value="$PROJECT_DIR$/priceweb/views.py" />
+        <option value="$PROJECT_DIR$/priceweb/static/javascript/charts.js" />
       </list>
     </option>
   </component>
@@ -221,8 +225,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-125" />
-    <option name="y" value="23" />
+    <option name="x" value="39" />
+    <option name="y" value="41" />
     <option name="width" value="1375" />
     <option name="height" value="777" />
   </component>
@@ -699,10 +703,10 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-125" y="23" width="1375" height="777" extended-state="0" />
-    <editor active="true" />
+    <frame x="39" y="41" width="1375" height="777" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14472727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14472727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22033899" sideWeight="0.37018183" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1004,16 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="94" column="8" selection-start-line="94" selection-start-column="8" selection-end-line="94" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1040,24 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/charts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/templates/priceweb/bestbuy_tv_data.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -1077,31 +1053,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/Helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="25" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/priceweb/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="188">
+          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
             <element signature="e#548#593#0" expanded="false" />
             <element signature="e#628#715#0" expanded="false" />
             <element signature="e#747#913#0" expanded="false" />
-            <element signature="e#3332#3377#0" expanded="false" />
-            <element signature="e#3402#3446#0" expanded="false" />
-            <element signature="e#3488#3945#0" expanded="false" />
-            <element signature="e#3971#4015#0" expanded="false" />
-            <element signature="e#4048#4670#0" expanded="false" />
-            <element signature="e#4698#6018#0" expanded="false" />
+            <element signature="e#943#1217#0" expanded="false" />
+            <element signature="e#1268#1513#0" expanded="false" />
+            <element signature="e#1582#1938#0" expanded="false" />
+            <element signature="e#1995#2626#0" expanded="false" />
+            <element signature="e#2704#3305#0" expanded="false" />
+            <element signature="e#3331#3376#0" expanded="false" />
+            <element signature="e#3401#3445#0" expanded="false" />
+            <element signature="e#3487#3944#0" expanded="false" />
+            <element signature="e#3970#4014#0" expanded="false" />
+            <element signature="e#4047#4669#0" expanded="false" />
+            <element signature="e#4697#6017#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/priceweb/Helper.py">
+    <entry file="file://$PROJECT_DIR$/priceweb/static/javascript/charts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1786">
-          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
+        <state relative-caret-position="930">
+          <caret line="64" column="80" selection-start-line="64" selection-start-column="80" selection-end-line="64" selection-end-column="80" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/priceweb/scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
