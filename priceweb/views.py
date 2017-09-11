@@ -86,8 +86,28 @@ def getTvDataCSVbyDate(request, search_date=None):
 
     writer = csv.writer(response)
 
-    helper.formatCSVData('smart tv', writer, search_date)
-    helper.formatCSVData('curved smart tv', writer, search_date)
+    helper.formatCSVData('smart tv', writer, search_date=search_date)
+    helper.formatCSVData('curved smart tv', writer, search_date=search_date)
+
+    response.set_cookie(key='JSANIMATORCHECK', value='csv_download_complete')
+
+    return response
+
+def getTvDataCSVbyDateRange(request, start_date=None, end_date=None):
+
+
+    d = datetime.now()
+    unique_string = "%d%d%d%d%d%d" % (d.year, d.month, d.day, d.hour, d.minute, d.second)
+
+    filename = "Data_" + unique_string + ".csv"
+
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=' + filename
+
+    writer = csv.writer(response)
+
+    helper.formatCSVData('smart tv', writer, start_date=start_date, end_date=end_date)
+    helper.formatCSVData('curved smart tv', writer, start_date=start_date, end_date=end_date)
 
     response.set_cookie(key='JSANIMATORCHECK', value='csv_download_complete')
 

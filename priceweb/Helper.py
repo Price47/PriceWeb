@@ -174,7 +174,7 @@ class HelperObject():
             writer.writerow([str(i[0]), str(i[1])])
 
 
-    def formatCSVData(self, search_term, writer, search_date):
+    def formatCSVData(self, search_term, writer, search_date=None, start_date=None, end_date=None):
         """
         Sets up the Django Queryset's used to write to the CSV
 
@@ -184,7 +184,16 @@ class HelperObject():
         :return: Writer passed to this function is updated
         """
 
-        base_query = Television.objects.filter(search_date=search_date).filter(search_term=search_term)
+        if start_date!=None and end_date!=None:
+            base_query = Television.objects.filter(search_date__gte=start_date)\
+                .filter(search_date__lte=end_date).filter(search_term=search_term)
+
+            search_date = str(start_date + " to " + str(end_date))
+
+        else:
+            base_query = Television.objects.filter(search_date=search_date).filter(search_term=search_term)
+
+
         top_3 = base_query.filter(top_3=True)
         ranks = base_query.values_list("search_rank","rating")
         reviews = base_query.values_list("search_rank", "rating")

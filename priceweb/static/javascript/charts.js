@@ -112,7 +112,8 @@ function dbDataByRange(){
 
         $('#header_date').text(headerDate(start) + " to " + headerDate(end) );
 
-
+        url = "getbestbuycsv/" + start + "/" + end;
+        document.getElementById("download_csv").href = (url);
 
         $('.data-chart').css('display', 'none');
         document.getElementById('best_buy_loader').style.display="inline";
