@@ -17,8 +17,8 @@ function getLowestDate(){
     lowestDate = $.get('/lowestDate').then(
         function(success){
 
-            highestDateOffset = parseInt(success['high_date'].split("-")[2]) -
-                parseInt(success['low_date'].split("-")[2]);
+            highestDateOffset = (parseInt(success['high_date'].split("-")[2]) -
+                parseInt(success['low_date'].split("-")[2]));
 
     },
         function(error){
@@ -93,9 +93,9 @@ function getNext(){
 function getPrev(){
 
     current = $('#date').text();
-    dateOffset = parseInt(current)+1;
+    dateOffset = parseInt(current);
 
-    if(dateOffset > highestDateOffset){
+    if(dateOffset > highestDateOffset+1){
         dateOffset = highestDateOffset
     }
 

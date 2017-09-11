@@ -15,7 +15,6 @@ helper = HelperObject()
 
 @periodic_task(run_every=crontab(hour=1, minute=30))
 def update_bestbuy_snapshot():
-    helper.clearTodaysData()
 
     SO(keyword='smart tv').search()
     SO(keyword='curved smart tv').search()
