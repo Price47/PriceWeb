@@ -42,7 +42,7 @@ def getTVData(request):
     smart_tv.search()
     curved_smart_tv.search()
 
-    return_obj = helper.formatReturnDict(today)
+    return_obj = helper.defineQuery(today)
 
     return JsonResponse(return_obj)
 

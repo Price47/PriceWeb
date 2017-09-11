@@ -121,9 +121,8 @@
     }
 
     .date-range-form-item{
-        position: relative;
-        float:left;
-        top:30%;
+        display: block;
+        margin:auto
     }
 
     #daily_view:hover{
@@ -131,6 +130,10 @@
     }
 
     #range_view:hover{
+        background: #44ff91;
+    }
+
+    #range_submit:hover{
         background: #44ff91;
     }
 
@@ -197,17 +200,19 @@
 <div id="range_menu" style="width:100%;height:100px;margin-bottom: 15px;">
 
 
-        <div class="row">
-            <div class="date-range-form-item" style="left:0">
-                <p>Start: <input name="start_date" type="text" id="datepicker"></p>
-            </div>
 
-            <div class="date-range-form-item" style="left:35%">
-                <p>End: <input name="end_date" type="text" id="datepicker2"></p>
-            </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" >
+            <strong style="color:white">Start:</strong><br>
+            <input style="margin-top: 15px;margin-bottom:15px;" name="start_date" type="text" id="datepicker">
         </div>
-        <div class="row">
-            <button class="top-nav-button"  style="left:20%;width:50%" onclick="dbDataByRange()">Searhc</button>
+
+        <div class="dcol-xs-12 col-sm-4 col-md-4 col-lg-4" >
+                <strong style="margin-top: 15px;color:white">End:</strong><br>
+                <input style="margin-top: 15px;margin-bottom:15px;" name="end_date" type="text" id="datepicker2">
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" >
+            <button id="range_submit" class="top-nav-button"  style="width: 100%;margin-top:30px;"
+                    onclick="dbDataByRange()">Search</button>
         </div>
 
 </div>

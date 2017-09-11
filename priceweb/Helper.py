@@ -67,6 +67,13 @@ class HelperObject():
 
 
     def defineQuery(self, date):
+        """
+        Gathers data for a single date
+
+        :param start: start date (yyyy-mm-dd)
+        :param end: end date (yyyy-mm-dd)
+        :return: formatted object for json response
+                """
         smart_tv = Television.objects.filter(search_term='smart tv').filter(search_date=date)
         curved_smart_tv = Television.objects.filter(search_term='curved smart tv').filter(search_date=date)
 
@@ -81,6 +88,13 @@ class HelperObject():
         return return_obj
 
     def defineRangeQuery(self, start, end):
+        """
+        Gathers data for a range of dates
+
+        :param start: start date (yyyy-mm-dd)
+        :param end: end date (yyyy-mm-dd)
+        :return: formatted object for json response
+        """
         smart_tv = Television.objects.filter(search_term='smart tv')\
             .filter(search_date__lte=end).filter(search_date__gte=start)
         curved_smart_tv = Television.objects.filter(search_term='curved smart tv')\
@@ -176,7 +190,8 @@ class HelperObject():
 
     def formatCSVData(self, search_term, writer, search_date=None, start_date=None, end_date=None):
         """
-        Sets up the Django Queryset's used to write to the CSV
+        Sets up the Django Queryset's used to write to the CSV. If start and end date are provided,
+        the base query includes a range of dates. If not, it includes only one day.
 
         :param search_term: Search term to limit results to ('smart tv', 'curved smart tv')
         :param writer: CSV writer
