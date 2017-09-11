@@ -2,6 +2,9 @@
  * Created by rockstar645 on 9/5/17.
  */
 $(document).ready(function(){
+    $('#range_menu').hide();
+    $( "#datepicker" ).datepicker();
+    $( "#datepicker2" ).datepicker();
     delete_cookie("JSANIMATORCHECK");
     cookie = false;
     document.getElementById("download_csv").addEventListener("click", function(){
@@ -12,6 +15,11 @@ $(document).ready(function(){
 });
 
 var highestDateOffset;
+
+function headerDate(date){
+    string = date.split("-");
+    return string[1] + "/" + string[2] +"/" + string[0]
+}
 
 function getLowestDate(){
     lowestDate = $.get('/lowestDate').then(
@@ -24,6 +32,18 @@ function getLowestDate(){
         function(error){
             console.log(error)
         });
+}
+
+function setDaily(){
+    dbData();
+    $('#daily_menu').slideDown();
+    $('#range_menu').slideUp();
+}
+
+function setRange(){
+    $('#range_menu').slideDown();
+    $('#daily_menu').slideUp()
+
 }
 
 function clearAnimation(){
@@ -54,7 +74,7 @@ function dbData(){
     document.getElementById("download_csv").href = (url);
     $('.data-chart').css('display', 'none');
     now = new Date().toISOString().split('T')[0];
-    $('#header_date').text('Best Buy Data ' + now);
+    $('#header_date').text(headerDate(now));
     document.getElementById('best_buy_loader').style.display="inline";
     console.log('collecting data...');
     $.get('savedTVData/'+ now).then(successCallback, errorCallback);
@@ -64,10 +84,40 @@ function dbData(){
 function dbDataByDate(date){
     cur_date = date.toISOString().split('T')[0];
     $('.data-chart').css('display', 'none');
-        $('#header_date').text('Best Buy Data ' + cur_date );
+    $('#header_date').text(headerDate(cur_date));
+    document.getElementById('best_buy_loader').style.display="inline";
+    console.log('collecting data...');
+    $.get('savedTVData/'+ cur_date).then(successCallback, errorCallback);
+}
+
+function dbDataByRange(){
+        date = new Date();
+        console.log('range');
+
+        if($( "#datepicker" ).val()) {
+            startDate = $( "#datepicker" ).val().split("/");
+            start = startDate[2] + "-" + startDate[0] + "-" + startDate[1];
+        }
+        else{
+            start = date.toISOString().split('T')[0];
+        }
+
+        if($( "#datepicker2" ).val()) {
+            endDate = $( "#datepicker2" ).val().split("/");
+            end = endDate[2] + "-" + endDate[0] + "-" + endDate[1];
+        }
+        else{
+            end = date.toISOString().split('T')[0];
+        }
+
+        $('#header_date').text(headerDate(start) + " to " + headerDate(end) );
+
+
+
+        $('.data-chart').css('display', 'none');
         document.getElementById('best_buy_loader').style.display="inline";
         console.log('collecting data...');
-        $.get('savedTVData/'+ cur_date).then(successCallback, errorCallback);
+        $.get('savedTVDataRange/' + start + "/" + end).then(successCallback, errorCallback)
 }
 
 function getNext(){
@@ -91,6 +141,8 @@ function getNext(){
 }
 
 function getPrev(){
+
+    console.log('getting prev');
 
     current = $('#date').text();
     dateOffset = parseInt(current);
@@ -122,6 +174,7 @@ function errorCallback(response){
 }
 
 function successCallback(response){
+    console.log(response)
     var straightData = response['normal_hits'];
     var curvedData = response['curved_hits'];
     var top3Data = response['top_3_hits'];

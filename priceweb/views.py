@@ -42,17 +42,32 @@ def getTVData(request):
     smart_tv.search()
     curved_smart_tv.search()
 
-    return_obj = helper.retrieveData(today)
+    return_obj = helper.formatReturnDict(today)
 
     return JsonResponse(return_obj)
 
 
 def savedTVData(request, search_date=None):
+    print ('not range in this one')
     if(search_date==None):
-        search_date = date.today()
+        search = date.today()
     else:
-        datetime.strptime(search_date,"%Y-%m-%d").date()
-    return_obj = helper.retrieveData(search_date)
+        search = datetime.strptime(search_date,"%Y-%m-%d").date()
+    return_obj = helper.defineQuery(search)
+
+    return JsonResponse(return_obj)
+
+def savedTVDataRange(request, start_date=None, end_date=None):
+    print ('svaed data range')
+    if(start_date==None):
+        start = date.today()
+    if(end_date==None):
+        end = date.today()
+    else:
+        start = datetime.strptime(start_date,"%Y-%m-%d").date()
+        end = datetime.strptime(end_date,"%Y-%m-%d").date()
+
+    return_obj = helper.defineRangeQuery(start,end)
 
     return JsonResponse(return_obj)
 
