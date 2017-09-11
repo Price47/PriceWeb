@@ -142,17 +142,20 @@ function getNext(){
 
 function getPrev(){
 
-    console.log('getting prev');
-
     current = $('#date').text();
-    dateOffset = parseInt(current);
 
-    if(dateOffset > highestDateOffset+1){
+    dateOffset = parseInt(current) + 1;
+
+    if(dateOffset > highestDateOffset){
         dateOffset = highestDateOffset
     }
 
     $('#date').text(dateOffset);
+
+
+    $('#date').text(dateOffset);
     cur = new Date(new Date() - (86500000*dateOffset));
+
 
     url = "getbestbuycsv/" + cur.toISOString().split('T')[0];
 
@@ -161,20 +164,12 @@ function getPrev(){
     dbDataByDate(cur)
 }
 
-function getDate(){
-    current = $('#date').text();
-
-    date = new Date(new Date() - (86500000*parseInt(current)));
-
-    return date
-}
 
 function errorCallback(response){
     console.log(response)
 }
 
 function successCallback(response){
-    console.log(response)
     var straightData = response['normal_hits'];
     var curvedData = response['curved_hits'];
     var top3Data = response['top_3_hits'];
