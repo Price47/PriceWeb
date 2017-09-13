@@ -173,19 +173,25 @@ class HelperObject():
         writer.writerow(['Top 3 Search Results'])
         writer.writerow(['Search Rank', 'Name', 'Rating', 'Reviews'])
         for i in top_3:
-            writer.writerow([str(i.search_rank), str(i.name), str(i.rating), str(i.reviews)])
+            try:
+                writer.writerow([i.search_rank, i.name, i.rating, i.reviews])
+            except UnicodeEncodeError:
+                writer.writerow(([i.search_rank, search_term, i.rating, i.reviews]))
         writer.writerow(['Search Results'])
         writer.writerow(['Search Rank', 'Name', 'Rating', 'Reviews'])
         for i in base_query:
-            writer.writerow([str(i.search_rank), str(i.name), str(i.rating), str(i.reviews)])
+            try:
+                writer.writerow(([i.search_rank, str(i.name).encode('utf8'), i.rating, i.reviews]))
+            except UnicodeEncodeError:
+                writer.writerow(([i.search_rank, search_term, i.rating, i.reviews]))
         writer.writerow(['Ranking Search Trend'])
         writer.writerow(['Search Rank', 'Rating'])
         for i in ranks:
-            writer.writerow([str(i[0]), str(i[1])])
+            writer.writerow([i[0], i[1]])
         writer.writerow(['Review Search Trend'])
         writer.writerow(['Search Rank', 'Reviews'])
         for i in reviews:
-            writer.writerow([str(i[0]), str(i[1])])
+            writer.writerow([i[0], i[1]])
 
 
     def formatCSVData(self, search_term, writer, search_date=None, start_date=None, end_date=None):
@@ -203,7 +209,7 @@ class HelperObject():
             base_query = Television.objects.filter(search_date__gte=start_date)\
                 .filter(search_date__lte=end_date).filter(search_term=search_term)
 
-            search_date = str(start_date + " to " + str(end_date))
+            search_date = (start_date + " to " + end_date)
 
         else:
             base_query = Television.objects.filter(search_date=search_date).filter(search_term=search_term)
