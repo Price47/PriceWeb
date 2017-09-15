@@ -1,5 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
+from django.utils.timezone import now as today
 
 
 from django.db import models
@@ -10,7 +11,7 @@ from datetime import date
 
 class Television(models.Model):
     search_rank = models.IntegerField()
-    search_date = models.DateField(default=date.today())
+    search_date = models.DateField(default=today)
     search_term = models.CharField(max_length=256, default="none")
     name = models.CharField(max_length=256)
     rating = models.FloatField()
