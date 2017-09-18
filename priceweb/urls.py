@@ -20,7 +20,7 @@ urlpatterns = [
         views.savedTVDataRange, name='getdata'),
     url(r'^brewer',views.brewer, name='brewer'),
     url(r'^lowestDate', views.getLowestDate, name='lowestDate'),
-    url(r'^get_bestbuy_data',views.getTVData, name='getdata'),
+    url(r'^get_bestbuy_data',views.getTVData, name='scrapedata'),
 
 
 ]

@@ -13,7 +13,7 @@ from Helper import  HelperObject
 helper = HelperObject()
 
 
-@periodic_task(run_every=crontab(hour=1, minute=30))
+@periodic_task(run_every=crontab(hour=6, minute=30))
 def update_bestbuy_snapshot():
 
     SO(keyword='smart tv').search()
@@ -32,6 +32,7 @@ def bestbuydata(request):
     return render(request, 'priceweb/bestbuy_tv_data.html', context={'date':collected})
 
 def getTVData(request):
+
     today = date.today()
 
     helper.clearTodaysData()
@@ -48,7 +49,6 @@ def getTVData(request):
 
 
 def savedTVData(request, search_date=None):
-    print ('not range in this one')
     if(search_date==None):
         search = date.today()
     else:

@@ -84,6 +84,7 @@ class ScraperObject():
         :param top_3: true or false
         :return:
         """
+        print "saving object"
         search_rank = obj['search_rank']
         name = obj['name']
         rating = obj['rating']
@@ -136,7 +137,4 @@ class ScraperObject():
 
                 except AttributeError:
                     print EMPTY_ATTRIBUTE_ERROR
-
-
-        return {'brands':self.brands, 'ranks':ranks, 'reviews':review_trend, 'top_3_brands':self.top3}
 

@@ -1,5 +1,6 @@
 from datetime import date, datetime
 from django.http import HttpResponse
+import pytz
 
 from models import Television
 
@@ -18,7 +19,10 @@ class HelperObject():
         set of data, the most current set, for each daily snapshot
 
         """
-        Television.objects.filter(search_date=self.today).delete()
+        print "clearing data"
+        queryset = Television.objects.filter(search_date=self.today)
+        if queryset:
+            queryset.delete()
 
     def lowestDate(self):
         """
