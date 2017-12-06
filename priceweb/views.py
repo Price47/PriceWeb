@@ -7,13 +7,14 @@ import csv
 from datetime import datetime, date
 from celery.schedules import crontab
 from celery.task import periodic_task
+import requests
 
 from Helper import  HelperObject
+from crypto import get_coin_info, get_coin_info_eth, ticker_difference
 
 helper = HelperObject()
 
 
-@periodic_task(run_every=crontab(hour=6, minute=30))
 def update_bestbuy_snapshot():
 
     SO(keyword='smart tv').search()
@@ -198,3 +199,32 @@ def brewer(request):
                                                             'method':data['method'],
                                                             'temps':data['temps'],
                                                             'twist':data['twist']})
+
+def crypto(request):
+    coin_data = []
+    status = {"Up":"#14ff2f","Down":"#ff1414"}
+    glpyh = {"Up":"glyphicon glyphicon-triangle-top", "Down":"glyphicon glyphicon-triangle-bottom"}
+    tickers = {"BTCUSD":"Bitcoin", "LTCUSD":"Litecoin", "ETHUSD":"Ethereum", "PLRETH":"Pillar"}
+    symbols = ["BTCUSD","LTCUSD","ETHUSD","PLRETH",""]
+    for url in symbols:
+        resp = requests.get("https://api.hitbtc.com/api/2/public/ticker/{}".format(url))
+        coin_json = resp.json()
+        if url not in ["BTCUSD","LTCUSD","ETHUSD"]:
+            price, prev, high, low = get_coin_info_eth(coin_json)
+
+        else:
+            price, prev, high, low = get_coin_info(coin_json)
+
+        performance, delta = ticker_difference(price, prev)
+
+        coin_data.append({'price': price,
+                          'prev': prev,
+                          'high': high,
+                          'low': low,
+                          "name": tickers[url],
+                          "color": status[performance],
+                          "glyph": glpyh[performance],
+                          "delta": delta})
+
+
+    return render(request, 'priceweb/crypto.html', context={'coins':coin_data})

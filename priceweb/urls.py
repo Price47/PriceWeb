@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^brewer',views.brewer, name='brewer'),
     url(r'^lowestDate', views.getLowestDate, name='lowestDate'),
     url(r'^get_bestbuy_data',views.getTVData, name='scrapedata'),
+    url(r'^crypto', views.crypto, name="crypto"),
 
 
 ]
