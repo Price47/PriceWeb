@@ -202,22 +202,24 @@ def brewer(request):
 
 def crypto(request):
     coin_data = []
+    carousel_id = 0
     status = {"Up":"#14ff2f","Down":"#ff1414"}
     glpyh = {"Up":"glyphicon glyphicon-triangle-top", "Down":"glyphicon glyphicon-triangle-bottom"}
-    tickers = {"BTCUSD":"Bitcoin", "LTCUSD":"Litecoin", "ETHUSD":"Ethereum", "PLRETH":"Pillar"}
-    symbols = ["BTCUSD","LTCUSD","ETHUSD","PLRETH",""]
+    tickers = {"BTCUSD":"Bitcoin", "LTCUSD":"Litecoin", "ETHUSD":"Ethereum", "PLRETH":"Pillar",
+               "BCCUSD":"Bitcoin Cash", "XRPETH": "Ripple"}
+    symbols = ["BTCUSD","LTCUSD","ETHUSD", "BCCUSD", "PLRETH", "XRPETH"]
     for url in symbols:
         resp = requests.get("https://api.hitbtc.com/api/2/public/ticker/{}".format(url))
         coin_json = resp.json()
-        if url not in ["BTCUSD","LTCUSD","ETHUSD"]:
+        if url not in ["BTCUSD","LTCUSD","ETHUSD", "BCCUSD"]:
             price, prev, high, low = get_coin_info_eth(coin_json)
-
         else:
             price, prev, high, low = get_coin_info(coin_json)
 
         performance, delta = ticker_difference(price, prev)
 
-        coin_data.append({'price': price,
+        coin_data.append({'carousel_id': carousel_id,
+                          'price': price,
                           'prev': prev,
                           'high': high,
                           'low': low,
@@ -225,6 +227,7 @@ def crypto(request):
                           "color": status[performance],
                           "glyph": glpyh[performance],
                           "delta": delta})
+        carousel_id+=1
 
 
     return render(request, 'priceweb/crypto.html', context={'coins':coin_data})

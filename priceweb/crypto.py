@@ -4,7 +4,6 @@ def eth_token_to_usd(token, key):
     response = requests.get("https://api.hitbtc.com/api/2/public/ticker/ETHUSD")
     base_usd = float(response.json()[key])
     token_eth = float(token[key])
-
     return token_eth*base_usd
 
 

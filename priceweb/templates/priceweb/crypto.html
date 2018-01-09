@@ -13,54 +13,126 @@
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
     {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'priceweb/styles.css' %}" />
     <script src="{% static 'javascript/crypto.js' %}"></script>
 
-
-</head>
 <style>
     .ticker-info-box{
-        background: #1a1b1c;
-        padding: 10px;
-        text-align: center;
-        border-radius: 5px;
-        margin-bottom: 15px;
-    }
+    background: black;
+    position:relative;
+    padding:10px;
+    margin-left:1%;
+    margin-top:15px;
+    float:left;border-radius: 10px;
+}
 </style>
+</head>
 <body style="background: #1a1b1c;z-index:2000">
 
-<div id="crypto_header" style="color:white"></div>
-
     {%  for coin in coins %}
-        <div style="background: black;position:relative;padding:10px;width:30%;
-        margin-left:1%;margin-top:15px; float:left;border-radius: 10px;border:1px solid {{ coin.color }}">
-            <div style="color:{{ coin.color }}">
-                <div style="color: white" class="ticker-info-box">
-                    <strong>{{ coin.name }}</strong><br>
-                </div>
-                <div class="ticker-info-box">
-                    ${{ coin.price }}
-                </div>
-                <div class="ticker-info-box">
-                    ${{ coin.delta }} <span class="{{ coin.glyph }}"></span>
-                </div>
-                <div>
-                    <div class="ticker-info-box" style="width: 45%;float:left;position: relative;margin-right:10% ">
-                        <div style="color:white">
-                            High <br>
-                        </div>
-                        ${{ coin.high }}
-                    </div>
-                    <div class="ticker-info-box" style="width: 45%;float:left;position: relative">
-                        <div style="color:white">
-                            Low <br>
-                        </div>
-                        ${{ coin.low }}
-                    </div>
-                </div>
-
+    <div style="background: black;position:relative;padding:10px;
+    margin-left:1%;margin-top:15px; float:left;border-radius: 10px;border:1px solid {{ coin.color }}">
+        <div style="color:{{ coin.color }}">
+            <div style="color: white">
+                <strong>{{ coin.name }}</strong>
+            </div>
+            <div >
+                ${{ coin.price }}
             </div>
         </div>
+    </div>
     {% endfor %}
 
+    <div id="carousel-crypto" class="carousel slide" data-ride="carousel" style="margin-top: 20px">
+                <!-- Menu -->
+                <ol class="carousel-indicators home-carousel-indicators">
+                    {% for coin in coins %}
+                        {% if coin.carousel_id == 0 %}
+                        <li data-target="#carousel-crypto" data-slide-to="0" class="active"></li>
+                        {% else %}
+                        <li data-target="#carousel-crypto" data-slide-to="{{  coin.carousel_id }}"></li>
+                        {% endif %}
+                    {% endfor %}
+                </ol>
+
+                <!-- Items -->
+                <div class="carousel-inner" style="height: 600px">
+                    {% for coin in coins %}
+                    {% if coin.carousel_id == 0 %}
+                    <div class="item active">
+                            <div style="background: black;position:relative;padding:10px;
+                            margin-left:1%;margin-top:15px; float:left;border-radius: 10px;
+                            border:1px solid {{ coin.color }}">
+                                <div style="color:{{ coin.color }}">
+                                    <div style="color: white" class="ticker-info-box">
+                                        <strong>{{ coin.name }}</strong><br>
+                                    </div>
+                                    <div class="ticker-info-box">
+                                        ${{ coin.price }}
+                                    </div>
+                                    <div class="ticker-info-box">
+                                        ${{ coin.delta }} <span class="{{ coin.glyph }}"></span>
+                                    </div>
+                                    <div>
+                                        <div class="ticker-info-box" style="width: 45%;float:left;position: relative;margin-right:10% ">
+                                            <div style="color:white">
+                                                High <br>
+                                            </div>
+                                            ${{ coin.high }}
+                                        </div>
+                                        <div class="ticker-info-box" style="width: 45%;float:left;position: relative">
+                                            <div style="color:white">
+                                                Low <br>
+                                            </div>
+                                            ${{ coin.low }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+                    {% else %}
+                    <div class="item">
+                            <div style="background: black;position:relative;padding:10px;
+                            margin-left:1%;margin-top:15px; float:left;border-radius: 10px;
+                            border:1px solid {{ coin.color }}">
+                                <div style="color:{{ coin.color }}">
+                                    <div style="color: white" class="ticker-info-box">
+                                        <strong>{{ coin.name }}</strong><br>
+                                    </div>
+                                    <div class="ticker-info-box">
+                                        ${{ coin.price }}
+                                    </div>
+                                    <div class="ticker-info-box">
+                                        ${{ coin.delta }} <span class="{{ coin.glyph }}"></span>
+                                    </div>
+                                    <div>
+                                        <div class="ticker-info-box" style="width: 45%;float:left;position: relative;margin-right:10% ">
+                                            <div style="color:white">
+                                                High <br>
+                                            </div>
+                                            ${{ coin.high }}
+                                        </div>
+                                        <div class="ticker-info-box" style="width: 45%;float:left;position: relative">
+                                            <div style="color:white">
+                                                Low <br>
+                                            </div>
+                                            ${{ coin.low }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <a href="#carousel-crypto" class="left carousel-control" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a href="#carousel-crypto" class="right carousel-control" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
 </body>
 </html>

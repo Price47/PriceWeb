@@ -341,8 +341,8 @@ ol.home-carousel-indicators {
 ol.home-carousel-indicators li,
 ol.home-carousel-indicators li.active {
   float: left;
-  width: 25%;
-  height: 5px;
+  width: 16.666667%;
+  height: 25px;
   margin: 0;
   border-radius: 0;
   border: 0;
@@ -350,11 +350,11 @@ ol.home-carousel-indicators li.active {
 }
 
 ol.home-carousel-indicators li:hover{
-    background: lightgrey;
+    background: whitesmoke;
 }
 
 ol.home-carousel-indicators li.active {
-  background: white;;
+  background: white;
 }
 
 .item a:hover{
@@ -443,6 +443,16 @@ ol.home-carousel-indicators li.active {
 .brew-table-title{
     transform: rotate(90deg);
 
+}
+
+/* crypto */
+.ticker-info-box{
+    background: black;
+    position:relative;
+    padding:10px;
+    margin-left:1%;
+    margin-top:15px;
+    float:left;border-radius: 10px;
 }
 
 /* gradients */
