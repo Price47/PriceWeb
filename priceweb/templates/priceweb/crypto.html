@@ -17,18 +17,11 @@
     <script src="{% static 'javascript/crypto.js' %}"></script>
 
 <style>
-    .ticker-info-box{
-    background: black;
-    position:relative;
-    padding:10px;
-    margin-left:1%;
-    margin-top:15px;
-    float:left;border-radius: 10px;
-}
+
 </style>
 </head>
-<body style="background: #1a1b1c;z-index:2000">
-
+<body style="background: #474747;z-index:2000">
+<div style="position:fixed;width:100%;background: black;top:0;left:0;height:100px;">
     {%  for coin in coins %}
     <div style="background: black;position:relative;padding:10px;
     margin-left:1%;margin-top:15px; float:left;border-radius: 10px;border:1px solid {{ coin.color }}">
@@ -42,7 +35,8 @@
         </div>
     </div>
     {% endfor %}
-
+</div>
+<div style="margin-top:50px">
     <div id="carousel-crypto" class="carousel slide" data-ride="carousel" style="margin-top: 20px">
                 <!-- Menu -->
                 <ol class="carousel-indicators home-carousel-indicators">
@@ -56,19 +50,20 @@
                 </ol>
 
                 <!-- Items -->
-                <div class="carousel-inner" style="height: 600px">
+                <div class="carousel-inner" style="height: 400px">
                     {% for coin in coins %}
                     {% if coin.carousel_id == 0 %}
                     <div class="item active">
                             <div style="background: black;position:relative;padding:10px;
-                            margin-left:1%;margin-top:15px; float:left;border-radius: 10px;
+                            margin-left:30%;margin-top:15px; float:left;border-radius: 10px;
                             border:1px solid {{ coin.color }}">
                                 <div style="color:{{ coin.color }}">
                                     <div style="color: white" class="ticker-info-box">
                                         <strong>{{ coin.name }}</strong><br>
+                                        ${{ coin.price }}
                                     </div>
                                     <div class="ticker-info-box">
-                                        ${{ coin.price }}
+
                                     </div>
                                     <div class="ticker-info-box">
                                         ${{ coin.delta }} <span class="{{ coin.glyph }}"></span>
@@ -93,7 +88,7 @@
                     </div>
                     {% else %}
                     <div class="item">
-                            <div style="background: black;position:relative;padding:10px;
+                            <div style="background: #1a1b1c;position:relative;padding:10px;
                             margin-left:1%;margin-top:15px; float:left;border-radius: 10px;
                             border:1px solid {{ coin.color }}">
                                 <div style="color:{{ coin.color }}">
@@ -134,5 +129,6 @@
                     <span class="glyphicon glyphicon-chevron-right"></span>
                 </a>
             </div>
+</div>
 </body>
 </html>
