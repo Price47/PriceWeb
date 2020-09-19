@@ -187,7 +187,6 @@ def brewer(request):
     if url == "https://api.punkapi.com/v2/beers/?":
         url = "https://api.punkapi.com/v2/beers/random"
 
-    print url
     r = requests.get(url)
 
     json = r.json()[0]
